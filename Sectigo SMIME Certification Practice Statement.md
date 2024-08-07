@@ -2631,4 +2631,4 @@ See profiles document
 | Version | Change Description | Date |
 | --- | --- | --- |
 | 1.0 | First version accoridng to the new S/MIME CABF BRs | 31-Aug-2023 | 
-| 1.0.1 | Updated sections 1.6.1, 5.2.1, 5.4.6 and 6.7 due to the new NetSec version 2.0 |07-Aug-2024 |
+| 1.0.1 | Updated sections 1.6.1, 5.2.1, 5.4.6 and 6.7 due to the new NetSec version 2.0 | 07-Aug-2024 |
