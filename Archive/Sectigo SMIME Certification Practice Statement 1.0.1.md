@@ -1,8 +1,8 @@
 ---
 title: Sectigo S/MIME Certificate Practice Statement
-version: 1.0.2 
+version: 1.0.1 
 author: Sectigo Limited
-date: 09-Aug-2024
+date: August 7, 2024
 copyright_header: Copyright Notice
 copyright_notice: Copyright Sectigo Limited 2024. All rights reserved.
 copyright_body: No part of this publication may be reproduced, stored in or introduced into a retrieval system, or transmitted,in any form or by any means (electronic, mechanical, photocopying, recording or otherwise) without prior written permission of Sectigo Limited. Requests for any other permission to reproduce this Sectigo document (as well as requests for copies from Sectigo) must be addressed to
@@ -745,26 +745,6 @@ In all types of Sectigo Certificates, the Subscriber has a continuous obligation
 Sectigo makes reasonable efforts to confirm Certificate application information and issue a digital Certificate within a reasonable time frame. The time frame is greatly dependent on the Subscriber providing the necessary details and/or documentation in a timely manner. Upon the receipt of the necessary details and/or documentation, Sectigo aims to confirm submitted application data and to complete the validation process and issue/reject a Certificate application within 2 working days.
 
 From time to time, events outside of the control of Sectigo MAY delay the issuance process, however Sectigo will make every reasonable effort to meet issuance times and to make Applicants aware of any factors that may affect issuance times in a timely manner.
-
-### 4.2.4.Certificate Authority Authorization
-
-Sectigo examines the Certification Authority Authorization (CAA) DNS Resource Records as specified in RFC 9495.
-
-Prior to March 15, 2025, if such CAA Records are found and do not grant Sectigo the authority to issue the Certificate, the application MAY be rejected. 
-Starting March 15, 2025, if such CAA Records are found and do not grant Sectigo the authority to issue the Certificate, the application SHALL be rejected. 
-
-Sectigo logs the results of the CAA checks.
-
-Where the Relevant RRSet contains any ‘issuemail’ Property Tags, Sectigo recognizes the following issuer-domain-names, as expressed in the Property Values, as granting authorization for issuance by Sectigo:
-
-- sectigo.com
-- usertrust.com
-- trust-provider.com
-
-For a transitional period, Sectigo also recognizes the following domain names as granting authorization although these are deprecated and should be replaced with a domain name from the above list at the earliest opportunity:
-
-- comodo.com
-- comodoca.com
 
 ## 4.3.Certificate Issuance
 
@@ -2652,4 +2632,3 @@ See profiles document
 | --- | --- | --- |
 | 1.0 | First version accoridng to the new S/MIME CABF BRs | 31-Aug-2023 | 
 | 1.0.1 | Updated sections 1.6.1, 5.2.1, 5.4.6 and 6.7 due to the new NetSec version 2.0 | 07-Aug-2024 |
-| 1.0.2 | Add CAA Practices for S/MIME | 09-Aug-2024 |
