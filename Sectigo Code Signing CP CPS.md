@@ -1737,6 +1737,7 @@ Depending on the circumstances and the type of Certificate, a Private Key can be
 ### 6.2.10. Method of Destroying Private Key
 
 Destroying a Private Key means the destruction of all active keys, both backed-up and stored. Destroying a Private Key MAY comprise of removing it from the HSM or removing it from the active backup set. Private Keys are destroyed in accordance with NIST SP 800-88.
+This process will be witnessed and signed by 2 trusted roles of Sectigo.
 
 ### 6.2.11. Cryptographic Module Rating
 
