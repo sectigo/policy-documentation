@@ -539,6 +539,16 @@ Sectigo validates that the Applicant holds the Private Key corresponding with a 
 Sectigo MAY confirm the Applicant’s control over each Mailbox Field to be included in the Certificate by confirming control of the SMTP FQDN to which a message delivered to the Mailbox Address should be directed. The SMTP FQDN SHALL be identified using the address resolution algorithm defined in RFC 5321 Section 5.1 which determines which SMTP FQDNs are authoritative for a given Mailbox Address. 
 If more than one SMTP FQDN has been discovered, Sectigo SHALL verify control of an SMTP FQDN following the selection process at RFC 5321 Section 5.1. Aliases in MX record RDATA SHALL NOT be used for this validation method.
 
+#### 3.2.2.4 Validating control over mailbox using ACME extensions
+
+Sectigo MAY confirm the Applicant’s control over each Mailbox Field to be included in a Certificate using ACME for S/MIME as defined in RFC 8823. Sectigo’s ACME server MAY respond to a POST request by sending the Random Value token components via email and SMTP, and then receiving a confirming response utilizing the generated Random Value, in accordance with RFC 8823.
+
+The control over each Mailbox Address SHALL be confirmed using a newly-generated Random Value. The Random Value token components SHALL only be shared in accordance with RFC 8823. As defined by RFC 8823, token-part1 SHALL contain at 
+least 128 bits of entropy and token-part2 SHOULD contain at least 128 bits of entropy.
+Sectigo SHALL not reuse the Random Value for other Certificate Requests. The Random Value SHALL remain valid for use in a confirming response for no more than 24 hours from its creation. Sectigo MAY specify a shorter validity period for Random Values in this document.
+
+Implementations MAY use ACME External Account Binding as defined by RFC 8555.
+
 ### 3.2.3.Authentication of Organization Identity
 
 Authentication of an organization identity is performed through the validation processes specified below and depends on the type of Certificate. This includes the  Organization-validated and Sponsor-validated profiles.
