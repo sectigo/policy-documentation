@@ -1,8 +1,8 @@
 ---
 title: Sectigo Code Signing Certificates Certificate Policy and Certification Practice Statement
-version: 1.0.4
+version: 1.0.3
 author: Sectigo Limited
-date: 12-Sep-25
+date: TBD - Set during publication
 copyright_header: Copyright Notice
 copyright_notice: Copyright Sectigo Limited 2025. All rights reserved.
 copyright_body: No part of this publication may be reproduced, stored in or introduced into a retrieval system, or transmitted,in any form or by any means (electronic, mechanical, photocopying, recording or otherwise) without prior written permission of Sectigo Limited. Requests for any other permission to reproduce this Sectigo document (as well as requests for copies from Sectigo) must be addressed to
@@ -1786,13 +1786,6 @@ Table 6.3.2
 | Sectigo Public Root R46 | 21/3/2046 | RSA 4096 | sha384WithRSA |
 | Sectigo Public Time Stamping Root E46 | 21/3/2046 | ECDSA 384 | ecdsa-with-SHA384 |
 | Sectigo Public Time Stamping Root R46 | 21/3/2046 | RSA 4096 | sha384WithRSA |
-| Entrust.net Certification Authority (2048) | 24/7/2029 | RSA 2048 | sha1WithRSAEncryption |
-| Entrust Root Certification Authority - G2 | 7/12/2030 | RSA 2048 | sha256WithRSAEncryption |
-| Entrust Code Signing Root Certification Authority - CSBR1 | 30/12/2040 | RSA 4096 | sha512WithRSAEncryption |
-| Entrust Digital Signing Root Certification Authority - DSR1 | 30/12/2040 | RSA 4096 | sha512WithRSAEncryption |
-| Entrust Root Certification Authority | 26/11/2026 | RSA 2048 | sha1WithRSAEncryption |
-| Entrust Root Certification Authority - EC1 | 18/12/2027 | ECDSA 384 | ecdsa-with-SHA384 |
-| Entrust Root Certification Authority - G4 | 27/12/2030 | RSA 4096 | sha256WithRSAEncryption |
 
 ## 6.4. Activation Data
 
@@ -2828,4 +2821,3 @@ E.g., EV codesigning certificate. As codeSigning Certificate, except:
 | 1.0.1 | Markdown-based CPS | 15-Nov-24 |
 | 1.0.2 | Combined CP/CPS | 5-Mar-25 |
 | 1.0.3 | Update section 5.2.2 | 10-Mar-25 |
-| 1.0.4 | Updated section 6.3.2 to incorporate Entrust Root CAs| 12-Sep-25 |

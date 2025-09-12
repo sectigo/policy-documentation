@@ -1,8 +1,8 @@
 ---
 title: Sectigo Code Signing Certificates Certificate Policy and Certification Practice Statement
-version: 1.0.4
+version: 1.0.2
 author: Sectigo Limited
-date: 12-Sep-25
+date: 05-Mar-2025
 copyright_header: Copyright Notice
 copyright_notice: Copyright Sectigo Limited 2025. All rights reserved.
 copyright_body: No part of this publication may be reproduced, stored in or introduced into a retrieval system, or transmitted,in any form or by any means (electronic, mechanical, photocopying, recording or otherwise) without prior written permission of Sectigo Limited. Requests for any other permission to reproduce this Sectigo document (as well as requests for copies from Sectigo) must be addressed to
@@ -1078,7 +1078,7 @@ Sectigo´s facilities housing their operational and standby CA functions have at
 
 ### 5.1.2. Physical Access
 
-Access to each tier of physical security, constructed in accordance with section 5.1.1, SHALL be controlled.  
+Access to each tier of physical security, constructed in accordance with section 5.1.1, SHALL be auditable and controlled so that only authorized personnel can access each tier.  
 
 Card access systems are in place to control and monitor access to all areas of the facility. Access to the Sectigo physical machinery within the secure facility is protected with locked cabinets and logical access controls. Security perimeters are clearly defined for all Sectigo locations. All of Sectigo’s entrances and exits are secured or monitored by security personnel, reception staff, or monitoring/control systems.
 
@@ -1158,12 +1158,10 @@ Internal Auditors are responsible for reviewing, maintaining, and archiving audi
 
 ### 5.2.2. Number of Persons Required per Task
 
-Multiparty control procedures are designed to ensure that at a minimum, the desired number of Trusted Persons are present to gain either physical or logical access to the CA equipment. 
-Access to Certificate Systems SHALL be defined and assigned to multiple Trusted Persons. 
-Access to CA Root Systems SHALL be strictly enforced by multiple Trusted Persons throughout its lifecycle, from incoming receipt and inspection to final logical and/or physical destruction.
+Multiparty control procedures are designed to ensure that at a minimum, the desired number of Trusted Persons are present to gain either physical or logical access to the CA equipment. Access to CA cryptographic modules SHALL be strictly enforced by multiple Trusted Persons throughout its lifecycle, from incoming receipt and inspection to final logical and/or physical destruction. Once a CA is activated with operational keys, further Access Controls SHALL be invoked to maintain split control over both physical and logical access to the CA. 
 
 Sectigo requires that at least two CA Administrators take action for: 
-•	Physical Access;
+•	Physical Access
 •	CA key generation; 
 •	CA signing key activation; and
 •	CA Private Key backup and restore. 
@@ -1786,13 +1784,6 @@ Table 6.3.2
 | Sectigo Public Root R46 | 21/3/2046 | RSA 4096 | sha384WithRSA |
 | Sectigo Public Time Stamping Root E46 | 21/3/2046 | ECDSA 384 | ecdsa-with-SHA384 |
 | Sectigo Public Time Stamping Root R46 | 21/3/2046 | RSA 4096 | sha384WithRSA |
-| Entrust.net Certification Authority (2048) | 24/7/2029 | RSA 2048 | sha1WithRSAEncryption |
-| Entrust Root Certification Authority - G2 | 7/12/2030 | RSA 2048 | sha256WithRSAEncryption |
-| Entrust Code Signing Root Certification Authority - CSBR1 | 30/12/2040 | RSA 4096 | sha512WithRSAEncryption |
-| Entrust Digital Signing Root Certification Authority - DSR1 | 30/12/2040 | RSA 4096 | sha512WithRSAEncryption |
-| Entrust Root Certification Authority | 26/11/2026 | RSA 2048 | sha1WithRSAEncryption |
-| Entrust Root Certification Authority - EC1 | 18/12/2027 | ECDSA 384 | ecdsa-with-SHA384 |
-| Entrust Root Certification Authority - G4 | 27/12/2030 | RSA 4096 | sha256WithRSAEncryption |
 
 ## 6.4. Activation Data
 
@@ -2826,6 +2817,4 @@ E.g., EV codesigning certificate. As codeSigning Certificate, except:
 | --- | --- | --- |
 | 1.0.0 | New version specific for Code Signing certificates. Updated sections 1.6.1, 5.2.1, 5.4.6 and 6.7 due to the new NetSec version 2.0 | 26-Aug-24 |
 | 1.0.1 | Markdown-based CPS | 15-Nov-24 |
-| 1.0.2 | Combined CP/CPS | 5-Mar-25 |
-| 1.0.3 | Update section 5.2.2 | 10-Mar-25 |
-| 1.0.4 | Updated section 6.3.2 to incorporate Entrust Root CAs| 12-Sep-25 |
+| 1.0.2 | Combined CP/CPS | 05-Mar-2025 |

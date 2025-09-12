@@ -1,8 +1,8 @@
 ---
 title: Sectigo S/MIME Certificate Policy and Certification Practice Statement
-version: 1.0.5
+version: 1.0.4
 author: Sectigo Limited
-date: TBD - Set during publishing
+date: 10-Mar-25
 copyright_header: Copyright Notice
 copyright_notice: Copyright Sectigo Limited 2025. All rights reserved.
 copyright_body: No part of this publication may be reproduced, stored in or introduced into a retrieval system, or transmitted,in any form or by any means (electronic, mechanical, photocopying, recording or otherwise) without prior written permission of Sectigo Limited. Requests for any other permission to reproduce this Sectigo document (as well as requests for copies from Sectigo) must be addressed to
@@ -1896,13 +1896,6 @@ Table 6.3.2
 | Sectigo Public Root R46 | 21/3/2046 | RSA 4096 | sha384WithRSA |
 | Sectigo Public Time Stamping Root E46 | 21/3/2046 | ECDSA 384 | ecdsa-with-SHA384 |
 | Sectigo Public Time Stamping Root R46 | 21/3/2046 | RSA 4096 | sha384WithRSA |
-| Entrust.net Certification Authority (2048) | 24/7/2029 | RSA 2048 | sha1WithRSAEncryption |
-| Entrust Root Certification Authority - G2 | 7/12/2030 | RSA 2048 | sha256WithRSAEncryption |
-| Entrust Digital Signing Root Certification Authority - DSR1 | 30/12/2040 | RSA 4096 | sha512WithRSAEncryption |
-| Entrust Root Certification Authority | 26/11/2026 | RSA 2048 | sha1WithRSAEncryption |
-| Entrust Root Certification Authority - EC1 | 18/12/2027 | ECDSA 384 | ecdsa-with-SHA384 |
-| Entrust Root Certification Authority - G4 | 27/12/2030 | RSA 4096 | sha256WithRSAEncryption |
-| Entrust SMIME Root CA - 2022 | 07/12/2047 | RSA 4096 | sha384WithRSAEncryption |
 
 Sectigo protects its CA Root Key Pairs in accordance with the audit program compliant infrastructure and this document.
 
@@ -2849,5 +2842,3 @@ See profiles document
 | 1.0.2 | Add CAA Practices for S/MIME | 09-Aug-2024 |
 | 1.0.3 | Created a combined CP/CPS. Add requierements from the CABF NCSSRs. Add recent CABF BRs updates. Combined CP/CPS for S/MIME | 5-Mar-2025 |
 | 1.0.4 | Updated section 5.2.2. Update CAA for S/MIME practices | 10-Mar-2025 |
-| 1.0.5 | Updated section 6.3.2 to incorporate Entrust Root CAs| 12-Sep-2025 |
-
