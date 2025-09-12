@@ -1,8 +1,8 @@
 ---
 title: Sectigo S/MIME Certificate Policy and Certification Practice Statement
-version: 1.0.5
+version: 1.0.3 
 author: Sectigo Limited
-date: TBD - Set during publishing
+date: 05-Mar-2025
 copyright_header: Copyright Notice
 copyright_notice: Copyright Sectigo Limited 2025. All rights reserved.
 copyright_body: No part of this publication may be reproduced, stored in or introduced into a retrieval system, or transmitted,in any form or by any means (electronic, mechanical, photocopying, recording or otherwise) without prior written permission of Sectigo Limited. Requests for any other permission to reproduce this Sectigo document (as well as requests for copies from Sectigo) must be addressed to
@@ -575,7 +575,7 @@ Sectigo MAY rely on an Attestation that indicates the Assumed Name under which t
 
 #### 3.2.3.3.Disclosure of verification sources
 
-Sectigo SHALL verify the Registration Reference to be included in the Certificate from a register that is maintained or authorized by the relevant government agency. Sectigo  discloses the authorized sources it uses to verify the Applicant’s creation, existence, or recognition in the repository available on https://infosrc.sectigo.com/avs/web/reg-qgis-src.
+Sectigo SHALL verify the Registration Reference to be included in the Certificate from a register that is maintained or authorized by the relevant government agency. Sectigo  discloses the authorized sources it uses to verify the Applicant’s creation, existence, or recognition in the repository. 
 
 Nothing in these Requirements prohibits the use of third‐party vendors to obtain regularly‐updated and current information from the government register provided that the third party obtains the information directly from the government.
 In the case of a LEI data reference, the CA or RA SHALL verify the associated data record with the Global Legal Entity Identifier Foundation.
@@ -796,7 +796,10 @@ From time to time, events outside of the control of Sectigo MAY delay the issuan
 
 ### 4.2.4.Certificate Authority Authorization
 
-Sectigo examines the Certification Authority Authorization (CAA) DNS Resource Records as specified in RFC 9495. If such CAA Records are found and do not grant Sectigo the authority to issue the Certificate, the application SHALL be rejected.
+Sectigo examines the Certification Authority Authorization (CAA) DNS Resource Records as specified in RFC 9495.
+
+Prior to March 15, 2025, if such CAA Records are found and do not grant Sectigo the authority to issue the Certificate, the application MAY be rejected. 
+Starting March 15, 2025, if such CAA Records are found and do not grant Sectigo the authority to issue the Certificate, the application SHALL be rejected. 
 
 Sectigo logs the results of the CAA checks.
 
@@ -816,12 +819,7 @@ For a transitional period, Sectigo also recognizes the following domain names as
 - comodo.com
 - comodoca.com
 
-Additionally, Entrust has contractually agreed to allow Sectigo to recognize the following domain names within the ‘issuemail’ tag as granting authorization for issuance by Sectigo.
-
-- entrust.net
-- affirmtrust.com
-
-Sectigo implements Section 3.2.2.9 of the CABF TLS Baseline Requirements regarding MPIC.
+Sectigo implements Section 3.2.2.9 of the CABF TLS Baseline Requirements regarding the MPIC.
 
 ## 4.3.Certificate Issuance
 
@@ -1264,7 +1262,7 @@ Sectigo operates within the United Kingdom, Europe and the United States, with s
 All physical access to Sectigo PKI facilities is restricted to authorized Sectigo employees, vendors, and contractors, for whom access is required in order to execute their jobs.
 
 #### 5.1.2.1.	Physical Access for CA Equipment
-Access to each tier of physical security SHALL be controlled.  
+Access to each tier of physical security SHALL be auditable and controlled so that only authorized personnel can access each tier.  
 Card access systems are in place to control and monitor access to all areas of the facility. Access to the Sectigo physical machinery within the secure facility is protected with locked cabinets and logical access controls.  Security perimeters are clearly defined for all Sectigo locations. All of Sectigo’s entrances and exits are secured or monitored by security personnel, reception staff, or monitoring/control systems.   
 
 #### 5.1.2.2.	Physical Access for RA Equipment
@@ -1344,17 +1342,13 @@ Internal Auditors are responsible for reviewing, maintaining, and archiving audi
 
 ### 5.2.2.Number of Persons Required per Task
 
-Multiparty control procedures are designed to ensure that at a minimum, the desired number of Trusted Persons are present to gain either physical or logical access to the CA equipment.
-
-Access to Certificate Systems SHALL be defined and assigned to multiple Trusted Persons.
-Access to CA Root Systems SHALL be strictly enforced by multiple Trusted Persons throughout its lifecycle, from incoming receipt and inspection to final logical and/or physical destruction. 
+Multiparty control procedures are designed to ensure that at a minimum, the desired number of Trusted Persons are present to gain either physical or logical access to the CA equipment. Access to CA cryptographic modules SHALL be strictly enforced by multiple Trusted Persons throughout its lifecycle, from incoming receipt and inspection to final logical and/or physical destruction. Once a CA is activated with operational keys, further Access Controls SHALL be invoked to maintain split control over both physical and logical access to the CA. 
 
 Sectigo requires that at least two CA Administrators take action for: 
-
-- Physical Access;
-- CA key generation; 
-- CA signing key activation; and
-- CA Private Key backup and restore. 
+•	Physical Access
+•	CA key generation; 
+•	CA signing key activation; and
+•	CA Private Key backup and restore. 
 
 Where multiparty control is required, at least one of the participants SHALL be an Administrator. All participants MUST serve in a Trusted Role as defined in Section 5.2.2. Multiparty control SHALL NOT be achieved using personnel that serve in the Internal Auditors Trusted Role.
 
@@ -1896,13 +1890,6 @@ Table 6.3.2
 | Sectigo Public Root R46 | 21/3/2046 | RSA 4096 | sha384WithRSA |
 | Sectigo Public Time Stamping Root E46 | 21/3/2046 | ECDSA 384 | ecdsa-with-SHA384 |
 | Sectigo Public Time Stamping Root R46 | 21/3/2046 | RSA 4096 | sha384WithRSA |
-| Entrust.net Certification Authority (2048) | 24/7/2029 | RSA 2048 | sha1WithRSAEncryption |
-| Entrust Root Certification Authority - G2 | 7/12/2030 | RSA 2048 | sha256WithRSAEncryption |
-| Entrust Digital Signing Root Certification Authority - DSR1 | 30/12/2040 | RSA 4096 | sha512WithRSAEncryption |
-| Entrust Root Certification Authority | 26/11/2026 | RSA 2048 | sha1WithRSAEncryption |
-| Entrust Root Certification Authority - EC1 | 18/12/2027 | ECDSA 384 | ecdsa-with-SHA384 |
-| Entrust Root Certification Authority - G4 | 27/12/2030 | RSA 4096 | sha256WithRSAEncryption |
-| Entrust SMIME Root CA - 2022 | 07/12/2047 | RSA 4096 | sha384WithRSAEncryption |
 
 Sectigo protects its CA Root Key Pairs in accordance with the audit program compliant infrastructure and this document.
 
@@ -2848,6 +2835,3 @@ See profiles document
 | 1.0.1 | Updated sections 1.6.1, 5.2.1, 5.4.6 and 6.7 due to the new NetSec version 2.0 | 07-Aug-2024 |
 | 1.0.2 | Add CAA Practices for S/MIME | 09-Aug-2024 |
 | 1.0.3 | Created a combined CP/CPS. Add requierements from the CABF NCSSRs. Add recent CABF BRs updates. Combined CP/CPS for S/MIME | 5-Mar-2025 |
-| 1.0.4 | Updated section 5.2.2. Update CAA for S/MIME practices | 10-Mar-2025 |
-| 1.0.5 | Updated section 6.3.2 to incorporate Entrust Root CAs| 12-Sep-2025 |
-
