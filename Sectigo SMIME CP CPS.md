@@ -1,8 +1,8 @@
 ---
 title: Sectigo S/MIME Certificate Policy and Certification Practice Statement
-version: 1.0.5
+version: 1.0.6
 author: Sectigo Limited
-date: TBD - Set during publishing
+date: 1-Nov-2025
 copyright_header: Copyright Notice
 copyright_notice: Copyright Sectigo Limited 2025. All rights reserved.
 copyright_body: No part of this publication may be reproduced, stored in or introduced into a retrieval system, or transmitted,in any form or by any means (electronic, mechanical, photocopying, recording or otherwise) without prior written permission of Sectigo Limited. Requests for any other permission to reproduce this Sectigo document (as well as requests for copies from Sectigo) must be addressed to
@@ -234,14 +234,7 @@ Capitalized terms used throughout this document shall have the meanings set fort
 | **Baseline Requirements (BR)** | Means the CA/Browser Forum Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates, published at _[https://www.cabforum.org](https://www.cabforum.org/)_. |
 | **Certificate** | Means an electronic document that uses a digital signature to bind a Public Key and an entity. |
 | **Certification Authority** | An organization that is responsible for the creation, issuance, revocation, and management of Certificates. The term applies equally to both Roots CAs and Subordinate CAs. |
-| **CA Infrastructure** | CA Infrastructure	Collectively the infrastructure used by the CA or Delegated Third Party which qualifies as a: 
-• Certificate Management System; 
-• Certificate System; 
-• Delegated Third Party System; 
-• Issuing System; 
-• Root CA System (Air‐Gapped and otherwise); or 
-• Security Support System.
- |
+| **CA Infrastructure** | CA Infrastructure	Collectively the infrastructure used by the CA or Delegated Third Party which qualifies as a: <br><br> Certificate Management System; <br> Certificate System; <br> Delegated Third Party System; <br> Issuing System; <br> Root CA System (Air‐Gapped and otherwise); or <br> Security Support System. |
 | **Certification Authority Authorization** | Means a DNS domain holder specify one or more CAs authorized to issue certificates for that domain name. This is described in RFC 8659. |
 | **Certificate Management** | Means the functions that include but are not limited to the following: verification of the identity of an Applicant of a Certificate; authorizing the issuance of Certificates; issuance of Certificates; revocation of Certificates; listing of Certificates; distributing Certificates; publishing Certificates; storing Certificates; storing Private Keys; escrowing Private Keys; generating, issuing, decommissioning, and destruction of Key Pairs; retrieving Certificates in accordance with their particular intended use; and verification of the domain of an Applicant of a Certificate. |
 | **Certificate Management System** | Means a system used by Sectigo to process, approve issuance of, or store Certificates or Certificate status information, including the database, database server, and storage. |
@@ -249,17 +242,7 @@ Capitalized terms used throughout this document shall have the meanings set fort
 | **Certificate Policy** | Means a statement of the issuer that corresponds to the prescribed usage of a digital Certificate within an issuance context. |
 | **Certificate Practice Statement** | One of several documents forming the governance framework in which Certificates are created, issued, managed, and used. |
 | **Certificate Revocation List** |  A regularly updated time‐stamped list of revoked Certificates that is created and digitally signed by the CA that issued the Certificates. |
-| **Certificate System** | Means the system used by Sectigo or a delegated third party to access, process, or manage data or provide services related to: 
-1. identity validation; 
-2. identity authentication; 
-3. account registration; 
-4. certificate application; 
-5. certificate approval; 
-6. certificate issuance; 
-7. certificate revocation; 
-8. authoritative certificate status; or 
-9. key escrow.
- |
+| **Certificate System** | Means the system used by Sectigo or a delegated third party to access, process, or manage data or provide services related to: <br><br>1. identity validation; <br>2. identity authentication; <br>3. account registration; <br>4. certificate application; <br>5. certificate approval; <br>6. certificate issuance; <br>7. certificate revocation; <br>8. authoritative certificate status; or <br>9. key escrow. |
 | **Certificate Type** | The S/MIME Baseline Requirements define Certificate Profiles differentiated by the type of Subject, (for example Mailbox, Organization, Sponsored, Individual) |
 | **Common Criteria** | is a framework in which computer system users can specify their security functional and assurance requirements (SFRs and SARs respectively) in a [Security Target](https://en.wikipedia.org/wiki/Security_Target) (ST), and may be taken from [Protection Profiles](https://en.wikipedia.org/wiki/Protection_Profile) (PPs). It is an [international standard](https://en.wikipedia.org/wiki/International_standard) ([ISO](https://en.wikipedia.org/wiki/International_Organization_for_Standardization)/[IEC](https://en.wikipedia.org/wiki/International_Electrotechnical_Commission) 15408) for [computer security](https://en.wikipedia.org/wiki/Computer_security) certification |
 | **Critical Vulnerability** | A system vulnerability that has a CVSS v2.0 score of 7.0 or higher according to the NVD or an equivalent to such CVSS rating (see http://nvd.nist.gov/home.cfm https://nvd.nist.gov/vuln-metrics/cvss), or as otherwise designated as a Critical Vulnerability by the CA or the CA/Browser Forum. |
@@ -275,23 +258,14 @@ Capitalized terms used throughout this document shall have the meanings set fort
 | **Issuing System** | Means a system used to sign Certificates or validity status information. |
 | **Key Pair** | The Private Key and its associated Public Key. |
 | **Legal Entity** | Means an association, corporation, partnership, proprietorship, trust, government entity, or other entity with legal standing in a country's legal system. |
-| **Linting** | Means a process in which the content of digitally signed data such as a Precertificate [RFC 6962],
-Certificate, CRL, or OCSP response, or data‐to‐be‐signed object such as a tbsCertificate (as described in RFC 5280, Section 4.1.1.1) is checked for conformance with the profiles and requirements defined in S/MIME BRs. |
+| **Linting** | Means a process in which the content of digitally signed data such as a Precertificate [RFC 6962], Certificate, CRL, or OCSP response, or data‐to‐be‐signed object such as a tbsCertificate (as described in RFC 5280, Section 4.1.1.1) is checked for conformance with the profiles and requirements defined in S/MIME BRs. |
 | **Mailbox Validated** |  Refers to a Certificate Subject that is limited to (optional) subject:emailAddress and/or subject:serialNumber attributes. |
-| **Multi-Factor Authentication** |  An authentication mechanism consisting of two or more of the following independent categories of credentials (i.e. factors) to verify the user’s identity for a login or other transaction: 
-1. something the user knows (knowledge factor); 
-2. something the user has (possession factor); and 
-3. something the user is (inherence factor). 
-Each factor is independent of the other(s).
- |
+| **Multi-Factor Authentication** |  An authentication mechanism consisting of two or more of the following independent categories of credentials (i.e. factors) to verify the user’s identity for a login or other transaction: <br><br> 1. something the user knows (knowledge factor); <br> 2. something the user has (possession factor); and <br> 3. something the user is (inherence factor). Each factor is independent of the other(s). |
 | **Multi-Party Control** |  An access control mechanism which requires two or more separate, authorized users to successfully authenticate with their own unique credentials prior to access being granted. |
 | **Multi‐Perspective Issuance Corroboration** | Means a process by which the determinations made during domain validation and CAA checking by the Primary Network Perspective are corroborated by other Network Perspectives before Certificate issuance. |
 | **Multipurpose Profile** |  The S/MIME Multipurpose Generation profiles are aligned with the more defined Strict Profiles, but with additional options for extKeyUsage and other extensions. This is intended to allow flexibility for crossover use cases between document signing and secure email. |
 | **Network Perspective** | Related to Multi‐Perspective Issuance Corroboration. A system (e.g., a cloud‐hosted server instance) or collection of network components (e.g., a VPN and corresponding infrastructure) for sending outbound Internet traffic associated with a domain control validation method and/or CAA check. The location of a Network Perspective is determined by the point where unencapsulated outbound Internet traffic is typically first handed off to the network infrastructure providing Internet connectivity to that perspective. |
-| **Physically Secure Environment** |  A controlled and protected physical space consisting minimally of a physical environment which is: 
-1. protected by security controls which address the topics outlined in section 4.5.1 of RFC 3647; and 
-2. designed, built, and maintained in accordance with Risk Assessments conducted by the CA.
-|
+| **Physically Secure Environment** |  A controlled and protected physical space consisting minimally of a physical environment which is: <br><br> 1. protected by security controls which address the topics outlined in section 4.5.1 of RFC 3647; and <br> 2. designed, built, and maintained in accordance with Risk Assessments conducted by the CA.|
 | **Primary Network Perspective** | The Network Perspective used by the CA to make the determination of 1) the CA’s authority to issue a Certificate for the requested domain(s) or IP address(es) and 2) the Applicant’s authority and/or domain authorization or control of the requested domain(s) or IP address(es).
 | **Organization validated** |  Refers to a Certificate Subject that includes only Organizational (Legal Entity) attributes, rather than attributes linked to an Individual. |
 | **Private Key** | The cryptographic key of an asymmetric Key Pair that is kept secret by the holder of the Key Pair. It may be used to create digital signatures and/or to decrypt data that were encrypted by the corresponding Public Key. |
@@ -305,37 +279,13 @@ Each factor is independent of the other(s).
 | **Relying Party Agreement** | means an agreement between Sectigo and a Relying Party that must be read and accepted by a Relying Party prior to validating, relying on or using a Certificate and is available for reference in the Repository. |
 | **Repository** | Means Sectigo's repository, available at _[www.sectigo.com/legal](https://www.sectigo.com/legal)_. |
 | **Request Token** | Means a value derived in a method specified by Sectigo which binds a demonstration of control to the certificate request. |
-| **Risk Assessment** | A formal process that: 
-1. Identifies and documents foreseeable internal and external threats to the CA Infrastucture that could result in: 
-• unauthorized access to the CA Infrastructure; 
-• disclosure of data stored in the CA Infrastructure; 
-• misuse of the CA Infrastructure; or 
-• unapproved alteration or destruction of any part of the CA Infrastructure; 
-2. Assesses and documents the likelihood and potential damage of each identified threat, taking into consideration minimally the sensitivity and criticality of the CA Infrastructure; and 
-3. Assesses and documents the sufficiency of the policies, procedures, controls, information systems, technology, and other arrangements that the CA has in place to counter each identified threat.
- |
-| **Root CA Certificate** | A self‐signed and self‐issued certificate where: 
-1. the issuer and subject of the certificate are the same; and 2. the digital signature of the certificate is: 
-• generated using the Private Key of a Key Pair whose corresponding Public Key is bound to the certificate; and 
-• verified using the Public Key contained in the certificate.
-|
+| **Risk Assessment** | A formal process that: <br><br> 1. Identifies and documents foreseeable internal and external threats to the CA Infrastucture that could result in: <br><br> unauthorized access to the CA Infrastructure; <br> disclosure of data stored in the CA Infrastructure; <br> misuse of the CA Infrastructure; or <br> unapproved alteration or destruction of any part of the CA Infrastructure; <br><br>2. Assesses and documents the likelihood and potential damage of each identified threat, taking into consideration minimally the sensitivity and criticality of the CA Infrastructure; and <br><br>3. Assesses and documents the sufficiency of the policies, procedures, controls, information systems, technology, and other arrangements that the CA has in place to counter each identified threat.|
+| **Root CA Certificate** | A self‐signed and self‐issued certificate where: <br><br> 1. the issuer and subject of the certificate are the same; and <br> 2. the digital signature of the certificate is: <br> generated using the Private Key of a Key Pair whose corresponding Public Key is bound to the certificate; and <br> verified using the Public Key contained in the certificate.|
 | **Root CA Private Key** |The Private Key associated with a Root CA Certificate. |
-| **Root CA System** | A system used to: 
-1. generate a Key Pair whose Private Key is or will be a Root CA Private Key; 
-2. store a Root CA Private Key; or 
-3. create digital signatures using a Root CA Private Key. |
+| **Root CA System** | A system used to: <br><br>1. generate a Key Pair whose Private Key is or will be a Root CA Private Key; <br>2. store a Root CA Private Key; or <br>3. create digital signatures using a Root CA Private Key. |
 | **Sectigo Policy Authority** | Means the entity charged with the maintenance and publication of this CP/CPS. |
-| **Security Support System** | A system or set of systems supporting the security of the CA Infrastructure, which minimally includes: 
-1. authentication; 
-2. network boundary control; 
-3. audit logging; 
-4. audit log reduction and analysis; 
-5. vulnerability scanning; 
-6. physical intrusion detection; 
-7. host‐based intrusion detection; and 
-8. network‐based intrusion detection|
-| **Sponsor Validated** | Refers to a Certificate Subject which combines Individual (Natural Person) attributes in conjunction with an subject:organizationName (an associated Legal Entity) attribute. Registration for Sponsor‐validated Certificates MAY be performed by an Enterprise RA where the subject:organizationName is either that of the delegated enterprise, or an Affiliate of the delegated enterprise, or that the delegated enterprise is an agent of the named Subject
-Organization. |
+| **Security Support System** | A system or set of systems supporting the security of the CA Infrastructure, which minimally includes: <br><br>1. authentication; <br>2. network boundary control; <br>3. audit logging; <br>4. audit log reduction and analysis; <br>5. vulnerability scanning; <br>6. physical intrusion detection; <br>7. host‐based intrusion detection; and <br>8. network‐based intrusion detection |
+| **Sponsor Validated** | Refers to a Certificate Subject which combines Individual (Natural Person) attributes in conjunction with an subject:organizationName (an associated Legal Entity) attribute. Registration for Sponsor‐validated Certificates MAY be performed by an Enterprise RA where the subject:organizationName is either that of the delegated enterprise, or an Affiliate of the delegated enterprise, or that the delegated enterprise is an agent of the named Subject Organization. |
 | **Strict Profile** |  The S/MIME Strict Generation profiles are the long term target profile for S/MIME Certificates with extKeyUsage limited to id-kp-emailProtection, and stricter use of Subject DN attributes and other extensions. |
 | **Subject** | The Natural Person, device, system, unit, or Legal Entity identified in a Certificate as the Subject. The Subject is either the Subscriber or a mailbox under the control and operation of the Subscriber. |
 | **Subject Identity Information** | Information that identifies the Certificate Subject. Subject Identity Information does not include a Mailbox Address listed in the subject:commonName or subject:emailAddress fields, or in the subjectAltName extension. |
@@ -344,10 +294,7 @@ Organization. |
 | **Terms of Use** | Provisions regarding the safekeeping and acceptable uses of a Certificate issued when the Applicant/Subscriber is an Affiliate of the CA or is the CA. |
 | **Trusted Role** | An employee or contractor of a CA or Delegated Third Party who has authorized access to any component of CA Infrastructure. |
 | **WebTrust for Certification Authorities** | Means the current program for CAs located at _[CPA Canada Webtrust Principles and Criteria](https://www.cpacanada.ca/en/business-and-accounting-resources/audit-and-assurance/overview-of-webtrust-services/principles-and-criteria)_. |
-| **Workstation** | A device, such as a phone, tablet, or desktop or laptop computer, which is: 
-1. connected to the same network as CA Infrastructure and/or Network Equipment; and 
-2. capable of accessing CA Infrastructure and/or Network Equipment
- |
+| **Workstation** | A device, such as a phone, tablet, desktop or laptop computer, which is: <br><br> 1. connected to the same network as CA Infrastructure and/or Network Equipment; and <br> 2. capable of accessing CA Infrastructure and/or Network Equipment |
 | **X.509** | Means the ITU-T standard for Certificates and their corresponding authentication framework |
 
 ### 1.6.2.Acronyms
@@ -538,6 +485,16 @@ Sectigo validates that the Applicant holds the Private Key corresponding with a 
 
 Sectigo MAY confirm the Applicant’s control over each Mailbox Field to be included in the Certificate by confirming control of the SMTP FQDN to which a message delivered to the Mailbox Address should be directed. The SMTP FQDN SHALL be identified using the address resolution algorithm defined in RFC 5321 Section 5.1 which determines which SMTP FQDNs are authoritative for a given Mailbox Address. 
 If more than one SMTP FQDN has been discovered, Sectigo SHALL verify control of an SMTP FQDN following the selection process at RFC 5321 Section 5.1. Aliases in MX record RDATA SHALL NOT be used for this validation method.
+
+#### 3.2.2.4 Validating control over mailbox using ACME extensions
+
+Sectigo MAY confirm the Applicant’s control over each Mailbox Field to be included in a Certificate using ACME for S/MIME as defined in RFC 8823. Sectigo’s ACME server MAY respond to a POST request by sending the Random Value token components via email and SMTP, and then receiving a confirming response utilizing the generated Random Value, in accordance with RFC 8823.
+
+The control over each Mailbox Address SHALL be confirmed using a newly-generated Random Value. The Random Value token components SHALL only be shared in accordance with RFC 8823. As defined by RFC 8823, token-part1 SHALL contain at 
+least 128 bits of entropy and token-part2 SHOULD contain at least 128 bits of entropy.
+Sectigo SHALL not reuse the Random Value for other Certificate Requests. The Random Value SHALL remain valid for use in a confirming response for no more than 24 hours from its creation. Sectigo MAY specify a shorter validity period for Random Values in this document.
+
+Implementations MAY use ACME External Account Binding as defined by RFC 8555.
 
 ### 3.2.3.Authentication of Organization Identity
 
@@ -1388,14 +1345,15 @@ Sectigo requires that all personnel filling Trusted Roles are properly trained a
 Consistent with this document, Sectigo follows personnel and management practices that provide reasonable assurance of the trustworthiness and competence of their employees and of the satisfactory performance of their duties.
 
 All persons filling Trusted Roles SHALL be selected based on loyalty, trustworthiness, and integrity, and SHALL be subject to a background investigation. Personnel appointed to Trusted Roles shall:
-•	Possess the expert knowledge, experience and qualifications necessary for the offered services and appropriate job function;
-•	Have successfully completed an appropriate training program;
-•	Have demonstrated the ability to perform their duties;
-•	Be trustworthy;
-•	Have no other duties that would interfere or conflict with their duties for the Trusted Role;
-•	Have not been previously relieved of duties for reasons of negligence or non-performance of duties;
-•	Have not been convicted of a serious crime or other offense which affects his/her suitability for the position; and
-•	Have been appointed in writing by the CA management.
+
+- Possess the expert knowledge, experience and qualifications necessary for the offered services and appropriate job function;  
+-	Have successfully completed an appropriate training program;  
+-	Have demonstrated the ability to perform their duties;  
+-	Be trustworthy;  
+-	Have no other duties that would interfere or conflict with their duties for the Trusted Role;  
+-	Have not been previously relieved of duties for reasons of negligence or non-performance of duties;  
+-	Have not been convicted of a serious crime or other offense which affects his/her suitability for the position; and  
+-	Have been appointed in writing by CA management.
 
 The Operator Role is only granted on Sectigo IT systems when there is a specific business need. New Operators are not given full administrator rights until they have demonstrated a detailed knowledge of Sectigo IT systems & policies and that they have reached a suitable skill level satisfactory to the Server Systems Manager/Administrator or CEO. New administrators are closely monitored by the Server Systems Manager/Administrator for the first three months. Where systems allow, administrator access authentication is via a public/Private Key specifically issued for this purpose. This provides accountability of individual administrators and permits their activities to be monitored.
 
@@ -1553,6 +1511,8 @@ Sectigo routinely performs vulnerability assessments by identifying the vulnerab
 
 Vulnerability scans are run by Sectigo trusted staff on a quarterly schedule. Additional scans are run following system updates, changes, or when deemed necessary.
 
+Sectigo will triage any critical vulnerability within a period of 48 hours after its discovery.
+
 If a Critical Vulnerability is discovered, not previously addressed, Sectigo will do in the next 96 hours one of the following:
 
 - remediate the Critical Vulnerability
@@ -1560,6 +1520,12 @@ If a Critical Vulnerability is discovered, not previously addressed, Sectigo wil
 - document the factual basis for which Sectigo thinks that the Critical Vulnerability does not require remediation
 
 Sectigo employs external parties to perform regular annual vulnerability scans & penetration testing on our Certificate Systems/infrastructure.
+
+In more detail: 
+
+-	Patches, packages, & updates, however identified, with a critical risk rating shall be patched within 5 days. This timeline may be reduced if the vulnerability has a high likelihood of posing a risk to Sectigo. 
+-	Patches, packages, & updates, however identified, with a high-risk rating shall be patched within 90 days. 
+-	Patches, packages, & updates, however identified, with a medium or low risk rating do not have defined patching timelines and are uniquely evaluated. 
 
 ## 5.5.Records Archival
 
@@ -1981,28 +1947,45 @@ Network segmentation SHOULD be designed and implemented in a manner that:
 3. restricts traffic flow between different network segments; and 
 4. protects all CA Infrastructure components from unauthorized access.
 
-At Sectigo, in its security program, general protections for the network include, among others:
--	Segmenting Certificate System into separate networks or zones based on their functional, logical, and physical relationship;
--	Applying the same security controls to all systems co-located in the same zone with a Certificate System;
--	Maintaining Root CA Systems in a high security zone and in an offline state or Air-Gapped from other networks;
+At Sectigo, in its security program, general protections for the network include, among others:  
+
+-	Segmenting Certificate System into separate networks or zones based on their functional, logical, and physical relationship;  
+-	Applying the same security controls to all systems co-located in the same zone with a Certificate System;  
+-	Maintaining Root CA Systems in a high security zone and in an offline state or Air-Gapped from other networks;  
 -	For this segmentation, configuring network boundary controls (firewalls, switches, routers, and gateways) with rules that support only the services, protocols, ports, and communications that Sectigo has identified as necessary to its operations; also using specific software such as VLANs, VPNs or software-defined networking.
 
 ### 6.7.2.	CA Infrastructure Security
 
 Sectigo´s CA Infrastructure is in a Physically Secure Environment. 
-For Certificate System, Sectigo has implemented detection and prevention controls to guard against viruses and malicious software; and is also changing authentication keys and passwords for any privileged account or service account on a Certificate System whenever a person’s authorization to administratively access that account on the Certificate System is changed or revoked.
-Sectigo has implemented and configured Security Support Systems that protect systems and communications between:
-1. between CA Infrastructure components; and 
-2. between CA Infrastructure and non‐CA Infrastructure. 
+For Certificate System, Sectigo has implemented detection and prevention controls to guard against viruses and malicious software; and is also changing authentication keys and passwords for any privileged account or service account on a Certificate System whenever a person’s authorization to administratively access that account on the Certificate System is changed or revoked.  
+
+Sectigo has implemented and configured Security Support Systems that protect systems and communications between:  
+
+1. between CA Infrastructure components; and   
+2. between CA Infrastructure and non‐CA Infrastructure.   
 Equivalent security is implemented on all Systems on the same network as any CA Infrastructure component.
+
+### 6.7.3.	Timeline for addressing vulnerabilities
+
+The following timelines apply for the application and infrastructure critical and non-critical vulnerabilities.
+Risk Assessment for every issue SHALL be completed within 48 hours and Resolution time shall be within:
+
+| **Criticality** | **Resolution Time** |
+|-----|-----|
+| Critical | 96 hours |
+| High | 30 days |
+| Medium |	90 days |
+| Low | 90 days |
 
 ## 6.8.Time-Stamping
 
 All CA components SHALL regularly synchronize with a time service such as National Institute of Standards and Technology (NIST) Atomic Clock or NIST Network Time Protocol Service. Time derived from the time service SHALL be used for establishing the time of:
-•	Initial validity type of a Device’s Certificate;
-•	Revocation of a Device’s Certificate;
-•	Posting of CRL updates; and
-•	OCSP or other responses.
+
+- Initial validity type of a Device’s Certificate;  
+- Revocation of a Device’s Certificate;  
+- Posting of CRL updates; and  
+- OCSP or other responses. 
+
 Certificates, CRLs, and other revocation database entries SHALL contain time and date information.
 
 Sectigo operates two Time-Stamping Authorities (TSA). 
@@ -2067,7 +2050,8 @@ Enhanced naming is the usage of an extended organization field in an X.509v3 Cer
 
 #### 7.1.2.1.Root CAs
 
-Sectigo Root CA Certificates contain
+Sectigo Root CA Certificates contain:
+
 - a basicConstraints extension marked critical. The cA field is set true. The pathLenConstraint is not present.
 - a keyUsage extension marked critical. Bit positions for keyCertSign and cRLSign are set. Some Sectigo Root CA certificates also have the digitalSignature bit set.
 - a subjectKeyIdentifier extension not marked critical. It contains a value that is included in the keyIdentifier field of the authorityKeyIdentifier extension in Certificates issued by the Root CA. 
@@ -2080,7 +2064,8 @@ Sectigo Root CA Certificates do not contain
 
 #### 7.1.2.2.Subordinate CAs
 
-Sectigo Subordinate CA certificates contain
+Sectigo Subordinate CA certificates contain:
+
 - a non-critical certificatePolicies extension that includes one or more policyIdentifiers and usually contains a policyQualifier referring to the CPS URI.
 - a non-critical cRLDistributionPoints extension containing the HTTP URL of the Issuing CA's CRL service.
 - a non-critical authorityInformationAccess extension containing the HTTP URL of the Issuing CA's OCSP responder and also containing the HTTP URL of the Issuing CA's certificate.
@@ -2092,7 +2077,8 @@ Sectigo Subordinate CA certificates contain
 
 #### 7.1.2.3.Subscriber Certificates
 
-Sectigo Subscriber Certificates contain
+Sectigo Subscriber Certificates contain: 
+
 - a non-critical certificatePolicies extension that includes one or more policyIdentifiers and usually contains a policyQualifier referring to the CPS URI but not including a userNotice.
 - a non-critical cRLDistributionPoints extension containing the HTTP URL of the Issuing CA's CRL service. Every uniformResourceIdentifier SHALL have the URI scheme HTTP
 - a non-critical authorityInformationAccess extension containing the HTTP URL of the Issuing CA's OCSP responder (accessMethod = 1.3.6.1.5.5.7.48.1) and also containing the HTTP URL of the Issuing CA's certificate (accessMethod = 1.3.6.1.5.5.7.48.2).
@@ -2118,6 +2104,7 @@ All other fields and extensions are in accordance with RFC5280.
 Sectigo does not issue certificates containing keyUsage or extendedKeyUsage values, or Certificate extensions, or other data not specified in sections 7.1.2.1, 7.1.2.2, or 7.1.2.3 above unless Sectigo is aware of a reason for including the data in the Certificate.
 
 Sectigo does not issue certificates containing:
+
 1. Extensions that do not apply in the context of the public Internet unless:
  i. such value falls within an OID arc for which the Applicant demonstrates ownership, or
  ii. the Applicant can otherwise demonstrate the right to assert the data in a public context, or
@@ -2849,5 +2836,6 @@ See profiles document
 | 1.0.2 | Add CAA Practices for S/MIME | 09-Aug-2024 |
 | 1.0.3 | Created a combined CP/CPS. Add requierements from the CABF NCSSRs. Add recent CABF BRs updates. Combined CP/CPS for S/MIME | 5-Mar-2025 |
 | 1.0.4 | Updated section 5.2.2. Update CAA for S/MIME practices | 10-Mar-2025 |
-| 1.0.5 | Updated section 6.3.2 to incorporate Entrust Root CAs| 12-Sep-2025 |
+| 1.0.5 | Updated section 6.3.2 adding the Entrust root CAs| 12-Sep-2025 |
+| 1.0.6 | Added new section 3.2.2.4 for ACME use for validating mailbox <br> Updated 5.4.8 with clarification on vulnerabilities. Added new section 6.7.3 with the timeline for addressing vulnerabilities | 11-Nov-2025 |
 
