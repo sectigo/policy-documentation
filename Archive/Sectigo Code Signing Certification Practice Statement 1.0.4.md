@@ -1,8 +1,8 @@
 ---
 title: Sectigo Code Signing Certificates Certificate Policy and Certification Practice Statement
-version: 1.0.5
+version: 1.0.4
 author: Sectigo Limited
-date: 11-Nov-2025
+date: 12-Sep-25
 copyright_header: Copyright Notice
 copyright_notice: Copyright Sectigo Limited 2025. All rights reserved.
 copyright_body: No part of this publication may be reproduced, stored in or introduced into a retrieval system, or transmitted,in any form or by any means (electronic, mechanical, photocopying, recording or otherwise) without prior written permission of Sectigo Limited. Requests for any other permission to reproduce this Sectigo document (as well as requests for copies from Sectigo) must be addressed to
@@ -1380,7 +1380,6 @@ A vulnerability is a weakness in the organization or in an information system th
 
 Vulnerability scans are run by Sectigo trusted staff on a quarterly schedule. Additional scans are run following system updates, changes, or when deemed necessary.
 
-Sectigo will triage any critical vulnerability within a period of 48 hours after its discovery.
 If a Critical Vulnerability is discovered, not previously addressed, Sectigo will do in the next 96 hours one of the following:
 
 - remediate the Critical Vulnerability
@@ -1388,11 +1387,6 @@ If a Critical Vulnerability is discovered, not previously addressed, Sectigo wil
 - document the factual basis for which Sectigo thinks that the Critical Vulnerability does not require remediation
 
 Sectigo employs external parties to perform regular annual vulnerability scans & penetration testing on our Certificate System/infrastructure.
-
-In more detail
-•	Patches, packages, & updates, however identified, with a critical risk rating shall be patched within 5 days. This timeline may be reduced if the vulnerability has a high likelihood of posing a risk to Sectigo. 
-•	Patches, packages, & updates, however identified, with a high-risk rating shall be patched within 90 days. 
-•	Patches, packages, & updates, however identified, with a medium or low risk rating do not have defined patching timelines and are uniquely evaluated. 
 
 ## 5.5. Records Archival
 
@@ -1746,8 +1740,6 @@ Depending on the circumstances and the type of Certificate, a Private Key can be
 
 Destroying a Private Key means the destruction of all active keys, both backed-up and stored. Destroying a Private Key MAY comprise of removing it from the HSM or removing it from the active backup set. Private Keys are destroyed in accordance with NIST SP 800-88.
 
-This process will be witnessed and signed by 2 trusted roles of Sectigo.
-
 ### 6.2.11. Cryptographic Module Rating
 
 See section 6.2.1 of this document.
@@ -1904,16 +1896,6 @@ Sectigo has implemented and configured Security Support Systems that protect sys
 2. between CA Infrastructure and non‐CA Infrastructure.
 
 Equivalent security is implemented on all Systems on the same network as any CA Infrastructure component.
-
-### 6.7.3. Timeline for addressing vulnerabilities
-
-The following timelines apply for the application and infrastructure critical and non-critical vulnerabilities.
-Risk Assessment for every issue shall be completed within 48 hours and Resolution time shall be within:
-
-Critical:	96 hours
-High:	30 days
-Medium:	90 days
-Low: 90 days
 
 ## 6.8. Time-Stamping
 
@@ -2843,8 +2825,7 @@ E.g., EV codesigning certificate. As codeSigning Certificate, except:
 | Version | Change Description | Date |
 | --- | --- | --- |
 | 1.0.0 | New version specific for Code Signing certificates. Updated sections 1.6.1, 5.2.1, 5.4.6 and 6.7 due to the new NetSec version 2.0 | 26-Aug-24 |
-| 1.0.2 | Combined CP/CPS | 05-Mar-2025 |
-| 1.0.3 | Update section 5.2.2 | 10-Mar-2025 |
-| 1.0.4 | Updated section 6.3.2 adding the Entrust root CAs | 2025-09-12 | 
-| 1.0.5 | Update section 6.2.10. Updated section 5.4.8 clarifying vulnerabilties issues. New section 6.7.3 for addressing vulnerabilities timelines | 11-Nov-2025 |
-          
+| 1.0.1 | Markdown-based CPS | 15-Nov-24 |
+| 1.0.2 | Combined CP/CPS | 5-Mar-25 |
+| 1.0.3 | Update section 5.2.2 | 10-Mar-25 |
+| 1.0.4 | Updated section 6.3.2 to incorporate Entrust Root CAs| 12-Sep-25 |
