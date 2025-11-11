@@ -2,7 +2,7 @@
 title: Sectigo S/MIME Certificate Policy and Certification Practice Statement
 version: 1.0.6
 author: Sectigo Limited
-date: 1-Nov-2025
+date: 11-Nov-2025
 copyright_header: Copyright Notice
 copyright_notice: Copyright Sectigo Limited 2025. All rights reserved.
 copyright_body: No part of this publication may be reproduced, stored in or introduced into a retrieval system, or transmitted,in any form or by any means (electronic, mechanical, photocopying, recording or otherwise) without prior written permission of Sectigo Limited. Requests for any other permission to reproduce this Sectigo document (as well as requests for copies from Sectigo) must be addressed to
