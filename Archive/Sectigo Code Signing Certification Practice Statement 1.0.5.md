@@ -1,10 +1,10 @@
 ---
 title: Sectigo Code Signing Certificates Certificate Policy and Certification Practice Statement
-version: 1.0.6
+version: 1.0.5
 author: Sectigo Limited
-date: 2026-01-19
+date: 11-Nov-2025
 copyright_header: Copyright Notice
-copyright_notice: Copyright Sectigo Limited 2026. All rights reserved.
+copyright_notice: Copyright Sectigo Limited 2025. All rights reserved.
 copyright_body: No part of this publication may be reproduced, stored in or introduced into a retrieval system, or transmitted,in any form or by any means (electronic, mechanical, photocopying, recording or otherwise) without prior written permission of Sectigo Limited. Requests for any other permission to reproduce this Sectigo document (as well as requests for copies from Sectigo) must be addressed to
 copyright_legal: Attention Legal Practices
 ---
@@ -159,9 +159,9 @@ The Sectigo Policy Authority:
 The Sectigo Policy Authority may be contacted at the following address:
 
 Sectigo Policy Authority
-Exmouth House, 3/11 Pine Street, London, EC1R 0JH, United Kingdom
+Unit 7, Campus Road, Listerhills Science Park, Bradford, BD7 1HR, United Kingdom
 
-Tel: +44 (0) 204 519 2097
+Tel: +44 (0) 161 874 7070
 
 Attention: Legal Practices
 
@@ -323,9 +323,9 @@ The Sectigo Certificate services and the Repository are accessible through sever
 
 Sectigo Ltd. 
 Attention: Legal Practices, 
-Exmouth House, 3/11 Pine Street, London, EC1R 0JH, United Kingdom
+Unit 7, Campus Road, Listerhills Science Park, Bradford, BD7 1HR, United Kingdom
 
-Tel: +44 (0) 204 519 2097
+Tel: + 44(0) 161 874 7070
 
 As specified in section 1.2, this document is structured in accordance with RFC 3647 and includes all material required by RFC 3647.
 
@@ -2655,7 +2655,7 @@ Sectigo accepts notices related to this document by means of digitally signed me
 
 Sectigo Policy Authority
 
-Exmouth House, 3/11 Pine Street, London, EC1R 0JH, United Kingdom
+Unit 7, Campus Road, Listerhills Science Park, Bradford, BD7 1HR, United Kingdom
 
 Attention: Legal Practices
 
@@ -2846,5 +2846,5 @@ E.g., EV codesigning certificate. As codeSigning Certificate, except:
 | 1.0.2 | Combined CP/CPS | 05-Mar-2025 |
 | 1.0.3 | Update section 5.2.2 | 10-Mar-2025 |
 | 1.0.4 | Updated section 6.3.2 adding the Entrust root CAs | 2025-09-12 | 
-| 1.0.5 | Update section 6.2.10. Updated section 5.4.8 clarifying vulnerabilties issues. New section 6.7.3 for addressing vulnerabilities timelines | 2025-11-11 |
-| 1.0.6 | Update of Sectigo Limited legal address | 2026-01-19 |          
+| 1.0.5 | Update section 6.2.10. Updated section 5.4.8 clarifying vulnerabilties issues. New section 6.7.3 for addressing vulnerabilities timelines | 11-Nov-2025 |
+          

@@ -1,10 +1,10 @@
 ---
 title: Sectigo S/MIME Certificate Policy and Certification Practice Statement
-version: 1.0.7
+version: 1.0.6
 author: Sectigo Limited
-date: 2026-01-19
+date: 11-Nov-2025
 copyright_header: Copyright Notice
-copyright_notice: Copyright Sectigo Limited 2026. All rights reserved.
+copyright_notice: Copyright Sectigo Limited 2025. All rights reserved.
 copyright_body: No part of this publication may be reproduced, stored in or introduced into a retrieval system, or transmitted,in any form or by any means (electronic, mechanical, photocopying, recording or otherwise) without prior written permission of Sectigo Limited. Requests for any other permission to reproduce this Sectigo document (as well as requests for copies from Sectigo) must be addressed to
 copyright_legal: Attention Legal Practices
 
@@ -169,8 +169,8 @@ The Sectigo Policy Authority may be contacted at the following address:
 
 Sectigo Policy Authority
 
-Exmouth House, 3/11 Pine Street, London, EC1R 0JH, United Kingdom
-Tel: +44 (0) 204 519 2097
+Unit 7, Campus Road, Listerhills Science Park, Bradford, BD7 1HR, United Kingdom
+Tel: +44 (0) 161 874 7070
 
 Attention: Legal Practices
 
@@ -368,8 +368,8 @@ The Sectigo Certificate services and the Repository are accessible through sever
 Sectigo Ltd.
 Attention: Legal Practices,
 
-Exmouth House, 3/11 Pine Street, London, EC1R 0JH, United Kingdom
-Tel: +44 (0) 204 519 2097
+Unit 7, Campus Road, Listerhills Science Park, Bradford, BD7 1HR, United Kingdom
+Tel: + 44(0) 161 874 7070
 
 As specified in section 1.2, this document is structured in accordance with RFC 3647 and includes all material required by RFC 3647.
 
@@ -2690,7 +2690,7 @@ Upon termination of this document, all PKI participants are bound by the terms o
 Sectigo accepts notices related to this document by means of digitally signed messages or in paper form. Upon receipt of a valid, digitally signed acknowledgment of receipt from Sectigo, the sender of the notice shall deem their communication effective. The sender must receive such acknowledgment within five (5) days, or else written notice must then be sent in paper form through a courier service that confirms delivery or via certified or registered mail, postage prepaid, return receipt requested, addressed as follows:
 
 Sectigo Policy Authority
-Exmouth House, 3/11 Pine Street, London, EC1R 0JH, United Kingdom
+Unit 7, Campus Road, Listerhills Science Park, Bradford, BD7 1HR, United Kingdom
 
 Attention: Legal Practices
 Email: _[legalnotices@sectigo.com](mailto:legalnotices@sectigo.com)_
@@ -2837,6 +2837,5 @@ See profiles document
 | 1.0.3 | Created a combined CP/CPS. Add requierements from the CABF NCSSRs. Add recent CABF BRs updates. Combined CP/CPS for S/MIME | 5-Mar-2025 |
 | 1.0.4 | Updated section 5.2.2. Update CAA for S/MIME practices | 10-Mar-2025 |
 | 1.0.5 | Updated section 6.3.2 adding the Entrust root CAs| 12-Sep-2025 |
-| 1.0.6 | Added new section 3.2.2.4 for ACME use for validating mailbox <br> Updated 5.4.8 with clarification on vulnerabilities <br> new section 6.7.3 with the timeline for addressing vulnerabilities | 11-11-2025 |
-| 1.0.7 | Update of Sectigo Limited legal address | 2026-01-19 |
+| 1.0.6 | Added new section 3.2.2.4 for ACME use for validating mailbox <br> Updated 5.4.8 with clarification on vulnerabilities. Added new section 6.7.3 with the timeline for addressing vulnerabilities | 11-Nov-2025 |
 
