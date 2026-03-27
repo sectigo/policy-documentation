@@ -1,8 +1,8 @@
 ---
 title: Sectigo Code Signing Certificates Certificate Policy and Certification Practice Statement
-version: 1.0.7
+version: 1.0.6
 author: Sectigo Limited
-date: 2026-03-26
+date: 2026-01-19
 copyright_header: Copyright Notice
 copyright_notice: Copyright Sectigo Limited 2026. All rights reserved.
 copyright_body: No part of this publication may be reproduced, stored in or introduced into a retrieval system, or transmitted,in any form or by any means (electronic, mechanical, photocopying, recording or otherwise) without prior written permission of Sectigo Limited. Requests for any other permission to reproduce this Sectigo document (as well as requests for copies from Sectigo) must be addressed to
@@ -550,7 +550,7 @@ Sectigo employs the following procedure for authenticating a revocation request:
 
 This section describes the Certificate application process, including the information required to make and support a successful application. Additionally, this section describes some of the requirements imposed upon RAs, Subscribers, and other participants with respect to the lifecycle of a Certificate.
 
-The validity period of Sectigo Certificates varies dependent on the Certificate type, but typically, a Code Signing Certificate will be valid for 460 days maximum. Sectigo reserves the right to, at its discretion, issue Certificates that may fall outside of these set periods.
+The validity period of Sectigo Certificates varies dependent on the Certificate type, but typically, a Code Signing Certificate will be valid for either 1 year, 2 years, or 3 years. Sectigo reserves the right to, at its discretion, issue Certificates that may fall outside of these set periods.
 
 Note: In contracts and day to day operations, Certificate Renewal, Re-key, and Modification, are all colloquially referred to using the umbrella term 'renewal'.
 
@@ -744,7 +744,7 @@ Warranties are only valid if the steps detailed above have been carried out.
 
 Certificate renewal means the issuance of a new Certificate to the Subscriber without changing the Subscriber’s, or other participant’s, Public Key or any other information in the Certificate.
 
-Depending on the option selected during application, the validity period of Sectigo Certificates is 460 days maximum from the date of issuance and is detailed in the relevant field within the Certificate.
+Depending on the option selected during application, the validity period of Sectigo Certificates is typically 1 year, 2 years or 3 years from the date of issuance and is detailed in the relevant field within the Certificate.
 
 Renewal fees are detailed on the official Sectigo websites and within communications sent to Subscribers approaching the Certificate expiration date.
 
@@ -1762,13 +1762,15 @@ When Public Keys are archived, they are archived according to procedures outline
 
 ### 6.3.2. Certificate Operational Periods and Key Pair Usage Periods
 
-The validity period for a Code Signing Certificate issued to a Subscriber MUST NOT exceed 460 days.
+The validity period for a Code Signing Certificate issued to a Subscriber MUST NOT exceed 39 months.
 
 The Timestamp Authority MUST use a new Timestamp Certificate with a new Private Key no later than every 15 months to minimize the impact to users in the event that a Timestamp Certificate’s Private Key is compromised.
 
 The validity for a Timestamp Certificate must not exceed 135 months.
 
-The age of all data used to support issuance does not exceed the limit of 398 days.
+Sectigo verifies all information that is included in Code Signing Certificates at time intervals of 825 days or less.
+
+In the case of EV Code Signing Certificates, the age of all data used to support issuance does not exceed the limit of 398 days.
 
 The expiration of Sectigo’s Root CA Certificates is set out in Table 6.3.2.
 
@@ -2840,10 +2842,9 @@ E.g., EV codesigning certificate. As codeSigning Certificate, except:
 
 | Version | Change Description | Date |
 | --- | --- | --- |
-| 1.0.0 | New version specific for Code Signing certificates. Updated sections 1.6.1, 5.2.1, 5.4.6 and 6.7 due to the new NetSec version 2.0 | 26-Aug-2024 |
+| 1.0.0 | New version specific for Code Signing certificates. Updated sections 1.6.1, 5.2.1, 5.4.6 and 6.7 due to the new NetSec version 2.0 | 26-Aug-24 |
 | 1.0.2 | Combined CP/CPS | 05-Mar-2025 |
 | 1.0.3 | Update section 5.2.2 | 10-Mar-2025 |
-| 1.0.4 | Updated section 6.3.2 adding the Entrust root CAs | 12-Sep-2025 | 
-| 1.0.5 | Update section 6.2.10. Updated section 5.4.8 clarifying vulnerabilties issues. New section 6.7.3 for addressing vulnerabilities timelines | 11-Nov-2025 |
-| 1.0.6 | Update of Sectigo Limited legal address | 19-Jan-2026 |          
-| 1.0.7 | Update of the validity period of end entity certificates as per ballot 31 | 26-Mar-2026 |        
+| 1.0.4 | Updated section 6.3.2 adding the Entrust root CAs | 2025-09-12 | 
+| 1.0.5 | Update section 6.2.10. Updated section 5.4.8 clarifying vulnerabilties issues. New section 6.7.3 for addressing vulnerabilities timelines | 2025-11-11 |
+| 1.0.6 | Update of Sectigo Limited legal address | 2026-01-19 |          
