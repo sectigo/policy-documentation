@@ -1,8 +1,8 @@
 ---
 title: Sectigo S/MIME Certificate Policy and Certification Practice Statement
-version: 1.0.8
+version: 1.0.7
 author: Sectigo Limited
-date: 2026-03-26
+date: 2026-01-19
 copyright_header: Copyright Notice
 copyright_notice: Copyright Sectigo Limited 2026. All rights reserved.
 copyright_body: No part of this publication may be reproduced, stored in or introduced into a retrieval system, or transmitted,in any form or by any means (electronic, mechanical, photocopying, recording or otherwise) without prior written permission of Sectigo Limited. Requests for any other permission to reproduce this Sectigo document (as well as requests for copies from Sectigo) must be addressed to
@@ -313,8 +313,6 @@ Acronyms and abbreviations used throughout this document shall stand for the phr
 | **CRL(s)** | Certificate Revocation List(s) |
 | **CSR** | Certificate Signing Request |
 | **DN** | Distinguished Name |
-| **DNS** | Domain Name System |
-| **DNSSEC** | DNS Security Extensions |
 | **DSA** | Digital Signature Algorithm |
 | **EPKI** | Enterprise Public Key Infrastructure Manager |
 | **ECDSA** | Elliptic Curve Digital Signature Algorithm |
@@ -781,18 +779,6 @@ Additionally, Entrust has contractually agreed to allow Sectigo to recognize the
 - affirmtrust.com
 
 Sectigo implements Section 3.2.2.9 of the CABF TLS Baseline Requirements regarding MPIC.
-
-#### 4.2.4.1 DNSSEC Validation of CAA records
-
-DNSSEC validation MUST be performed on all DNS queries associated with CAA record lookups performed by the Primary Network Perspective. The DNS resolver used for all DNS queries associated with CAA record lookups performed by the Primary Network Perspective MUST:
-• perform DNSSEC validation using the algorithm defined in RFC 4035 Section 5; and
-• support NSEC3 as defined in RFC 5155; and
-• support SHA‐2 as defined in RFC 4509 and RFC 5702; and
-• properly handle the security concerns enumerated in RFC 6840 Section 4.
-
-Sectigo will not use local policy to disable DNSSEC validation on any DNS query associated with CAA record lookups.
-DNSSEC‐validation errors observed by the Primary Network Perspective (e.g., SERVFAIL) MUST NOT be treated as permission to issue.
-DNSSEC validation MAY be performed on all DNS queries associated with CAA record lookups performed by Remote Network Perspectives as part of Multi‐Perspective Issuance Corroboration.
 
 ## 4.3.Certificate Issuance
 
@@ -2851,7 +2837,6 @@ See profiles document
 | 1.0.3 | Created a combined CP/CPS. Add requierements from the CABF NCSSRs. Add recent CABF BRs updates. Combined CP/CPS for S/MIME | 5-Mar-2025 |
 | 1.0.4 | Updated section 5.2.2. Update CAA for S/MIME practices | 10-Mar-2025 |
 | 1.0.5 | Updated section 6.3.2 adding the Entrust root CAs| 12-Sep-2025 |
-| 1.0.6 | Added new section 3.2.2.4 for ACME use for validating mailbox <br> Updated 5.4.8 with clarification on vulnerabilities
-          Added new section 6.7.3 with the timeline for addressing vulnerabilities| 11-Nov-2025 |
-| 1.0.7 | Update of Sectigo Limited legal address | 19-Jan-2026 |
-| 1.0.8 | Added new section 4.2.4.1 regarding DNSSEC for CAA| 26-Mar-2026 |
+| 1.0.6 | Added new section 3.2.2.4 for ACME use for validating mailbox <br> Updated 5.4.8 with clarification on vulnerabilities <br> new section 6.7.3 with the timeline for addressing vulnerabilities | 11-11-2025 |
+| 1.0.7 | Update of Sectigo Limited legal address | 2026-01-19 |
+
