@@ -1,8 +1,8 @@
 ---
 title: Sectigo TLS Certificated Certificate Policy and Certification Practice Statement
-version: 6.2.1
+version: 6.2.0
 author: Sectigo Limited
-date: 20-Apr-2026
+date: 7-Apr-2026
 copyright_header: Copyright Notice
 copyright_notice: Copyright Sectigo Limited 2026. All rights reserved.
 copyright_body: No part of this publication may be reproduced, stored in or introduced into a retrieval system, or transmitted,in any form or by any means (electronic, mechanical, photocopying, recording or otherwise) without prior written permission of Sectigo Limited. Requests for any other permission to reproduce this Sectigo document (as well as requests for copies from Sectigo) must be addressed to
@@ -846,14 +846,6 @@ Sectigo performs the applicable certificate validation procedures and as require
 - Performing the validation procedures set out in section 3.2 and the relevant subsections
 
 In the case of a Secure Server/TLS Certificate, Sectigo checks the DNS for the existence of a CAA record for each dNSName in the subjectAltName extension of the certificate to be issued, as specified in RFC 8659, and in accordance with section 3.2.2.8 of the TLS Baseline Requirements.
-
-For the _DNS TXT Record with Persistent Value_ Domain Control Validation method as stipulated in Section 3.2.2.4.22 of the Baseline Requirements for TLS Certificates, Sectigo recognizes the following Issuer Domain Names as valid _issuer-domain-name_ values:
-
-- sectigo.com
-- trust-provider.com
-- comodo.com
-- comodoca.com
-- usertrust.com
 
 ### 4.2.1. Performing Identification and Authentication Functions
 
@@ -3171,4 +3163,3 @@ E.g., EV Secure Server Certificate. As OV Secure Server Certificate, except:
 | 6.1.4 | Update Sectigo Limited legal address | 19-Jan-2026 |
 | 6.1.5 | Add new policies in section 1.1.<br>Update domain and IP validation methods.<br>Update section 4.2.2. | 6-Mar-2026 |
 | 6.2.0 | TLS CP/CPS converted to MarkDown | 7-Apr-2026 |
-| 6.2.1 | Add Issuer Domain Name for DNS TXT Record with Persistent Value | 20-Apr-2026 |
