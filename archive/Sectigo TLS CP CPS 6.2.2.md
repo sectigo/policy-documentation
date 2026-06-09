@@ -1,8 +1,8 @@
 ---
 title: Sectigo TLS Certificates Certificate Policy and Certification Practice Statement
-version: 6.2.3
+version: 6.2.2
 author: Sectigo Limited
-date: 09-Jun-2026
+date: 22-Apr-2026
 copyright_header: Copyright Notice
 copyright_notice: Copyright Sectigo Limited 2026. All rights reserved.
 copyright_body: No part of this publication may be reproduced, stored in or introduced into a retrieval system, or transmitted,in any form or by any means (electronic, mechanical, photocopying, recording or otherwise) without prior written permission of Sectigo Limited. Requests for any other permission to reproduce this Sectigo document (as well as requests for copies from Sectigo) must be addressed to
@@ -15,7 +15,7 @@ Sectigo is a Certification Authority (CA) that issues high quality and highly tr
 
 ## 1.1. Overview
 
-Sectigo conforms to the latest published version of the TLS Baseline Requirements (TLS BRs) and EV Guidelines (EVGs) published at <https://www.cabforum.org>, the CCADB policy and, for the specific hierarchies included within Application Software Suppliers, the applicable root store policy. These policies include, but may not be limited to, the Apple Root Program Policy, the Chrome Root Program Policy, the Mozilla Root Store Policy and the Microsoft Root Program Requirements. In the event of any inconsistency between this document and the other documents specified in this paragraph, those documents take precedence over this document.
+Sectigo conforms to the latest published version of the TLS Baseline Requirements (TLS BRs) and EV Guidelines (EVGs) published at <https://www.cabforum.org>, the CCADB policy and any of the Browsers´ root programs policies. In the event of any inconsistency between this document and the other documents specified in this paragraph, those documents take precedence over this document.
 
 Sectigo MAY extend, under agreement, membership of its PKI to approved third parties known as Registration Authorities (RAs). The international network of Sectigo RAs share Sectigo's policies, practices, and CA Infrastructure to issue Sectigo digital Certificates, or if appropriate, private labeled digital Certificates.
 
@@ -92,12 +92,11 @@ Sectigo's internal RA, together with its staff and systems, all fall within the 
 
 #### 1.3.2.2. External Registration Authority
 
-Some resellers, Powered SSL Partners or enterprise customers may be authorized by Sectigo to act as external RAs. As such they MAY be granted RA functionality which MAY include the validation of some or all of the subject identity information for Secure Server/TLS Certificates. The external RA is obliged to conduct validation in accordance with this document, the TLS BRs and/or the EVGs prior to issuing a Certificate. Sectigo will check this procedure.
+Some resellers, Powered SSL Partners or enterprise customers may be authorized by Sectigo to act as external RAs. As such they MAY be granted RA functionality which MAY include the validation of some or all of the subject identity information for Secure Server/TLS Certificates. The external RA is obliged to conduct validation in accordance with this document, the TLS BRs and/or the EVGs prior to issuing a Certificate.
 
 External RAs do not validate domain control for Secure Server/TLS Certificates. This element of the validation of Secure Server/TLS Certificates is always performed by Sectigo's internal RA as described in this document.
 
-Some of these external RAs have their own practice statement for RAs and are duly audited and certified, at least yearly.
-Sectigo will not authorize any third party to act as external RA unless they are able to obtain the appropriate certification.
+Some of these external RAs have their own practice statement for RAs and are duly audited and certified.
 
 ### 1.3.3. Subscribers (End Entities)
 
@@ -254,8 +253,6 @@ Capitalized terms used throughout this document shall have the meanings set fort
 | **Certificate Management** | Means the functions that include but are not limited to the following: verification of the identity of an Applicant of a Certificate; authorizing the issuance of Certificates; issuance of Certificates; revocation of Certificates; listing of Certificates; distributing Certificates; publishing Certificates; storing Certificates; storing Private Keys; escrowing Private Keys; generating, issuing, decommissioning, and destruction of Key Pairs; retrieving Certificates in accordance with their particular intended use; and verification of the domain of an Applicant of a Certificate. |
 | **Certificate Manager** | Means the software issued by Sectigo and used by Subscribers to download Certificates. |
 | **Certificate Policy** | Means a statement of the issuer that corresponds to the prescribed usage of a digital Certificate within an issuance context. |
-| **Certificate Problem Report** |  Complaint of suspected Key Compromise, Certificate misuse, or
-other types of fraud, compromise, misuse, or inappropriate conduct related to Certificates. |
 | **Certificate System** | Means the system used by Sectigo or a delegated third party to access, process, or manage data or provide services related to:<br>1\. identity validation;<br>2\. identity authentication;<br>3\. account registration;<br>4\. certificate application;<br>5\. certificate approval;<br>6\. certificate issuance;<br>7\. certificate revocation;<br>8\. authoritative certificate status; or<br>9\. key escrow. |
 | **Certificate Transparency** | Means the protocol described in RFC 6962 for publicly logging the existence of Transport Layer Security (TLS) certificates as they are issued or observed. |
 | **Certification Authority** | An organization that is responsible for the creation, issuance, revocation, and management of Certificates. The term applies equally to both Roots CAs and Subordinate CAs. |
@@ -665,13 +662,6 @@ Sections 3.2.2.1.1 and Section 3.2.2.1.2 indicate the validation methods that re
 Sectigo does not reuse or cached the information obtained from one Network Perspective when performing validation through subsequent Network Perspectives (e.g., different Network Perspectives cannot rely on a shared DNS cache to prevent an adversary with control of traffic from one Network Perspective from poisoning the DNS cache used by other Network Perspectives).
 
 A Network Perspective MAY use a recursive DNS resolver that is NOT co-located with the Network Perspective. However, the DNS resolver used by the Network Perspective MUST fall within the same Regional Internet Registry service region as the Network Perspective relying upon it. Furthermore, for any pair of DNS resolvers used on a Multi-Perspective Issuance Corroboration attempt, the straight-line distance between the two States, Provinces, or Countries the DNS resolvers reside in MUST be at least 500 km. The location of a DNS resolver is determined by the point where unencapsulated outbound DNS queries are typically first handed off to the network infrastructure providing Internet connectivity to that DNS resolver.
-
-Sectigo MAY reuse corroborating evidence for CAA record quorum compliance for a maximum of 398 days. After issuing a Certificate to a domain, remote Network Perspectives MAY omit retrieving and processing CAA records for the same domain or its subdomains in subsequent Certificate requests from the same Applicant for up to a maximum of 398 days.
-The quorum requirements are
-| **# of Distinct Remote Network Perspectives Used** | **# of allowed non-Corroborrations** |
-| -------------------------------------------------- | ------------------------------------ |
-| 2-5                                                | 1                                    |
-| 6+                                                 | 2                                    |
 
 Sectigo does not rely on corroborations from previous attempts. There is no stipulation regarding the maximum number of validation attempts that may be performed in any period of time.
 
@@ -1345,7 +1335,6 @@ Lightweight OCSP conforms to RFC 5019. Sectigo provides revocation information f
 Sectigo operates and maintains its CRL (and optional OCSP) capability with resources sufficient to provide a response time of ten seconds or less under normal operating conditions.
 
 Certificate status services are available 24/7.
-Sectigo maintains a continuous 24x7 ability to respond internally to a high-priority Certificate Problem Report, and where appropriate, forward such a complaint to law enforcement authorities, and/or revoke a Certificate that is the subject of such a complaint.
 
 ### 4.10.3. Optional Features
 
@@ -2145,7 +2134,7 @@ Sectigo ensures the integrity of its computer systems by implementing controls, 
 
 CA systems enforce Multi-Factor Authentication for all accounts capable of directly causing certificate issuance.
 
-### 6.5.2. Computer Security Rating
+### 6.5.1. Computer Security Rating
 
 No stipulation.
 
@@ -2294,13 +2283,17 @@ Sectigo Root CA Certificates do not contain:
 
 #### 7.1.2.2. Subordinate CAs
 
-Sectigo Subordinate CA certificates contain:
-- a certificatePolicies extension that includes one or more policyIdentifiers and may contain a policyQualifier referring to the CPS URI but not including a userNotice.
-- a non-critical cRLDistributionPoints extension containing the HTTP URL of the Issuing CA's CRL service.
-- a non-critical authorityInformationAccess extension containing the HTTP URL of the Issuing CA's OCSP responder and also containing the HTTP URL of the Issuing CA's certificate.
-- a basicConstraints extension marked critical. The cA field is set true. The pathLenConstraint is often present and the pathLenConstraint is usually set to 0.
-- a keyUsage extension marked critical. Bit positions for keyCertSign and cRLSign are set. The digitalSignature bit is also set if this CA also signs OCSP responses.
-- an ExtendedKeyUsage extension not marked critical.
+Sectigo Subordinate CA certificates contain a certificatePolicies extension that includes one or more policyIdentifiers and usually contains a policyQualifier referring to the CPS URI but not including a userNotice.
+
+Sectigo Subordinate CA certificates contain a non-critical cRLDistributionPoints extension containing the HTTP URL of the Issuing CA's CRL service.
+
+Sectigo Subordinate CA certificates contain a non-critical authorityInformationAccess extension containing the HTTP URL of the Issuing CA's OCSP responder and also containing the HTTP URL of the Issuing CA's certificate.
+
+Sectigo Subordinate CA certificates contain a basicConstraints extension marked critical. The cA field is set true. The pathLenConstraint is often present and the pathLenConstraint is usually set to 0.
+
+Sectigo Subordinate CA certificates contain a keyUsage extension marked critical. Bit positions for keyCertSign and cRLSign are set. The digitalSignature bit is also set if this CA also signs OCSP responses.
+
+Sectigo Subordinate CA certificates contain an ExtendedKeyUsage extension not marked critical.
 
 #### 7.1.2.3. Subscriber Certificates
 
@@ -2374,76 +2367,38 @@ For internationalized domain names, the Common Name and each SAN dnsName entry i
 
 ##### 7.1.4.2.2. Subject Distinguished Name Fields
 
-1. subject:commonName  
-   If present, this field contains a single IP address or Fully-Qualified Domain Name that is one of the values contained    in the Certificate's subjectAltName extension (see above).
-2. subject:organizationName  
+- subject:commonName  
+   If present, this field contains a single IP address or Fully-Qualified Domain Name that is one of the values contained in the Certificate's subjectAltName extension (see above).
+- subject:organizationName  
    If present this field contains the Subject's name and/or DBA/tradename as verified under Section 3.2.2.2 or 3.2.2.3.
 
-   Sectigo MAY include information in this field that differs slightly from the verified name, such as common variations     or abbreviations, provided that any abbreviations used are locally accepted abbreviations, e.g., if the official          record shows "Company Name Incorporated", Sectigo MAY use "Company Name Inc." or "Company Name".
+Sectigo MAY include information in this field that differs slightly from the verified name, such as common variations or abbreviations, provided that any abbreviations used are locally accepted abbreviations, e.g., if the official record shows "Company Name Incorporated", Sectigo MAY use "Company Name Inc." or "Company Name".
 
-   If both are included, the DBA/tradename SHALL appear first, followed by the Subject's name in parentheses.
+If both are included, the DBA/tradename SHALL appear first, followed by the Subject's name in parentheses.
 
-   Because Subject name attributes for individuals (e.g. givenName (2.5.4.42) and surname (2.5.4.4)) are not broadly         supported by application software, Sectigo MAY use the subject:organizationName field to convey a natural person          Subject's name or DBA.
+Because Subject name attributes for individuals (e.g. givenName (2.5.4.42) and surname (2.5.4.4)) are not broadly supported by application software, Sectigo MAY use the subject:organizationName field to convey a natural person Subject's name or DBA.
 
-3. subject:stateOrProvinceName  
-   If present this field contains the Subject's state or province information as verified under Section 3.2.2.2 or           3.2.2.3.
+- subject:stateOrProvinceName  
+   If present this field contains the Subject's state or province information as verified under Section 3.2.2.2 or 3.2.2.3.
 
-   If the subject:countryName field specifies the ISO 3166-1 user-assigned code of XX in accordance with Section             7.1.4.2.2(7), the subject:stateOrProvinceName field may contain the full name of the Subject's country information as     verified under Section 3.2.2.2 or 3.2.2.3.
+If the subject:countryName field specifies the ISO 3166-1 user-assigned code of XX in accordance with Section 7.1.4.2.2(7), the subject:stateOrProvinceName field may contain the full name of the Subject's country information as verified under Section 3.2.2.2 or 3.2.2.3.
 
-4. subject:countryName  
-   This field contains the Subject's two-letter ISO 3166-1 country code information as verified under Section 3.2.2.2 or     3.2.2.3.
+- subject:countryName  
+   This field contains the Subject's two-letter ISO 3166-1 country code information as verified under Section 3.2.2.2 or 3.2.2.3.
 
-   If a Country is not represented by an official ISO 3166-1 country code, Sectigo will specify the ISO 3166-1 user-         assigned code of XX indicating that an official ISO 3166-1 alpha-2 code has not been assigned.
+If a Country is not represented by an official ISO 3166-1 country code, Sectigo will specify the ISO 3166-1 user-assigned code of XX indicating that an official ISO 3166-1 alpha-2 code has not been assigned.
 
-5. subject:organizationIdentifier
-   If present, this field MUST contain a Registration Reference for a Legal Entity assigned in accordance to the             identified Registration Scheme.
-   The organizationIdentifier MUST be encoded as a PrintableString or UTF8String.
-   The Registration Scheme MUST be identified using the using the following structure in the presented order:
-     - 3 character Registration Scheme identifier;
-     - 2 character ISO 3166 country code for the nation in which the Registration Scheme is operated, or if the scheme is        operated globally ISO 3166 code “XG” shall be used;
-     - For the NTR Registration Scheme identifier, if required under Section 7.1.4.2.4, a 2 character ISO 3166‐2                 identifier for the subdivision (state or province) of the nation in which the Registration Scheme is operated,            preceded by plus “+” (0x2B (ASCII), U+002B (UTF‐8));
-     - ahyphen‐minus“‐” (0x2D (ASCII), U+002D (UTF‐8));
-     - Registration Reference allocated in accordance with the identified Registration Scheme
-
-6. EV TLS Certificates SHALL also include the following fields as per Section 7.1.4.2 of the EVGs:
-   a. Subject Business Category
+- EV TLS Certificates SHALL also include the following fields as per Section 7.1.4.2 of the EVGs:
+  - Subject Business Category
     - subject:businessCategory (OID: 2.5.4.15)
-   b. Subject Jurisdiction of Incorporation or Registration
+  - Subject Jurisdiction of Incorporation or Registration
     - subject:jurisdictionLocalityName (OID: 1.3.6.1.4.1.311.60.2.1.1) (if required)
     - subject:jurisdictionStateOrProvinceName (OID: 1.3.6.1.4.1.311.60.2.1.2) (if required)
     - subject:jurisdictionCountryName (OID: 1.3.6.1.4.1.311.60.2.1.3)
-   c. Subject Registration Number or Date
+  - Subject Registration Number or Date
     - subject:serialNumber (OID: 2.5.4.5)
-
-7. Other Subject Attributes  
-   Sectigo SHALL NOT include any Subject Distinguished Name attributes except as specified in Section 7.1.4.2 of the         EVGs. If present in other types of certificates, all other optional attributes, will contain information that has been    verified by Sectigo. Optional attributes for Secure Server Certificates will not contain metadata such as '.', '-',       and ' ' (i.e., space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.    dNSName entries are in the "preferred name syntax", as specified in RFC 5280, and do not contain underscore characters    ("\_").
-
-##### 7.1.4.2.3. CA/Browser ForumOrganizationIdentifier Extension
-If the subject:organizationIdentifier is present, this field MUST be present.
-
-If present, this extension MUST contain a Registration Reference for a Legal Entity assigned in accordance to the identified Registration Scheme.
-
-The Registration Scheme MUST be encoded as described by the following ASN.1 grammar:
-
-id-CABFOrganizationIdentifier OBJECT IDENTIFIER ::= {
-    joint-iso-itu-t(2) international-organizations(23)
-    ca-browser-forum(140) certificate-extensions(3)
-    cabf-organizationIdentifier(1) 
-}
-
-ext-CABFOrganizationIdentifier EXTENSION ::= {
-    SYNTAX CABFOrganizationIdentifier
-    IDENTIFIED BY id-CABFOrganizationIdentifier
-}
-
-CABFOrganizationIdentifier ::= SEQUENCE {
-    registrationSchemeIdentifier PrintableString (SIZE(3)),
-    registrationCountry          PrintableString (SIZE(2)),
-    registrationStateOrProvince  [0] IMPLICIT PrintableString
-                                  (SIZE(0..128)) OPTIONAL,
-    registrationReference        UTF8String
-}
-where the subfields have the same values, meanings, and restrictions described in Section 7.1.4.2.2 point 5.
+- Other Subject Attributes  
+   Sectigo SHALL NOT include any Subject Distinguished Name attributes except as specified in Section 7.1.4.2 of the EVGs. If present in other types of certificates, all other optional attributes, will contain information that has been verified by Sectigo. Optional attributes for Secure Server Certificates will not contain metadata such as '.', '-', and ' ' (i.e., space) characters, and/or any other indication that the value is absent, incomplete, or not applicable. dNSName entries are in the "preferred name syntax", as specified in RFC 5280, and do not contain underscore characters ("\_").
 
 #### 7.1.4.3. Subject Information - Root Certificates and Subordinate CA Certificates
 
@@ -2595,7 +2550,7 @@ Sectigo operates an OCSP service at <http://ocsp.sectigo.com>. Revocation inform
 The profile of Sectigo OCSP responses is as per this table:
 
 | **Extension** | | **Value** |
-| --- | | --- | --- |
+| --- | --- | --- |
 | OCSP Response Status | | successful (0x0) |
 | Response Type | | Basic OCSP Response |
 | Version | | 1 (0x0) |
@@ -2983,7 +2938,7 @@ The following rights, responsibilities, and obligations survive the termination 
 
 Upon termination of this document, all PKI participants are bound by the terms of this document for Certificates issued during the term of this document and for the remainder of the validity periods of such Certificates.
 
-## 9.11. Individual Notices and Communications with Participants
+## 9.10.4. Individual Notices and Communications with Participants
 
 Sectigo accepts notices related to this document by means of digitally signed messages or in paper form. Upon receipt of a valid, digitally signed acknowledgment of receipt from Sectigo, the sender of the notice shall deem their communication effective. The sender must receive such acknowledgment within five (5) days, or else written notice must then be sent in paper form through a courier service that confirms delivery or via certified or registered mail, postage prepaid, return receipt requested, addressed as follows:
 
@@ -2997,7 +2952,7 @@ Email: [legalnotices@sectigo.com](mailto:legalnotices@sectigo.com)
 
 This document and related agreements referenced within this document are available online in the Repository.
 
-## 9.12. Amendments
+## 9.11. Amendments
 
 Upon the Sectigo Policy Authority accepting such changes it deems to have significant impact on the users of this document, an updated edition of this document will be published at the Sectigo repository (available at <https://sectigo.com/legal>), with suitable incremental version numbering used to identify new editions. This document SHALL be updated at least once per year.
 
@@ -3005,27 +2960,27 @@ Revisions not denoted "significant" are those deemed by the Sectigo Policy Autho
 
 Controls are in place to reasonably ensure that this document is not amended and published without the prior authorization of the Sectigo Policy Authority.
 
-### 9.12.1. Procedure for Amendment
+### 9.11.1. Procedure for Amendment
 
 An amendment to this document is made by the Sectigo Policy Authority. The Sectigo Policy Authority will approve amendments to this document, and Sectigo will publish amendments in the Repository. Amendments can be an update, revision, or modification to this document, and can be detailed in this document or in a separate document. Additionally, amendments supersede any designated or conflicting provisions of the amended version of this document.
 
-### 9.12.2. Notification Mechanism and Period
+### 9.11.2. Notification Mechanism and Period
 
 Sectigo provides notice of an amendment to this document by posting it to the Repository. Amendments become effective on the date provided in the document, when an amendment is written in a separate document, or on the date provided in this document, when written in this document.
 
 Sectigo does not guarantee or establish a notice and comment period.
 
-### 9.12.3. Circumstances Under Which OID Must be Changed
+### 9.11.3. Circumstances Under Which OID Must be Changed
 
 The Sectigo Policy Authority has the sole authority to determine whether an amendment to this document requires an OID change.
 
-## 9.13. Dispute Resolution Provisions
+## 9.12. Dispute Resolution Provisions
 
 Before resorting to any dispute resolution mechanism including adjudication or any type of Alternative Dispute Resolution (including without exception mini-trial, arbitration, binding expert's advice, co-operation monitoring and normal expert's advice) all parties agree to notify Sectigo of the dispute with a view to seek dispute resolution.
 
-## 9.14. Governing Law
+## 9.13. Governing Law
 
-### 9.14.1. Governing Law
+### 9.13.1. Governing Law
 
 This document is governed by, and construed in accordance with, English law. This choice of law is made to ensure uniform interpretation of this document, regardless of the place of residence or place of use of Sectigo digital Certificates or other products and services. English law applies in all Sectigo commercial or contractual relationships in which this document may apply or quoted implicitly or explicitly in relation to Sectigo products and services where Sectigo acts as a provider, supplier, beneficiary receiver or otherwise.
 
@@ -3222,4 +3177,3 @@ E.g., EV Secure Server Certificate. As OV Secure Server Certificate, except:
 | 6.2.0 | TLS CP/CPS converted to MarkDown | 7-Apr-2026  |
 | 6.2.1 | Add Issuer Domain Name for DNS TXT Record with Persistent Value | 20-Apr-2026 |
 | 6.2.2 | Clean-up 2025. <br> removal of SHA-1 mentions. | 22-Apr-2026 |
-| 6.2.3 | Internal review as per BRs self-assessment. | 09-Jun-2026 |
