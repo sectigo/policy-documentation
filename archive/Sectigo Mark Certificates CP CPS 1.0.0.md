@@ -1,8 +1,8 @@
 ---
 title: Sectigo Mark Certificates Certificate Policy and Certification Practice Statement
-version: 1.0.1
+version: 1.0.0
 author: Sectigo Limited
-date: 2026-07-07
+date: 2026-03-24
 copyright_header: Copyright Notice
 copyright_notice: Copyright Sectigo Limited 2026. All rights reserved.
 copyright_body: No part of this publication may be reproduced, stored in or introduced into a retrieval system, or transmitted,in any form or by any means (electronic, mechanical, photocopying, recording or otherwise) without prior written permission of Sectigo Limited. Requests for any other permission to reproduce this Sectigo document (as well as requests for copies from Sectigo) must be addressed to
@@ -2108,10 +2108,7 @@ Sectigo does not include the anyExtendedKeyUsage EKU in Name Constrained CA cert
 
 ### 7.1.6.Certificate Policy Object Identifier
 
-For Subscriber Certificates, Sectigo includes two Policy Object Identifiers:
-
-- 1.3.6.1.4.1.6449.1.2.1.13, indicating adherence to and compliance with this CP/CPS, together with a URL for the webpage where the CP/CPS can be publicly reviewed.
-- 1.3.6.1.4.1.53087.1.1, indicating adherence to and compliance with the Mark Certificates Requirements.
+Sectigo uses policy OIDs under its own ARC.
 
 ### 7.1.7.Usage of Policy Constraints Extension
 
@@ -2716,5 +2713,4 @@ Unless otherwise stated in this document, Subscribers shall exclusively be respo
 
 | Version | Change Description | Date |
 | --- | --- | --- |
-| 1.0.0 | First version according to the MC Requirements | 2026-03-24 |
-| 1.0.1 | Update Subscriber Certificate Policy OIDs | 2026-07-07 |
+| 1.0 | First version according to the MC Requirements | 2026-03-24 | 
