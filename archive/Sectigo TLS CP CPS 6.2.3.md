@@ -1,8 +1,8 @@
 ---
 title: Sectigo TLS Certificates Certificate Policy and Certification Practice Statement
-version: 6.2.4
+version: 6.2.3
 author: Sectigo Limited
-date: 3-Sep-2026
+date: 09-Jun-2026
 copyright_header: Copyright Notice
 copyright_notice: Copyright Sectigo Limited 2026. All rights reserved.
 copyright_body: No part of this publication may be reproduced, stored in or introduced into a retrieval system, or transmitted,in any form or by any means (electronic, mechanical, photocopying, recording or otherwise) without prior written permission of Sectigo Limited. Requests for any other permission to reproduce this Sectigo document (as well as requests for copies from Sectigo) must be addressed to
@@ -2314,7 +2314,8 @@ Sectigo Subscriber certificates contain a basicConstraints extension marked crit
 
 Sectigo Subscriber certificates contain a keyUsage extension marked critical. Bit positions for keyCertSign and cRLSign are NOT set.
 
-Sectigo Subscriber certificates contain a non-critical extKeyUsage extension that MUST contain id-kp-serverAuth and MAY contain additional EKUs, except for id-kp-emailProtection, id-kp-codeSigning, id-kp-timeStamping or anyExtendedKeyUsage.
+Sectigo Subscriber certificates contain a non-critical extKeyUsage extension.
+serverAuthentication certificates contain both id-kp-serverAuth and id-kp-clientAuth. Other values are not typically present in serverAuthentication certificates.
 
 #### 7.1.2.4. All Certificates
 
@@ -2594,7 +2595,7 @@ Sectigo operates an OCSP service at <http://ocsp.sectigo.com>. Revocation inform
 The profile of Sectigo OCSP responses is as per this table:
 
 | **Extension** | | **Value** |
-| --- | --- | --- |
+| --- | | --- | --- |
 | OCSP Response Status | | successful (0x0) |
 | Response Type | | Basic OCSP Response |
 | Version | | 1 (0x0) |
@@ -3152,7 +3153,8 @@ E.g., DV Secure Server Certificate
 | X509v3 Subject Key Identifier:     | SHA-1 hash of the value of the subjectPublicKey (excluding the tag, length, and number of unused bits)              |                                                |
 | X509v3 Key Usage: critical         | Digital Signature                                                                                                   |                                                |
 | X509v3 Basic Constraints: critical | CA:FALSE                                                                                                            |                                                |
-| X509v3 Extended Key Usage:         | TLS Web Server Authentication                                                                                      |                                                                 |
+| X509v3 Extended Key Usage:         | TLS Web Server Authentication,                                                                                      |                                                |
+|                                    | TLS Web Client Authentication                                                                                       |                                                |
 | X509v3 Certificate Policies:       | 1.3.6.1.4.1.6449.1.2.2.7, CPS: <https://sectigo.com/CPS>, 2.23.140.1.2.1                                            |                                                |
 | Authority Information Access:      | CA Issuers - <http://crt.sectigo.com/SectigoECCDomainValidationSecureServerCA.crt> OCSP - <http://ocsp.sectigo.com> |                                                |
 | X509v3 Subject Alternative Name:   | DNS:\*.example.com, DNS:example.com                                                                                 |                                                |
@@ -3220,5 +3222,4 @@ E.g., EV Secure Server Certificate. As OV Secure Server Certificate, except:
 | 6.2.0 | TLS CP/CPS converted to MarkDown | 7-Apr-2026  |
 | 6.2.1 | Add Issuer Domain Name for DNS TXT Record with Persistent Value | 20-Apr-2026 |
 | 6.2.2 | Clean-up 2025. <br> removal of SHA-1 mentions. | 22-Apr-2026 |
-| 6.2.3 | Internal review as per BRs self-assessment. | 9-Jun-2026 |
-| 6.2.4 | Clarifying language regarding id-kp-clientAuth | 3-Sep-2026 |
+| 6.2.3 | Internal review as per BRs self-assessment. | 09-Jun-2026 |
