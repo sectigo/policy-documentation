@@ -1,8 +1,8 @@
 ---
-title: Sectigo Mark Certificates Certificate Policy and Certification Practice Statement
-version: 1.0.2
+title: Sectigo S/MIME Certificate Policy and Certification Practice Statement
+version: 1.0.8
 author: Sectigo Limited
-date: 10-Sep-2026
+date: 2026-03-26
 copyright_header: Copyright Notice
 copyright_notice: Copyright Sectigo Limited 2026. All rights reserved.
 copyright_body: No part of this publication may be reproduced, stored in or introduced into a retrieval system, or transmitted,in any form or by any means (electronic, mechanical, photocopying, recording or otherwise) without prior written permission of Sectigo Limited. Requests for any other permission to reproduce this Sectigo document (as well as requests for copies from Sectigo) must be addressed to
@@ -16,11 +16,11 @@ Sectigo is a Certification Authority (CA) or a Trust Service Provider (TSP) that
 
 ## 1.1.Overview
 
-For issuance of Mark Certificates (MCs) Sectigo conforms to the latest published versions of the Minimum Security Requirements for Issuance of Mark Certificates (MCRs) published at https://bimigroup.org and the CCADB policy. In the event of any inconsistency between this document and those other documents mentioned in this paragraph, those documents take precedence over this document.
+For issuance of Secure Email (S/MIME) Certificates Sectigo conforms to the latest published version of the CAB Forum S/MIME Baseline Requirements (BR) published at https://www.cabforum.org. In the event of any inconsistency between this document and the S/MIME BRs, the S/MIME BRs takes precedence over this document.
 
 Sectigo MAY extend, under agreement, membership of its PKI to approved third parties known as Registration Authorities (RAs). The international network of Sectigo RAs share Sectigo's policies, practices, and CA infrastructure to issue Sectigo digital Certificates, or if appropriate, private labeled digital Certificates.
 
-This document states the Policy and Practice Statement applied to the Mark Certificates of Sectigo, referred as the Certificate Policy and Certification Practice Statement (CP/CPS).
+This document states the Policy and Practice Statement applied to the S/MIME Certificates of Sectigo, referred as the Certification Practice Statement (CPS).
 
 This document is only one of a set of documents relevant to the provision of Certification Services by Sectigo and that the list of documents contained in this clause are other documents that this document will from time to time mention, although this is not an exhaustive list. The document name, location of and status, whether public or private, are detailed below.
 
@@ -35,19 +35,17 @@ This document, related agreements and policies referenced within this document a
 
 ## 1.2.Document Name and Identification
 
-This document is the Sectigo Certificate Policy and Certification Practice Statement for Mark Certificates. It outlines the legal, commercial and technical principles and practices that Sectigo employ in providing certification services that include, but are not limited to, approving, issuing, using and managing of Digital Certificates and in maintaining a X.509 Certificate based public key infrastructure (PKI) in accordance with the Certificate Policies determined by Sectigo. It also defines the underlying certification processes for Subscribers and describes Sectigo's repository operations. The document is also a means of notification of roles and responsibilities for parties involved in Certificate based practices within the Sectigo PKI.
+This document is the Sectigo Certificate Policy and Certification Practice Statement for S/MIME Certificates. It outlines the legal, commercial and technical principles and practices that Sectigo employ in providing certification services that include, but are not limited to, approving, issuing, using and managing of Digital Certificates and in maintaining a X.509 Certificate based public key infrastructure (PKI) in accordance with the Certificate Policies determined by Sectigo. It also defines the underlying certification processes for Subscribers and describes Sectigo's repository operations. The document is also a means of notification of roles and responsibilities for parties involved in Certificate based practices within the Sectigo PKI.
 
 This document is a public statement of the practices of Sectigo and the conditions of issuance, revocation and renewal of a Certificate issued under Sectigo's own hierarchy.
 
 This document is structured in accordance with the Internet Engineering Task Force (IETF) standard RFC 3647.
 
+OIDs found in Certificates reliant upon CAB Forum requirements and guidelines include the designated reserved policy identifiers in the Certificate Policy extension.
+
 ### 1.2.1.Revisions
 
 See Appendix B.
-
-### 1.2.2.Mark Certificate OIDs
-
-Certificates adhering to the MCRs SHALLL be identified by the presence of the MC policy OID in the Certificate Policies Extension as described in Section 7.1.6.
 
 ## 1.3.PKI Participants
 
@@ -66,7 +64,6 @@ In its role as a CA, Sectigo provides Certificate services within the Sectigo PK
 - Update CRLs in a timely manner as detailed in this document,
 - Notify Subscribers via email (or any other method) of the imminent expiry of their Sectigo issued Certificate (for a period disclosed in this document).
 
-Sectigo CA is also known as a Mark Verifying Authority.
 
 ### 1.3.2.Registration Authorities
 
@@ -74,41 +71,41 @@ The registration authorities (RAs) collect and verify each Subscriber’s identi
 Sectigo has established the necessary secure infrastructure to fully manage the lifecycle of digital Certificates within its PKI. Through a network of RAs, Sectigo also makes its certification authority services available to its Subscribers. Sectigo RAs:
 
 - Accept, evaluate, approve or reject the registration of Certificate applications.
-- Verify the accuracy and authenticity of the information provided by the Subscriber at the time of application as specified in this document and/or the MCRs.
+- Verify the accuracy and authenticity of the information provided by the Subscriber at the time of application as specified in this document and/or the S/MIME BR.
 - Use official, notarized or otherwise indicated document to evaluate a Subscriber application.
-- Verify the accuracy and authenticity of the information provided by the Subscriber at the time of reissue or renewal as specified in this document and/or the MCRs.
+- Verify the accuracy and authenticity of the information provided by the Subscriber at the time of reissue or renewal as specified in this document and/or the S/MIME BR.
 
 RAs act locally within their own context of geographical or business partnerships on approval and authorization by Sectigo in accordance with Sectigo practices and procedures.
 
-Sectigo MAY extend the use of RAs for its Resellers and Enterprise Public Key Infrastructure (EPKI) Manager. Upon successful approval to join the respective programs the Reseller Subscriber or EPKI Manager Subscriber MAY be permitted to act as an RA on behalf of Sectigo. RAs are required to conform to this document and the MCRs.
+Sectigo MAY extend the use of RAs for its Resellers and Enterprise Public Key Infrastructure (EPKI) Manager. Upon successful approval to join the respective programs the Reseller Subscriber or EPKI Manager Subscriber MAY be permitted to act as an RA on behalf of Sectigo. RAs are required to conform to this document and the S/MIME BR.
 
-Some RAs MAY be enabled to perform validation of some or all of the subject identity information, with the exception of Section 3.2.14 of this document and the MCRs.
+Some RAs MAY be enabled to perform validation of some or all of the subject identity information but are not able to undertake domain control validation for any certificate type.
 
 RAs MAY only undertake their validation duties from pre-approved systems which are identified to the CA by various means that always include but are not limited to the white-listing of the IP address from which the RA operates.
 
+Sectigo operates several intermediate CAs from which it issues certificates for which some part of the validation has been performed by a Registration Authority. Some of the intermediate CAs are dedicated to the work of a single RA, whilst others are dedicated to the work of multiple related RAs.
+
 #### 1.3.2.1.Internal Registration Authority
 
-Sectigo operates several intermediate CAs from which it issues certificates for which some part of the validation has been performed by a Registration Authority. Some of the intermediate CAs are dedicated to the work of a single RA, whilst others are dedicated to the work of multiple related RAs.
 
 Sectigo operates its own internal RA that allows retail customers as well as all customers of Reseller Partners along with some of Sectigo's Resellers to manage their Certificate lifecycle, including application, issuance, renewal and revocation. Sectigo's RA adheres to this document.
 
-For the issuance of Mark Certificates this RA is also equipped with automated systems that validate domain control.
+For the issuance of S/MIME Certificates this RA is also equipped with automated systems that validate domain control. For that minority of S/MIME Certificates for which the validation of domain control is not possible by completely automated means, the specially trained and vetted staff that Sectigo employs in its RA have the ability to cause the issuance of Certificates – but only when they are authenticated to Sectigo's issuance systems using two-factor authentication.
 
 Sectigo's internal RA, together with its staff and systems, all fall within the scope of Sectigo's audit certification.
 
 #### 1.3.2.2.External Registration Authority
 
-Some resellers, Partners or enterprise customers may be authorized by Sectigo to act as external RAs. As such they MAY be granted RA functionality which MAY include the validation of some or all of the subject identity information for Mark Certificates. The external RA is obliged to conduct validation in accordance with this document and/or the MCRs prior to issuing a Certificate and acknowledges that they have sufficiently validated the Applicant's identity. This acknowledgement may be via an online process (for example by checking the "I have sufficiently validated this application" checkbox when applying for a Certificate), or via API parameters that sufficient validation has taken place prior to Sectigo issuing a Certificate.
 
-External RAs do not validate domain control for Mark Certificates. This element of the validation of Mark Certificates is always performed by Sectigo's internal RA as described in this document.
+Some resellers, Partners or enterprise customers may be authorized by Sectigo to act as external RAs. As such they MAY be granted RA functionality which MAY include the validation of some or all of the subject identity information for S/MIME Certificates. The external RA is obliged to conduct validation in accordance with this document and/or the S/MIME BR prior to issuing a Certificate and acknowledges that they have sufficiently validated the Applicant's identity. This acknowledgement may be via an online process (for example by checking the "I have sufficiently validated this application" checkbox when applying for a Certificate), or via API parameters that sufficient validation has taken place prior to Sectigo issuing a Certificate.
+
+External RAs do not validate domain control for S/MIME Certificates. This element of the validation of S/MIME Certificates is always performed by Sectigo's internal RA as described in this document.
 
 Some of these external RAs have their own practice statement for RAs and are duly audited and certified.
 
 ### 1.3.3.Subscribers (End Entities)
 
 Subscribers of Sectigo services are individuals or companies that use PKI in relation with Sectigo supported transactions and communications. Subscribers are parties that are identified in a Certificate and hold the Private Key corresponding to the Public Key listed in the Certificate. Prior to verification of identity and issuance of a Certificate, a Subscriber is an Applicant for the services of Sectigo.
-
-Subscribers are also known as Mark Asserting Entities.
 
 ### 1.3.4.Relying Parties
 
@@ -119,6 +116,22 @@ To verify the validity of a digital Certificate they receive, Relying Parties mu
 ### 1.3.5.Other Participants
 
 Sectigo has several categories of partner which assist in the provision of certification services.
+
+#### 1.3.5.1.Reseller Partners
+
+Sectigo operates a Reseller Partner network that allows authorized partners to integrate Sectigo digital Certificates into their own product portfolios. Reseller Partners are responsible for referring digital Certificate customers to Sectigo, who maintain full control over the Certificate lifecycle process, including application, issuance, renewal and revocation. Due to the nature of the reseller program, the Reseller Partner must authorize a pending customer order made through its Reseller Partner account prior to Sectigo instigating the validation of such Certificate orders. All Reseller Partners are required to provide proof of organizational status (refer to section 3.2.2 of this document for examples of documentation required) and must enter into a Sectigo Reseller Partner agreement prior to being provided with Reseller Partner facilities.
+
+Some Resellers MAY be designated as external RAs.
+
+#### 1.3.5.2.EPKI Manager Accounts
+
+Sectigo Enterprise PKI (EPKI) Manager is a fully outsourced enterprise public key infrastructure service that allows authorized EPKI Manager account holders to control the entire Certificate lifecycle process, including application, issuance, renewal and revocation, for Certificates designated to company servers, intranets, extranets, partners, employees and hardware devices.
+
+These accounts are able to streamline the verification and issuance process by restricting the subject identifying information in the Certificates to refer only to the organization's name and address previously verified by Sectigo.
+
+EPKI account holders do not perform the initial validation of domain control for S/MIME Certificates. This element of the validation of S/MIME Certificates is always performed by Sectigo's internal RA as described in this document.
+
+The EPKI Manager account holder is obliged to request Certificates only for legitimate company resources, including partners, employees and hardware devices.
 
 ## 1.4.Certificate Usage
 
@@ -132,19 +145,22 @@ As detailed in this document, Sectigo offers a range of distinct Certificate typ
 
 As the suggested usage for a digital Certificate differs on a per application basis, Subscribers are urged to appropriately study their requirements for their specific application before applying for a specific Certificate. Revoked Certificates are appropriately referenced in CRLs and published in Sectigo directories.
 
+Secure/Multipurpose Internet Mail Extension(s) (S/MIME) Certificates are used for cryptographically signing and encrypting email. They are issued to a specific email address and MAY also contain Subject information verifying the identity of the individual/natural person and/or the organization which owns the email address.
+
 ### 1.4.2.Prohibited Certificate Uses
 
 Certificates are prohibited from being used to the extent that the use is inconsistent with applicable law. Certificates are prohibited from being used as control equipment in hazardous circumstances or for uses requiring fail-safe performance such as the operation of nuclear facilities, aircraft navigation or communication systems, air traffic control systems, or weapons control systems, where failure could lead directly to death, personal injury, or severe damage to persons or property.
 
 ## 1.5.Policy Administration
 
+
 Information located in this section includes the contact information of the organization responsible for drafting, registering, maintaining, updating, and approving this document.
 
 ### 1.5.1.Organization Administering the Document
 
 The Sectigo Policy Authority:
-- Establishes and maintains this document, related agreements and policies referenced within this document;
-- Approves the establishment of trust relationships with external PKIs that offer appropiately comparable assurance; and,
+- Establishes and maintains this document, related agreements and policies referenced within this document,
+- Approves the establishment of trust relationships with external PKIs that offer appropiately comparable assurance
 - Ensures that all aspects of the CA services, operations, and infrastructure as described in this document are performed in accordance with the requirements, representations, and warranties.. 
 
 ### 1.5.2.Contact Person
@@ -166,7 +182,7 @@ Email: _[legalnotices@sectigo.com](mailto:legalnotices@sectigo.com)_
 
 To report abuse, fraudulent, or malicious use of Certificates issued by Sectigo, please see the supported methods below. All these methods can be found at: _[https://sectigo.com/support/revocation](https://sectigo.com/support/revocation)_
 
-We encourage the use of our automated revocation portal for the quickest response to issues requiring revocation.
+We encourage the use of our automated revocation portal, or ACME revokeCert for quickest response to issues requiring revocation.
 
 ##### 1.5.2.1.1.Revocation Portal
 
@@ -176,7 +192,10 @@ To revoke one or more certificates issued by Sectigo for which you (i) are the S
 
 ##### 1.5.2.1.2.ACME revokeCert
 
-No Stipulation. The ACME revokeCert method is not applicable for Mark Certificates.
+To programmatically revoke one or more certificates issued by Sectigo for which you have in your possession the private key, you may use the ACME revokeCert method at this endpoint:
+
+- ACME Directory: _[https://acme.sectigo.com/v2/keyCompromise](https://acme.sectigo.com/v2/keyCompromise)_
+- revokeCert API: _[https://acme.sectigo.com/v2/keyCompromise/revokeCert](https://acme.sectigo.com/v2/keyCompromise/revokeCert)_
 
 ##### 1.5.2.1.3.Notifying Us Via Email
 
@@ -201,175 +220,80 @@ Capitalized terms used throughout this document shall have the meanings set fort
 
 | **Term** | **Definition** |
 | --- | --- |
-| **Accounting Practitioner** | A certified public accountant, chartered accountant, or a person with an equivalent license within the country of the Applicant’s Jurisdiction of Incorporation or Registration or any jurisdiction where the Applicant maintains an office or physical facility; provided that an accounting standards body in the jurisdiction maintains full (not “suspended” or “associate”) membership status with the International Federation of Accountants. |
 | **Affiliate** | Means a corporation, partnership, joint venture or other entity controlling, controlled by, or under common control with another entity, or an agency, department, political subdivision, or any entity operating under the direct control of a Government Entity. |
 | **Air-Gapped** | Physically and logically separated, disconnected, and isolated from all other Systems. |
 | **Applicant** | Means the natural person or Legal Entity that applies for (or seeks renewal of) a Certificate. Once the Certificate issues, the Applicant is referred to as the Subscriber. |
 | **Applicant Representative** | Means a natural person or human sponsor who is either the Applicant, employed by the Applicant, or an authorized agent who has express authority to represent the Applicant: (i) who signs and submits, or approves a Certificate request on behalf of the Applicant, and/or (ii) who signs and submits a Subscriber Agreement on behalf of the Applicant, and/or (iii) who acknowledges and agrees to the Certificate Terms of Use on behalf of the Applicant when the Applicant is an Affiliate of the CA. |
-| **Application Software Supplier** | A supplier of relying‐party application software that displays or uses Certificates and incorporates Root Certificate. |
-| **Archive Webpage Sources** | Online public sources that are reliable and that show screen captures of webpages and the date(s) on which the screen captures were made. See Section 3.2.16.2.3.2 for the list of sources allowed by these Requirements. |
+| **Application Software Supplier** | A supplier of Internet browser software or other relying‐party application software that displays or uses Certificates and incorporates Root Certificates |
 | **Assumed Name** |  Also known as “doing business as”, “DBA”, or “d/b/a” name in the US and “trading as” name in the UK. |
-| **Attestatio Letter** | A letter attesting that Subject Information is correct written by an accountant, lawyer, government official, or other reliable third party customarily relied upon for such information. |
+| **Attestation** | A letter attesting that Subject Information is correct written by an accountant, lawyer, government official, or other reliable third party customarily relied upon for such information. |
 | **Audit Period** |  In a period‐of‐time audit, the period between the first day (start) and the last day of operations (end) covered by the auditors in their engagement. |
 | **Audit Report** | Means a report from a Qualified Auditor stating the Qualified Auditor's opinion on whether an entity's processes and controls comply with the mandatory provisions of the Baseline Requirements. |
 | **Authorization Domain Name** | Means the Domain Name used to obtain authorization for Certificate issuance for a given FQDN. |
-| **Authorized Ports** | One of the following ports: 80 (http), 443 (https), 25 (smtp), 22 (ssh). |
-| **Base Domain Name** | The portion of an applied-for FQDN that is the first domain name node left of a registry-controlled or public suffix plus the registry-controlled or public suffix (e.g. "example.co.uk" or "example.com"). For FQDNs where the right-most domain name node is a gTLD having ICANN Specification 13 in its registry agreement, the gTLD itself may be used as the Base Domain Name. |
-| **Business Entity** | Any entity that is not a Private Organization, Government Entity, or Non-Commercial Entity as defined herein. Examples include, but are not limited to, general partnerships, unincorporated associations, sole proprietorships, etc. |
 | **Basic Constraints** | Means an extension that specifies whether the subject of the Certificate may act as a CA or only as an end-entity |
+| **Baseline Requirements (BR)** | Means the CA/Browser Forum Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates, published at _[https://www.cabforum.org](https://www.cabforum.org/)_. |
 | **Certificate** | Means an electronic document that uses a digital signature to bind a Public Key and an entity. |
-| **Certification Authority** | An organization that is responsible for the creation, issuance, revocation, and management of Certificates. The term applies equally to both Roots CAs and Subordinate CAs. Also known as CA |
+| **Certification Authority** | An organization that is responsible for the creation, issuance, revocation, and management of Certificates. The term applies equally to both Roots CAs and Subordinate CAs. |
 | **CA Infrastructure** | CA Infrastructure	Collectively the infrastructure used by the CA or Delegated Third Party which qualifies as a: <br><br> Certificate Management System; <br> Certificate System; <br> Delegated Third Party System; <br> Issuing System; <br> Root CA System (Air‐Gapped and otherwise); or <br> Security Support System. |
-| **Certification Authority Authorization** | Means a DNS domain holder specify one or more CAs authorized to issue certificates for that domain name. This is described in RFC 8659. Also known as CAA. |
-| **Certificate Approver** | A natural person who is either the Applicant, employed by the Applicant, or an authorized agent who has express authority to represent the Applicant to (i) act as a Certificate Requester and to authorize other employees or third parties to act as a Certificate Requester, and (ii) to approve MC Requests submitted by other Certificate Requesters. The Certificate Approver may also serve as the Designated Individual during the F2F Verification Procedure. |
-| **Certificate Data** | Certificate requests and data related thereto (whether obtained from the Applicant or otherwise) in the CA’s possession or control or to which the CA has access. |
+| **Certification Authority Authorization** | Means a DNS domain holder specify one or more CAs authorized to issue certificates for that domain name. This is described in RFC 8659. |
 | **Certificate Management** | Means the functions that include but are not limited to the following: verification of the identity of an Applicant of a Certificate; authorizing the issuance of Certificates; issuance of Certificates; revocation of Certificates; listing of Certificates; distributing Certificates; publishing Certificates; storing Certificates; storing Private Keys; escrowing Private Keys; generating, issuing, decommissioning, and destruction of Key Pairs; retrieving Certificates in accordance with their particular intended use; and verification of the domain of an Applicant of a Certificate. |
-| **Certificate Management Process** | Processes, practices, and procedures associated with the use of keys, software, and hardware, by which the CA verifies Certificate Data, issues Certificates, maintains a Repository, and revokes Certificates. |
 | **Certificate Management System** | Means a system used by Sectigo to process, approve issuance of, or store Certificates or Certificate status information, including the database, database server, and storage. |
 | **Certificate Manager** | Means the software issued by Sectigo and used by Subscribers to download Certificates. |
 | **Certificate Policy** | Means a statement of the issuer that corresponds to the prescribed usage of a digital Certificate within an issuance context. |
-| **Certificate Profile** | A set of rules that indicates the applicability of a named Certificate to a particular community and/or PKI implementation with common security requirements. |
 | **Certificate Practice Statement** | One of several documents forming the governance framework in which Certificates are created, issued, managed, and used. |
-| **Certificate Requester** | A natural person who is either the Applicant, employed by the Applicant, an authorized agent who has express authority to represent the Applicant, or a third party (such as an ISP or hosting company) that completes and submits a MC Certificate Request on behalf of the Applicant. |
 | **Certificate Revocation List** |  A regularly updated time‐stamped list of revoked Certificates that is created and digitally signed by the CA that issued the Certificates. |
 | **Certificate System** | Means the system used by Sectigo or a delegated third party to access, process, or manage data or provide services related to: <br><br>1. identity validation; <br>2. identity authentication; <br>3. account registration; <br>4. certificate application; <br>5. certificate approval; <br>6. certificate issuance; <br>7. certificate revocation; <br>8. authoritative certificate status; or <br>9. key escrow. |
-| **Combined Mark** | A mark consisting of a graphic design, stylized logo, or image, with words and/or letters having a particular stylized appearance. For greater certainty, a “Combined Mark” includes marks made up of both word and design elements. See Appendix B for mapping of the names used by different trademarks offices to the definition of Combined Mark. |
-| **Common Mark** | A mark or logo used by an Applicant/Subscriber which the Applicant/Subscriber asserts a right to use under common law (or equivalent in civil law countries). The Common Mark may or may not also be a Registered Mark. |
-| **Common Mark Certificate** | A Mark Certificate that contains a Mark Representation that has not been verified as a Registered Mark or Government Mark. |
-| **Confirmation Request** | An appropriate out-of-band communication requesting verification or confirmation of the particular fact at issue. |
-| **Confirming Person** | A position within an Applicant’s organization that confirms the particular fact at issue. |
-| **Conflicting Trademark Owner** | The owner or licensee of a registered trademark who asserts that the Mark Representation in a Mark Certificate is being used in a way that infringes upon the owner’s or licensee’s registered trademark. |
-| **Consuming Entity (”CE”)** | An entity that incorporates and uses the Mark Representation and related data contained in a Mark Certificate in its products and services in accordance with the MC Terms. Consuming Entities include mailbox providers. |
-| **Contract Signer** | A natural person who is either the Applicant, employed by the Applicant, or an authorized agent who has express authority to represent the Applicant, and who has authority on behalf of the Applicant to sign Subscriber Agreements. The Contract Signer may also serve as the Designated Individual during the F2F Verification Procedure. |
-| **Control** | “Control” (and its correlative meanings, “controlled by” and “under common control with”) means possession, directly or indirectly, of the power to: (1) direct the management, personnel, finances, or plans of such entity; (2) control the election of a majority of the directors; or (3) vote that portion of voting shares required for “control” under the law of the entity’s Jurisdiction of Incorporation or Registration but in no case less than 10%. |
-| **Country** | Either a member of the United Nations OR a geographic region recognized as a Sovereign State by at least two UN member nations. |
-| **Court Order of Infringement** | A final order from a court of competent jurisdiction or trademark office tribunal (or equivalent) stating that the Mark Representation contained in a Mark Certificate improperly infringes the registered trademark of a Conflicting Trademark Owner (with details sufficient to identify the trademark and the owner). |
-| **CRL** |  A regularly updated time‐stamped list of revoked Certificates that is created and digitally signed by the CA that issued the Certificates. |
-| **Cross Certificate** | A certificate that is used to establish a trust relationship between two Root CAs. |
-| **CSPRNG** | A random number generator intended for use in cryptographic system. |
-| **Delegated Third Party** | A natural person or Legal Entity that is not the CA, and whose activities are not within the scope of the appropriate CA audits, but is authorized by the CA to assist in the Certificate Management Process by performing or fulfilling one or more of the CA requirements found herein. |
-| **Demand Deposit Account** | A deposit account held at a bank or other financial institution, the funds deposited in which are payable on demand. The primary purpose of demand accounts is to facilitate cashless payments by means of check, bank draft, direct debit, electronic funds transfer, etc. Usage varies among countries, but a demand deposit account is commonly known as a share draft account, a current account, or a checking account. |
-| **Design Mark** | A mark consisting of a graphic design, stylized logo, or image, without words and/or letters. For greater certainty, a “Design Mark” includes marks made up solely of design elements. For Registered Marks, see Appendix B for mapping of the names used by different trademarks offices to the definition of Design Mark. |
-| **Designated Individual** | The person who completes any of the verification procedures described in Appendix G. |
+| **Certificate Type** | The S/MIME Baseline Requirements define Certificate Profiles differentiated by the type of Subject, (for example Mailbox, Organization, Sponsored, Individual) |
+| **Common Criteria** | is a framework in which computer system users can specify their security functional and assurance requirements (SFRs and SARs respectively) in a [Security Target](https://en.wikipedia.org/wiki/Security_Target) (ST), and may be taken from [Protection Profiles](https://en.wikipedia.org/wiki/Protection_Profile) (PPs). It is an [international standard](https://en.wikipedia.org/wiki/International_standard) ([ISO](https://en.wikipedia.org/wiki/International_Organization_for_Standardization)/[IEC](https://en.wikipedia.org/wiki/International_Electrotechnical_Commission) 15408) for [computer security](https://en.wikipedia.org/wiki/Computer_security) certification |
+| **Critical Vulnerability** | A system vulnerability that has a CVSS v2.0 score of 7.0 or higher according to the NVD or an equivalent to such CVSS rating (see http://nvd.nist.gov/home.cfm https://nvd.nist.gov/vuln-metrics/cvss), or as otherwise designated as a Critical Vulnerability by the CA or the CA/Browser Forum. |
 | **Demand Deposit Account** | a deposit account held at a bank or other financial institution, the funds deposited in which are payable on demand. The primary purpose of demand accounts is to facilitate cashless payments by means of check, bank draft, direct debit, electronic funds transfer, etc. Usage varies among countries, but a demand deposit account is commonly known as: a checking account, a share draft account, or a current account |
-| **DNS CAA Email Contact** | The email address defined in [Appendix A.1.1](#a11-caa-contactemail-property). | 
-| **DNS TXT Record Email Contact** | The email address defined in [Appendix A.2.1](#a21-dns-txt-record-email-contact). |
-| **Domain Authorization Document** | Documentation provided by, or a CA’s documentation of a communication with, a Domain Name Registrar, the Domain Name Registrant, or the person or entity listed in WHOIS as the Domain Name Registrant (including any private, anonymous, or proxy registration service) attesting to the authority of an Applicant to request a Certificate for a specific Domain Namespace. |
 | **Domain Contact** | Means the Domain Name Registrant, technical contact, or administrative contract (or the equivalent under a ccTLD) as listed in the WHOIS record of the Base Domain Name or in a DNS SOA record. |
 | **Domain Name** | Means the label assigned to a node in the Domain Name System. |
-| **Domain Namespace** | The set of all possible Domain Names that are subordinate to a single node in the Domain Name System. |
 | **Domain Name Registrant** | Means the person(s) or entity(ies) registered with a Domain Name Registrar as having the right to control how a Domain Name is used, such as the natural person or Legal Entity that is listed as the "Registrant" by WHOIS or the Domain Name Registrar, and sometimes referred to as the "owner" of a Domain Name. |
 | **Domain Name Registrar** | Means a person or entity that registers Domain Names under the auspices of or by agreement with: (i) the Internet Corporation for Assigned Names and Numbers (ICANN), (ii) a national Domain Name authority/registry, or (iii) a Network Information Center (including their affiliates, contractors, delegates, successors, or assigns). |
-| **Expiry Date** | The “Not After” date in a Certificate that defines the end of a Certificate’s validity period. |
-| **F2F Verification Procedure** |** Any of the F2F verification procedures permitted under Appendix G, as chosen by the CA. |
-| **Fully-Qualified Domain Name** | A Domain Name that includes the labels of all superior nodes in the Internet Domain Name System. |
-| **Global Legal Entity Identifier Foundation (GLEIF)** | The organization established by the Financial Stability Board to support the implementation and use of the Legal Entity Identifier (LEI). See https://www.gleif.org. |
-| **Global Legal Entity Identifier Index** | The GLEIF public index of LEI records for those legal entitied identifiable with an LEI.|
-| **Government Agency** | In the context of a Private Organization, the government agency in the Jurisdiction of Incorporation under whose authority the legal existence of Private Organizations is established (e.g., the government agency that issued the Certificate of Incorporation). In the context of Business Entities, the government agency in the jurisdiction of operation that registers business entities. In the case of a Government Entity, the entity that enacts law, regulations, or decrees establishing the legal existence of Government Entities. |
-| **Government Entity** | A government-operated legal entity, agency, department, ministry, branch, or similar element of the government of a country, or political subdivision within such country (such as a state, province, city, county, etc.). |
-| **Government Mark** | A Mark or equivalent granted to or claimed by a government organization (or granted to a private organization or other organization) through official statute, regulation, treaty, or government action as it appears or is described in the statute, regulation, treaty, or government action and confirmed by a Mark Verifying Authority using the procedures prescribed in Section 3.2.17.2. A Mark that has been registered by a Government Entity as a trademark with a Trademark Office is not considered a “Government Mark”. |
-| **Government Mark Certificate** | One type of Verified Mark Certificate. |
-| **Incorporating Agency** | In the context of a Private Organization, the government agency in the Jurisdiction of Incorporation under whose authority the legal existence of the entity is registered (e.g., the government agency that issues certificates of formation or incorporation). In the context of a Government Entity, the entity that enacts law, regulations, or decrees establishing the legal existence of Government Entities. |
-| **Independent Confirmation From Applicant** | Confirmation of a particular fact received by the CA pursuant to the provisions of the Requirements or binding upon the Applicant.
-| **Internal Name** | A string of characters (not an IP address) in a Common Name or Subject Alternative Name field of a Certificate that cannot be verified as globally unique within the public DNS at the time of certificate issuance because it does not end with a Top Level Domain registered in IANA’s Root Zone Database. |
-| **International Organization** | An organization founded by a constituent document, e.g., a charter, treaty, convention or similar document, signed by, or on behalf of, a minimum of two Sovereign State governments. |
+| **Front End/Internal Support System** | Means a system with a public IP address, including a web server, mail server, DNS server, jump host, or authentication server. |
+| **Grace Period** | Means the period during which the Subscriber must make a revocation request. |
+| **Individual Validated** |  Refers to a Certificate Subject that includes only Individual (Natural Person) attributes, rather than attributes linked to an Organization. |
+| **IP Address Registration Authority** | The Internet Assigned Numbers Authority (IANA) or a Regional Internet Registry (RIPE, APNIC, ARIN, AfriNIC, LACNIC). |
 | **Issuing System** | Means a system used to sign Certificates or validity status information. |
-| **Jurisdiction of Incorporation** | In the context of a Private Organization, the country and (where applicable) the state or province or locality where the organization’s legal existence was established by a filing with (or an act of) an appropriate government agency or entity (e.g., where it was incorporated). In the context of a Government Entity, the country and (where applicable) the state or province where the Entity’s legal existence was created by law. |
-| **Jurisdiction of Registration** | In the case of a Business Entity, the state, province, or locality where the organization has registered its business presence by means of filings by a Principal Individual involved in the business. |
-| **Key Generation Script** | A documented plan of procedures for the generation of a CA Key Pair. | 
 | **Key Pair** | The Private Key and its associated Public Key. |
-| **Latin Notary** | A person with legal training whose commission under applicable law not only includes authority to authenticate the execution of a signature on a document but also responsibility for the correctness and content of the document. A Latin Notary is sometimes referred to as a Civil Law Notary. |
 | **Legal Entity** | Means an association, corporation, partnership, proprietorship, trust, government entity, or other entity with legal standing in a country's legal system. |
-| **Legal Entity Identifier (“LEI”)** | LEI is specified in the ISO 17442 and names legal entities in the Global Legal Entity Identifier Index. |
-| **Legal Existence** | A Private Organization, Government Entity, or Business Entity has Legal Existence if it has been validly formed and not otherwise terminated, dissolved, or abandoned. |
-| **Legal Practitioner** | A person who is either a lawyer or a Latin Notary as described in these Requirements and competent to render an opinion on factual claims of the Applicant. |
-| **Linting** | Means a process in which the content of digitally signed data such as a Precertificate [RFC 6962], Certificate, CRL, or OCSP response, or data‐to‐be‐signed object such as a tbsCertificate (as described in RFC 5280, Section 4.1.1.1) is checked for conformance with the profiles and requirements defined in MCRs. |
-| **Mark** | A Combined Mark, Design Mark, or Word Mark. Such Marks may either be (1) registered with a Trademark Office (Registered Mark) or created through government action (Government Mark); or (2) a mark or logo which qualifies to be included in a Mark Certificate. |
-| **Mark Asserting Entity (“MAE”)** | An Applicant for/Subscriber of a Mark Certificate. May be the same as the Applicant and/or Subscriber. |
-| **Mark Certificate** | A certificate that contains subject information and extensions specified in these MC Requirements and that has been verified and issued by a MVA in accordance with these MC Requirements. |
-| **Mark Representation** | A digital representation of a Combined Mark, Design Mark, or Word Mark such as a digital or computer file, containing structured binary or textual data which can be interpreted to recreate (render) a visual representation of the mark so that it can be seen. The Mark Representation will be used as the Logotype Extension under Section 7.1.2.3. |
-| **Mark Verifying Authority (“MVA”)** | The authority who issues a Mark Certificate. Also referred to as a Certification Authority or CA. |
-| **Maximum Validity Period** | 1. The maximum time period for which the issued MC is valid. 2. The maximum period after validation by the CA that certain Applicant information may be relied upon in issuing a MC pursuant to these Requirements. |
-| **MC Authority** | A source other than the Certificate Approver, through which verification occurs that the Certificate Approver is expressly authorized by the Applicant, as of the date of the MC Certificate Request, to take the Request actions described in these Requirements. |
-| **MC Certificate Request** | A request from an Applicant to the CA requesting that the CA issue an MC Certificate to the Applicant, which request is validly authorized by the Applicant and signed by the Certificate Approver. |
-| **MC Mark** | The Mark Representation and Word Mark, if any, contained in a MAE’s Mark Certificate application. |
-| **MC Marks** | Any Mark permitted in a Mark Certificate by the Mark Certificate Requirements. |
-| **MC Terms** | The terms of use that apply to an MC Certificate and to the Mark Representation and related data contained in a Mark Certificate, as set out in Appendix D to these MC Requirements. |
-| **MCR** | Minimum Security Requirements for Issuance of Mark Certificates Requirements. |
-| **Modified Registered Trademark Certificate** | One type of Common Mark Certificate. |
+| **Linting** | Means a process in which the content of digitally signed data such as a Precertificate [RFC 6962], Certificate, CRL, or OCSP response, or data‐to‐be‐signed object such as a tbsCertificate (as described in RFC 5280, Section 4.1.1.1) is checked for conformance with the profiles and requirements defined in S/MIME BRs. |
+| **Mailbox Validated** |  Refers to a Certificate Subject that is limited to (optional) subject:emailAddress and/or subject:serialNumber attributes. |
 | **Multi-Factor Authentication** |  An authentication mechanism consisting of two or more of the following independent categories of credentials (i.e. factors) to verify the user’s identity for a login or other transaction: <br><br> 1. something the user knows (knowledge factor); <br> 2. something the user has (possession factor); and <br> 3. something the user is (inherence factor). Each factor is independent of the other(s). |
 | **Multi-Party Control** |  An access control mechanism which requires two or more separate, authorized users to successfully authenticate with their own unique credentials prior to access being granted. |
-| **Notary** | A notary (or legal equivalent in the applicable jurisdiction), Latin Notary, lawyer, solicitor, or other person or organization in the jurisdiction where the Contract Signer or Certificate Approver (also known as the “Designated Individual”) will be verified whose commission under applicable law includes authority to authenticate the execution of a signature on a document. “Notarize” includes Remote Notarization. |
-| **Notarize** | The process by which the Notary verifies the identity of the Contract Signer or Certificate Approver by means of a government-issued photo ID, observes the Contract Signer or Certificate Approver sign a Verification Document prepared by the CA, and signs and affixes the Notary’s notarization seal or other equivalent method to the Verification Document to indicate the Notarization process has been completed by the Notary. |
-| **Object Identifier** | A unique alphanumeric or numeric identifier registered under the International Organization for Standardization’s applicable standard for a specific object or object class. |
-| **OCSP Responder** | An online server operated under the authority of the CA and connected to its Repository for processing Certificate status requests. See also, Online Certificate Status Protocol. |
-| **Online Certificate Status Protocol** | An online Certificate-checking protocol as defined in RFC6960 that enables Relying Parties and relying-party application software to determine the status of an identified Certificate. See also OCSP Responder. |
-| **Organization validated** |  Refers to a Certificate Subject that includes only Organizational (Legal Entity) attributes, rather than attributes linked to an Individual. |
-| **Parent Company** | A company that Controls a Subsidiary Company. |
-| **Place of Business** | The location of any facility (such as a factory, retail store, warehouse, etc) where the Applicant’s business is conducted. |
+| **Multi‐Perspective Issuance Corroboration** | Means a process by which the determinations made during domain validation and CAA checking by the Primary Network Perspective are corroborated by other Network Perspectives before Certificate issuance. |
+| **Multipurpose Profile** |  The S/MIME Multipurpose Generation profiles are aligned with the more defined Strict Profiles, but with additional options for extKeyUsage and other extensions. This is intended to allow flexibility for crossover use cases between document signing and secure email. |
+| **Network Perspective** | Related to Multi‐Perspective Issuance Corroboration. A system (e.g., a cloud‐hosted server instance) or collection of network components (e.g., a VPN and corresponding infrastructure) for sending outbound Internet traffic associated with a domain control validation method and/or CAA check. The location of a Network Perspective is determined by the point where unencapsulated outbound Internet traffic is typically first handed off to the network infrastructure providing Internet connectivity to that perspective. |
 | **Physically Secure Environment** |  A controlled and protected physical space consisting minimally of a physical environment which is: <br><br> 1. protected by security controls which address the topics outlined in section 4.5.1 of RFC 3647; and <br> 2. designed, built, and maintained in accordance with Risk Assessments conducted by the CA.|
-| **Principal Individual** | An individual of a Private Organization, Government Entity, or Business Entity that is either an owner, partner, managing member, director, or officer, as identified by their title of employment, or an employee, contractor or agent authorized by such entity or organization to conduct business related to the request, issuance, and use of Mark Certificates. |
-| **Prior Use Mark Certificate** | One type of Common Mark Certificate. |
-| **Private Organization** | A non-governmental legal entity (whether ownership interests are privately held or publicly traded) whose existence was created by a filing with (or an act of) the Incorporating Agency or equivalent in its Jurisdiction of Incorporation. |
+| **Primary Network Perspective** | The Network Perspective used by the CA to make the determination of 1) the CA’s authority to issue a Certificate for the requested domain(s) or IP address(es) and 2) the Applicant’s authority and/or domain authorization or control of the requested domain(s) or IP address(es).
+| **Organization validated** |  Refers to a Certificate Subject that includes only Organizational (Legal Entity) attributes, rather than attributes linked to an Individual. |
 | **Private Key** | The cryptographic key of an asymmetric Key Pair that is kept secret by the holder of the Key Pair. It may be used to create digital signatures and/or to decrypt data that were encrypted by the corresponding Public Key. |
-| **Public Key** | The key of a Key Pair that may be publicly disclosed by the holder of the corresponding Private Key and that is used to generate MC signing requests for the CA on behalf of the Subscriber. |
-| **Public Key Infrastructure** | A set of hardware, software, people, procedures, rules, policies, and obligations used to facilitate the trustworthy creation, issuance, management, and use of Certificates and keys based on Public Key Cryptography. |
-| **Publicly-Trusted Certificate** | A Certificate that is trusted by virtue of the fact that its corresponding Root Certificate is distributed as a trust anchor in widely-available application software. |
-| **Qualified Government Information Source** | A database maintained by a Government Entity (e.g. SEC filings) that meets the requirements of Section 3.2.13.6. |
-| **Qualified Government Tax Information Source** | A Qualified Governmental Information Source that specifically contains tax information relating to Private Organizations, Business Entities, or Individuals. |
-| **Qualified Independent Information Source** | A regularly-updated and current, publicly available, database designed for the purpose of accurately providing the information for which it is consulted, and which is generally recognized as a dependable source of such information. |
-| **Qualified Practitioner** | A natural person or Legal Entity that meets the requirements of Section 8.2. |
+| **Public Key** | The cryptographic key of an asymmetric Key Pair that can be made public without compromising the security of the Key Pair. It may be used to verify digital signatures and/or to encrypt data that can be decrypted by the corresponding Private Key. |
 | **Random Value** | Means a value specified by Sectigo to the Applicant that exhibits at least 112 bits of entropy. |
-| **Registered Agent** | An individual or entity that is: (i) authorized by the Applicant to receive service of process and business communications on behalf of the Applicant; and (ii) listed in the official records of the Applicant’s Jurisdiction of Incorporation as acting in the role specified in (i) above. |
-| **Registered Domain Name** | A Domain Name that has been registered with a Domain Name Registrar. A Registered Domain Name may also be called an Organizational Domain. |
-| **Registered Mark Certificate** | One type of Verified Mark Certificate. |
-| **Registered Office** | The official address of a company, as recorded with the Incorporating Agency, to which official documents are sent and at which legal notices are received. |
-| **Registration Agency** | A Governmental Agency that registers business information in connection with an entity’s business formation or authorization to conduct business under a license, charter or other certification. A Registration Agency MAY include, but is not limited to (i) a State Department of Corporations or a Secretary of State; (ii) a licensing agency, such as a State Department of Insurance; or (iii) a chartering agency, such as a state office or department of financial regulation, banking or finance, or a federal agency such as the Office of the Comptroller of the Currency or Office of Thrift Supervision. |
 | **Registration Authority** | Any Legal Entity that is responsible for identification and authentication of subjects of Certificates, but is not a CA, and hence does not sign or issue Certificates. An RA MAY assist in the certificate application process or revocation process or both. When “RA” is used as an adjective to describe a role or function, it does not necessarily imply a separate body, but can be part of the CA. |
-| **Registration Number** | The unique number assigned to a Private Organization by the Incorporating Agency in such entity’s Jurisdiction of Incorporation |
 | **Registration Reference** | An identifier assigned to a Legal Entity. |
-| **Regulated Financial Institution** | A financial institution that is regulated, supervised, and examined by governmental, national, state or provincial, or local authorities. |
 | **Reliable Data Source** |  An identification document or source of data used to verify Subject Identity Information that is generally recognized among commercial enterprises and governments as reliable, and which was created by a third party for a purpose other than the Applicant obtaining a Certificate. |
 | **Reliable Method of Communication** | Means a method of communication, such as a postal/courier delivery address, telephone number, or email address, that was verified using a source other than the Applicant Representative. |
-| **Remote Notarization** | The process by which a Notary Notarizes a document over a live video/audio link while the Notary and the Contract Signer or Certificate Approver are physically in different locations. |
 | **Relying Party** | Means an entity that relies upon the information contained within the Certificate. |
 | **Relying Party Agreement** | means an agreement between Sectigo and a Relying Party that must be read and accepted by a Relying Party prior to validating, relying on or using a Certificate and is available for reference in the Repository. |
 | **Repository** | Means Sectigo's repository, available at _[www.sectigo.com/legal](https://www.sectigo.com/legal)_. |
-| **Required Website Content** | Either a Random Value or a Request Token, together with additional information that uniquely identifies the Subscriber, as specified by the CA. |
-| **Requirements** | The MC Requirements. |
 | **Request Token** | Means a value derived in a method specified by Sectigo which binds a demonstration of control to the certificate request. |
 | **Risk Assessment** | A formal process that: <br><br> 1. Identifies and documents foreseeable internal and external threats to the CA Infrastucture that could result in: <br><br> unauthorized access to the CA Infrastructure; <br> disclosure of data stored in the CA Infrastructure; <br> misuse of the CA Infrastructure; or <br> unapproved alteration or destruction of any part of the CA Infrastructure; <br><br>2. Assesses and documents the likelihood and potential damage of each identified threat, taking into consideration minimally the sensitivity and criticality of the CA Infrastructure; and <br><br>3. Assesses and documents the sufficiency of the policies, procedures, controls, information systems, technology, and other arrangements that the CA has in place to counter each identified threat.|
-| **Root CA** | The top level Certification Authority whose Root Certificate is distributed by Application Software Suppliers and that issues Subordinate CA Certificates. |
 | **Root CA Certificate** | A self‐signed and self‐issued certificate where: <br><br> 1. the issuer and subject of the certificate are the same; and <br> 2. the digital signature of the certificate is: <br> generated using the Private Key of a Key Pair whose corresponding Public Key is bound to the certificate; and <br> verified using the Public Key contained in the certificate.|
 | **Root CA Private Key** |The Private Key associated with a Root CA Certificate. |
 | **Root CA System** | A system used to: <br><br>1. generate a Key Pair whose Private Key is or will be a Root CA Private Key; <br>2. store a Root CA Private Key; or <br>3. create digital signatures using a Root CA Private Key. |
-| **Root Certificate** | The self-signed Certificate issued by the Root CA to identify itself and to facilitate verification of Certificates issued to its Subordinate CAs. |
 | **Sectigo Policy Authority** | Means the entity charged with the maintenance and publication of this CP/CPS. |
 | **Security Support System** | A system or set of systems supporting the security of the CA Infrastructure, which minimally includes: <br><br>1. authentication; <br>2. network boundary control; <br>3. audit logging; <br>4. audit log reduction and analysis; <br>5. vulnerability scanning; <br>6. physical intrusion detection; <br>7. host‐based intrusion detection; and <br>8. network‐based intrusion detection |
-| **Sovereign State** | A state or country that administers its own government, and is not dependent upon, or subject to, another power. |
 | **Sponsor Validated** | Refers to a Certificate Subject which combines Individual (Natural Person) attributes in conjunction with an subject:organizationName (an associated Legal Entity) attribute. Registration for Sponsor‐validated Certificates MAY be performed by an Enterprise RA where the subject:organizationName is either that of the delegated enterprise, or an Affiliate of the delegated enterprise, or that the delegated enterprise is an agent of the named Subject Organization. |
 | **Strict Profile** |  The S/MIME Strict Generation profiles are the long term target profile for S/MIME Certificates with extKeyUsage limited to id-kp-emailProtection, and stricter use of Subject DN attributes and other extensions. |
-| **Subject** | The natural person, device, system, unit, or Legal Entity identified in a Certificate as the Subject. The Subject is the Subscriber. |
-| **Subject Identity Information** | Information that identifies the Certificate Subject. Subject Identity Information does not include a domain name listed in the subjectAltName extension or the Subject commonName field. |
-| **Subsidiary Company** | A company that is controlled by a Parent Company. |
-| **Subordinate CA** | A Certification Authority whose Certificate is signed by the Root CA, or another Subordinate CA. |
-| **Subscriber** | A person, entity, or organization that has applied for and has been issued a Verified Mark Certificate. A Subscriber is a natural person or Legal Entity to whom a Certificate is issued and who is legally bound by a Subscriber Agreement or Terms of Use. |
-| **Subscriber Agreement** | An agreement between the CA and the Applicant/Subscriber that specifies the rights and responsibilities of the parties |
+| **Subject** | The Natural Person, device, system, unit, or Legal Entity identified in a Certificate as the Subject. The Subject is either the Subscriber or a mailbox under the control and operation of the Subscriber. |
+| **Subject Identity Information** | Information that identifies the Certificate Subject. Subject Identity Information does not include a Mailbox Address listed in the subject:commonName or subject:emailAddress fields, or in the subjectAltName extension. |
+| **Subscriber** | Means is an entity that has been issued a Certificate. |
+| **Subscriber Agreement** | Means an agreement that must be read and accepted by an Applicant before applying for a Certificate. The Subscriber Agreement is specific to the digital Certificate product type as presented during the product online order process and is available for reference in the Repository. |
 | **Terms of Use** | Provisions regarding the safekeeping and acceptable uses of a Certificate issued when the Applicant/Subscriber is an Affiliate of the CA or is the CA. |
 | **Trusted Role** | An employee or contractor of a CA or Delegated Third Party who has authorized access to any component of CA Infrastructure. |
-| **Trustworthy System** | Computer hardware, software, and procedures that are: reasonably secure from intrusion and misuse; provide a reasonable level of availability, reliability, and correct operation; are reasonably suited to performing their intended functions; and enforce the applicable security policy. |
-| **Valid Certificate** | A Certificate that passes the validation procedure specified in RFC 5280. |
-| **Validation Specialists** | Someone who performs the information verification duties specified by these Requirements. |
-| **Validity Period** | The period of time measured from the date when the Certificate is issued until the Expiry Date. |
-| **Verification Document** | A document used to verify the identity and relevant information of the Contract Signer or Certificate Approver (acting as the Designated Individual) that is Notarized by a Notary. The Verification Document should: <br>1. List the Contract Signer or Certificate Approver’s name and the address where the Contract Signer or Certificate Approver is located when the Notarization procedure occurs, <br>2. Contain language that the Contract Signer or Certificate Approver confirms the information listed in (1) is correct and a place for the Contract Signer or Certificate Approver to sign the document, and <br>3. Contain appropriate text for the Notary to sign and affix a seal (as appropriate in the jurisdiction) to indicate the Verification Document was Notarized by the Notary. |
-| **Verified Accountant Letter** | A document meeting the requirements specified in Section 3.2.13.2 of these Requirements |
-| **Verified Legal Opinion** | A document meeting the requirements specified in Section 3.2.13.1 of these Requirements. |
-| **Verified Mark Certificate** | A certificate that contains subject information and extensions specified in these MC Requirements and that has been verified and issued by a CA in accordance with these MC Requirements. Additionally, the certificate contains a Mark Representation that has been verified as a Registered Mark or Government Mark. |
-| **Verified Method of Communication** | The use of a telephone number, a fax number, an email address, or postal delivery address, confirmed by the CA in accordance with Section 3.2.8 of the Requirements as a reliable way of communicating with the Applicant. |
-| **Verified Professional Letter** | A Verified Accountant Letter or Verified Legal Opinion. |
 | **WebTrust for Certification Authorities** | Means the current program for CAs located at _[CPA Canada Webtrust Principles and Criteria](https://www.cpacanada.ca/en/business-and-accounting-resources/audit-and-assurance/overview-of-webtrust-services/principles-and-criteria)_. |
-| **WHOIS** | Information retrieved directly from the Domain Name Registrar or registry operator via the protocol defined in RFC 3912, the Registry Data Access Protocol defined in RFC 7482, or an HTTPS website. |
-| **Word Mark** | A mark consisting exclusively of text expressed without regard to the font, style, size or color. For Registered Marks, see Appendix B for mapping of the names used by different trademarks offices to the definition of Word Mark. |
 | **Workstation** | A device, such as a phone, tablet, desktop or laptop computer, which is: <br><br> 1. connected to the same network as CA Infrastructure and/or Network Equipment; and <br> 2. capable of accessing CA Infrastructure and/or Network Equipment |
 | **X.509** | Means the ITU-T standard for Certificates and their corresponding authentication framework |
 
@@ -379,35 +303,32 @@ Acronyms and abbreviations used throughout this document shall stand for the phr
 
 | **Acronym** | **Full Name** |
 | --- | --- |
-| **AICPA** | American Institute of Certified Public Accountants |
-| **ADN** | Authorization Domain Name |
+| **BR** | Baseline Requirements (see Definitions) |
 | **CA** | Certificate Authority |
 | **CAA** | Certification Authority Authorization |
-| **ccTLD** | Country Code Top-Level Domain |
+| **CA/B (or CAB) Forum** | Certificate Authority/Browser (Forum) |
 | **CMS** | Certificate Management System |
 | **CP** | Certificate Policy |
 | **CPS** | Certification Practice Statement |
-| **CRL** | Certificate Revocation List |
+| **CRL(s)** | Certificate Revocation List(s) |
 | **CSR** | Certificate Signing Request |
-| **DBA** | Doing Business As |
-| **DNS** | Domain Name System |
 | **DN** | Distinguished Name |
+| **DNS** | Domain Name System |
+| **DNSSEC** | DNS Security Extensions |
 | **DSA** | Digital Signature Algorithm |
 | **EPKI** | Enterprise Public Key Infrastructure Manager |
 | **ECDSA** | Elliptic Curve Digital Signature Algorithm |
-| **FIPS** | Federal Information Processing Standard |
 | **FIPS PUB** | Federal Information Processing Standards Publication |
 | **FQDN** | fully qualified domain name |
 | **HSM** | Hardware Security Module |
 | **HTTP** | Hypertext Transfer Protocol |
-| **IANA** | Internet Assigned Numbers Authority |
 | **ICANN** | Internet Corporation for Assigned Names and Numbers |
-| **IM** | Instant Messaging |
-| **ISO** | International Organization for Standardization |
 | **ITU** | International Telecommunication Union |
 | **ITU-T** | ITU Telecommunication Standardization Sector |
 | **JoI** | Jurisdiction of Incorporation |
 | **LEI** | Legal Entity Identifier |
+| **MDC** | Multiple Domain Certificate |
+| **MPIC** | Multi-perspective issuance corroboration |
 | **NIST** | National Institute for Standards and Technology |
 | **OCSP** | Online Certificate Status Protocol |
 | **OID** | Object Identifier |
@@ -419,57 +340,12 @@ Acronyms and abbreviations used throughout this document shall stand for the phr
 | **RFC** | Request for Comments |
 | **RSA** | Rivest Shamir Adleman |
 | **SHA** | Secure Hash Algorithm |
-| **SSL** | Secure Sockets Layer |
-| **TLD** | Top-Level Domain |
-| **TLS** | Transport Layer Security |
-| **VoIP** | Voice Over Internet Protocol |
+| **S/MIME** | Secure/Multipurpose Internet Mail Extension(s) |
+| **TSA** | Time Stamping Authority |
 | **UTC** | Coordinated Universal Time |
 | **URL** | Uniform Resource Locator |
-| **BIPM** | International Bureau of Weights and Measures |
-| **BIS** | Bureau of Industry and Security |
-| **CEO** | Chief Executive Officer |
-| **CFO** | Chief Financial Officer |
-| **CIO** | Chief Information Officer |
-| **CISO** | Chief Information Security Officer |
-| **COO** | Chief Operating Officer |
-| **CPA** | Chartered Professional Accountant |
-| **CSO** | Chief Security Officer |
-| **EV** | Extended Validation |
-| **gTLD** | Generic Top-Level Domain |
-| **IFAC** | International Federation of Accountants |
-| **IRS** | Internal Revenue Service |
-| **ISP** | Internet Service Provider |
-| **QGIS** | Qualified Government Information Source |
-| **QTIS** | Qualified Government Tax Information Source |
-| **QIIS** | Qualified Independent Information Source |
-| **SEC** | Securities and Exchange Commission |
-| **UTC(k)** | National realization of Coordinated Universal Time |
 
-### 1.6.3.References
-
-ETSI EN 319 403, Electronic Signatures and Infrastructures (ESI); Trust Service Provider Conformity Assessment - Requirements for conformity assessment bodies assessing Trust Service Providers.  
-ETSI EN 319 411-1, Electronic Signatures and Infrastructures (ESI); Policy and security requirements for Trust Service Providers issuing certificates; Part 1: General requirements.  
-ETSI TS 102 042, Electronic Signatures and Infrastructures (ESI); Policy requirements for certification authorities issuing public key certificates.  
-FIPS 140-2, Federal Information Processing Standards Publication - Security Requirements For Cryptographic Modules, Information Technology Laboratory, National Institute of Standards and Technology, May 25, 2001.  
-FIPS 186-4, Federal Information Processing Standards Publication - Digital Signature Standard (DSS), Information Technology Laboratory, National Institute of Standards and Technology, July 2013.  
-ISO 21188:2006, Public key infrastructure for financial services — Practices and policy framework.  
-Network and Certificate System Security Requirements, v1.7, 4/5/2021.  
-NIST SP 800-89, Recommendation for Obtaining Assurances for Digital Signature Applications, http://csrc.nist.gov/publications/nistpubs/800-89/SP-800-89_November2006.pdf.  
-RFC2119, Request for Comments: 2119, Key words for use in RFCs to Indicate Requirement Levels, Bradner, March 1997.  
-RFC2527, Request for Comments: 2527, Internet X.509 Public Key Infrastructure: Certificate Policy and Certification Practices Framework, Chokhani, et al, March 1999.  
-RFC3647, Request for Comments: 3647, Internet X.509 Public Key Infrastructure: Certificate Policy and Certification Practices Framework, Chokhani, et al, November 2003.  
-RFC3912, Request for Comments: 3912, WHOIS Protocol Specification, Daigle, September 2004.  
-RFC4366, Request for Comments: 4366, Transport Layer Security (TLS) Extensions, Blake-Wilson, etal, April 2006.  
-RFC5019, Request for Comments: 5019, The Lightweight Online Certificate Status Protocol (OCSP) Profile for High-Volume Environments, A. Deacon, et al, September 2007.  
-RFC5280, Request for Comments: 5280, Internet X.509 Public Key Infrastructure: Certificate and Certificate Revocation List (CRL) Profile, Cooper et al, May 2008.  
-RFC6960, Request for Comments: 6960, X.509 Internet Public Key Infrastructure Online Certificate Status Protocol - OCSP. Santesson, Myers, Ankney, Malpani, Galperin, Adams, June 2013.  
-RFC6962, Request for Comments: 6962, Certificate Transparency. B. Laurie, A. Langley, E. Kasper. June 2013.  
-RFC7482, Request for Comments: 7482, Registration Data Access Protocol (RDAP) Query Format, Newton, et al, March 2015.  
-WebTrust for Certification Authorities , SSL Baseline with Network Security, Version 2.0, available at http://www.webtrust.org/homepage-documents/item79806.pdf.  
-RFC8659, Request for Comments: 8659, DNS Certification Authority Authorization (CAA) Resource Record, Hallam-Baker, Stradling, Hoffman-Andrews, November 2019.
-X.509, Recommendation ITU-T X.509 (10/2012) | ISO/IEC 9594-8:2014 (E), Information technology Open Systems Interconnection - The Directory: Public-key and attribute certificate frameworks.  
-
-### 1.6.4.Conventions
+### 1.6.3.Conventions
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in these Requirements shall be interpreted in accordance with RFC 2119.
 
@@ -513,7 +389,7 @@ Sectigo, recognizing its trusted position, makes all reasonable efforts to ensur
 
 # 3.IDENTIFICATION AND AUTHENTICATION
 
-Prior to the issuance of a Certificate, Sectigo will validate an application in accordance with this document that may involve the request by Sectigo to the Applicant for relevant official documentation supporting the application.
+Sectigo offers different Certificate types, for example, to make use S/MIME technology for secure email. Prior to the issuance of a Certificate, Sectigo will validate an application in accordance with this document that may involve the request by Sectigo to the Applicant for relevant official documentation supporting the application.
 
 Sectigo conducts the overall certification management within the Sectigo PKI; either directly or through a Sectigo approved RA.
 
@@ -523,16 +399,20 @@ Sectigo conducts the overall certification management within the Sectigo PKI; ei
 
 Sectigo issues Certificates with null and non-null subject DNs. The constituent elements of the subject DN conform with ITU X.500.
 
+Sectigo does not issue pseudonymous Certificates.
+
 ### 3.1.2.Need for Names to be Meaningful
 
 Sectigo puts meaningful names in both the subjectDN and the issuerDN extensions of Certificates. The names in the Certificates identify the subject and issuer respectively.
 Personal Names SHALL be a meaningful representation of the Subject’s name as verified in the identifying documentation or Enterprise RA records.
 
+CA Certificates that assert this policy SHALL identify the subject as a CA and include the name-space for which the CA is authoritative. For example: 
+c= country, o = Issuer Organization Name, cn = OrganizationX CA-3
 The subject name in CA Certificates MUST match the issuer name in Certificates issued by the CA, as required by the RFC5280.
 
 ### 3.1.3.Anonymity or Pseudonymity of Subscribers
 
-No stipulation.
+Sectigo does not issue pseudonymous Certificates for email use.
 
 ### 3.1.4.Rules for Interpreting Various Name Forms
 
@@ -568,40 +448,83 @@ From time to time, Sectigo MAY modify the requirements related to application in
 
 ### 3.2.1.Method to Prove Possession of Private Key
 
-The Public Key contained in Mark Certificates is not used, Sectigo MAY does not require prove of possession of the associated Private Key.
+Verification of a digital signature is used to determine that:
 
-### 3.2.2.Authentication of Organization and Domain Identity
+- the Private Key corresponding to the Public Key listed in the signer's Certificate created the digital signature, and
+- the signed data associated with this digital signature has not been altered since the digital signature was created.
 
-Authentication of an organization identity is performed through the validation processes specified below and depends on the type of Certificate. Applications for Sectigo Mark Certificates are supported by appropriate documentation to establish the identity of an Applicant.
+The usual means by which Sectigo accepts signed data from an Applicant to prove possession of a Private Key is in the receipt of a PKCS#10 Certificate Signing Request (CSR).
 
-#### 3.2.2.1.Domain Verification
+In the case where key generation is performed under the CA or RA’s direct control, proof of possession is not required.
 
-For each domain name to be included in the Certificate Subject Alterative Name extension, Sectigo verifies the Applicant’s control of the domain name in accordance with the TLS Baseline Requirements, section 3.2.2.4, and maintains a record of the method used for each FQDN;
+### 3.2.2.Validation of mailbox authorization or control
 
-Sectigo uses only the approved methods in Section 3.2.2.4 of the TLS Baseline Requirements and indicated in the Sectigo TLS Certificates CP/CPS to perform this verification.
+This section defines the permitted processes and procedures for confirming the Applicant’s control of Mailbox Addresses to be included in issued Certificates.
+Sectigo SHALL verify that Applicant controls the email accounts associated with all Mailbox Fields referenced in the Certificate or has been authorized by the email account holder to act on the account holder’s behalf.
+
+Sectigo does not delegate the verification of mailbox authorization or control.
+
+Sectigo maintains a record of which validation method was used to validate every domain, as indicated in the TLS Certificates CPS or email address in issued Certificates.
+
+#### 3.2.2.1.Validating authority over mailbox via domain
+
+Sectigo MAY confirm the Applicant has been authorized by the email account holder to act on the account holder’s behalf by verifying the entity’s control over the
+domain portion of the Mailbox Address to be used in the Certificate.
+
+Sectigo uses only the approved methods in Section 3.2.2.4 of the TLS Baseline Requirements and indicated in the TLS Certificates CPS to perform this verification.
 
 For purposes of domain validation, the term Applicant includes the Applicant’s Parent Company, Subsidiary Company, or Affiliate.
 
-#### 3.2.2.2.Attribute collection of organization identity
+#### 3.2.2.2.Validating control over mailbox via email
+
+The only identifying information in the subject DN is the email address of the Subscriber. Sectigo validates the right for the Applicant to use the submitted email address. This is achieved through the delivery via a challenge and response made to the email address submitted during the Certificate application. This challenge and respond method is by using a Random Value.
+
+The Random Value SHALL be unique in each email. The Random Value SHALL remain valid for use in a confirming response for no more than 24 hours from its creation.
+
+Sectigo validates that the Applicant holds the Private Key corresponding with a Public Key to be included in the Certificate by utilizing an online enrollment process whereby Sectigo facilitates the Subscriber generating its key-pair using a specially crafted web page. 
+
+#### 3.2.2.3.Validating applicant as operator of associated mail server(s)
+
+Sectigo MAY confirm the Applicant’s control over each Mailbox Field to be included in the Certificate by confirming control of the SMTP FQDN to which a message delivered to the Mailbox Address should be directed. The SMTP FQDN SHALL be identified using the address resolution algorithm defined in RFC 5321 Section 5.1 which determines which SMTP FQDNs are authoritative for a given Mailbox Address. 
+If more than one SMTP FQDN has been discovered, Sectigo SHALL verify control of an SMTP FQDN following the selection process at RFC 5321 Section 5.1. Aliases in MX record RDATA SHALL NOT be used for this validation method.
+
+#### 3.2.2.4 Validating control over mailbox using ACME extensions
+
+Sectigo MAY confirm the Applicant’s control over each Mailbox Field to be included in a Certificate using ACME for S/MIME as defined in RFC 8823. Sectigo’s ACME server MAY respond to a POST request by sending the Random Value token components via email and SMTP, and then receiving a confirming response utilizing the generated Random Value, in accordance with RFC 8823.
+
+The control over each Mailbox Address SHALL be confirmed using a newly-generated Random Value. The Random Value token components SHALL only be shared in accordance with RFC 8823. As defined by RFC 8823, token-part1 SHALL contain at 
+least 128 bits of entropy and token-part2 SHOULD contain at least 128 bits of entropy.
+Sectigo SHALL not reuse the Random Value for other Certificate Requests. The Random Value SHALL remain valid for use in a confirming response for no more than 24 hours from its creation. Sectigo MAY specify a shorter validity period for Random Values in this document.
+
+Implementations MAY use ACME External Account Binding as defined by RFC 8555.
+
+### 3.2.3.Authentication of Organization Identity
+
+Authentication of an organization identity is performed through the validation processes specified below and depends on the type of Certificate. This includes the  Organization-validated and Sponsor-validated profiles.
+
+#### 3.2.3.1.Attribute collection of organization identity
 
 Sectigo collects and retains evidence supporting the following identity attributes for the Organization:
-
 1. Formal name of the Legal Entity;
 2. A registered Assumed Name for the Legal Entity (if included in the Subject);
 3. An address of the Legal Entity (if included in the Subject);
 4. Jurisdiction of Incorporation or Registration of the Legal Entity; and
 5. Identifier and type of identifier for the Legal Entity.
+The identifier SHALL be included in the Certificate subject:organizationIdentifier 
 
-#### 3.2.3.Validation of organization identity
+#### 3.2.3.2.Validation of organization identity
 
 Sectigo verifies the full legal name and an address (if included in the Certificate Subject) of the Legal Entity Applicant using documentation provided by, or through communication with, at least one of the following:
 1. A government agency in the jurisdiction of the Legal Entity’s creation, existence, or recognition;
-2. A site visit by the CA or a third party who is acting as an agent for the CA; or
-3. An Attestation which includes a copy of supporting documentation used to establish the Applicant’s legal existence, such as a certificate of registration, articles of incorporation, operating agreement, statute, or regulatory act.
+2. A Legal Entity Identifier (LEI) data reference;
+3. A site visit by the CA or a third party who is acting as an agent for the CA; or
+4. An Attestation which includes a copy of supporting documentation used to establish the Applicant’s legal existence, such as a certificate of registration, articles of incorporation, operating agreement, statute, or regulatory act.
 
-Sectigo MAY use the same documentation or communication described in 1 through 3 above to verify both the Applicant’s identity and address.
+Sectigo MAY use the same documentation or communication described in 1 through 4 above to verify both the Applicant’s identity and address.
 
 Sectigo verifies that the status of the Applicant is not designated by labels such as “ceased,” “inactive,” “invalid,” “not current,” or the equivalent. 
+
+When LEI data reference is used, Sectigo verifies that the RegistrationStatus is ISSUED and the EntityStatus is ACTIVE. Sectigo only allows the use of an LEI if the ValidationSources entry is FULLY_CORROBORATED. An LEI SHALL NOT be used if ValidationSources entry is PARTIALLY_CORROBORATED, PENDING, or ENTITY_SUPPLIED_ONLY.
 
 In the case of an Assumed Name to be included in the Certificate, Sectigo verifies that:
 1. The Applicant has registered its use of the Assumed Name with the appropriate government agency for such filings in the jurisdiction of its incorporation or registration; and
@@ -609,22 +532,50 @@ In the case of an Assumed Name to be included in the Certificate, Sectigo verifi
 
 Sectigo MAY rely on an Attestation that indicates the Assumed Name under which the Applicant conducts business, the government agency with which the Assumed Name is registered, and that such filing continues to be valid.
 
+#### 3.2.3.3.Disclosure of verification sources
+
+Sectigo SHALL verify the Registration Reference to be included in the Certificate from a register that is maintained or authorized by the relevant government agency. Sectigo  discloses the authorized sources it uses to verify the Applicant’s creation, existence, or recognition in the repository available on https://infosrc.sectigo.com/avs/web/reg-qgis-src.
+
+Nothing in these Requirements prohibits the use of third‐party vendors to obtain regularly‐updated and current information from the government register provided that the third party obtains the information directly from the government.
+In the case of a LEI data reference, the CA or RA SHALL verify the associated data record with the Global Legal Entity Identifier Foundation.
+
 ### 3.2.4.Authentication of Individual Identity
 
-No Stipulation.
+Authentication of an individual identity is performed through the validation processes specified below and depends on the type of Certificate. This includes Sponsor-validated and Individual-validated Certificate profiles.
+
+Sectigo collects and retains evidence supporting the following identity attributes for the Individual Applicant:
+1. Given name(s) and surname(s), which SHALL be current names;
+2. Address (if displayed in Subject); and
+3. Further information as needed to uniquely identify the Applicant.
+
+#### 3.2.4.1.Attribute collection and validation of individual identity
+
+Sectigo verifies the identity and address of the Applicant in accordance with the S/MIME Baseline Requirements, using:
+
+1. Verify the Applicant's name using a legible copy, which discernibly shows the Applicant's face, of at least one currently valid government issued photo ID (passport, driver's license, military ID, national ID or equivalent document type)
+
+2. Verify the Applicant's address using a form of identification that Sectigo determines to be reliable such as a government ID, utility bill, or bank or credit card statement. Sectigo MAY rely on the same government issued ID that was used to verify the Applicant's name.
+
+Sectigo MAY accept or require, at its discretion, other official documentation supporting an application, possibly including, but not limited to, requiring face to face verification of the Applicant's identity before an authorized agent of Sectigo, an attorney, a CPA, a Latin notary, a notary public or equivalent.
+
+In the case of Sponsor-validated Certificates approved by an Enterprise RA, records maintained by the Enterprise RA SHALL be accepted as evidence of Individual identity. The Enterprise RA SHALL maintain records to satisfy the requirements of Section 1.3.2 and Section 8.8.
+
+In the case of Sponsor-validated Certificates not approved by an Enterprise RA, Sectigo MAY verify the authority or affiliation of an Individual to represent an Organization to be included in the subject:organizationName of the Certificate using an Attestation provided by the Organization and verified in accordance with Section 3.2.8.
+
+Sectigo verifies the certificate request with the Applicant using a Reliable Method of Communication.
 
 ### 3.2.5.Non-Verified Subscriber Information
 
 Notwithstanding the limited warranties provided under this document, Sectigo shall not be responsible for non-verified Subscriber information submitted to Sectigo, or the Sectigo directory or otherwise submitted with the intention to be included in a Certificate.
-Sectigo only includes in Publicly‐Trusted Mark Certificates, Subscriber information that has been verified in accordance with this document.
+Sectigo only includes in Publicly‐Trusted S/MIME Certificates, Subscriber information that has been verified in accordance with this document.
 
 ### 3.2.6.Validation of Authority
 
 Validation of authority involves a determination of whether a person has specific rights, entitlements, or permissions, including the permission to act on behalf of an organization to obtain a Certificate. Validation of authority is dependent on the type of Certificate requested and is performed in accordance with section 3.2.7 of this document.
 
-If the Applicant for a Certificate containing Subject Identity Information is an organization, then Sectigo SHALL use a Verified Method of Communication to verify the authenticity of the Applicant Representative's certificate request.
+If the Applicant for a Certificate containing Subject Identity Information is an organization, then Sectigo SHALL use a Reliable Method of Communication to verify the authenticity of the Applicant Representative's certificate request.
 
-Provided that a Verified Method of Communication is used, Sectigo MAY establish the authenticity of the certificate request directly with the Applicant Representative or with an authoritative source within the Applicant's organization, such as the Applicant's main business offices, corporate offices, human resource offices, information technology offices, or other department that Sectigo deems appropriate.
+Sectigo MAY use the sources listed in section 3.2.3.2.1 to verify the Reliable Method of Communication. Provided that a Reliable Method of Communication is used, Sectigo MAY establish the authenticity of the certificate request directly with the Applicant Representative or with an authoritative source within the Applicant's organization, such as the Applicant's main business offices, corporate offices, human resource offices, information technology offices, or other department that Sectigo deems appropriate.
 
 In addition, Sectigo SHALL establish a process that allows an Applicant to specify the individuals who may request Certificates. If an Applicant specifies, in writing, the individuals who may request a Certificate, then Sectigo SHALL NOT accept any certificate requests that are outside this specification. Sectigo SHALL provide an Applicant with a list of its authorized certificate requesters upon the Applicant's verified written request.
 
@@ -642,14 +593,6 @@ Sectigo verifies the reliability of a Data Source before relying on a it to vali
 
 Sectigo MAY rely upon a letter attesting that Subject Information or other fact is correct. Sectigo SHALL verify that the letter was written by an accountant, lawyer, government official, or other reliable third party in the Applicant’s jurisdiction customarily relied upon for such information.
 An Attestation SHALL include a copy of documentation supporting the fact to be attested. Sectigo SHALL use a Reliable Method of Communication to contact the sender and to confirm the Attestation is authentic.
-
-### 3.2.9.Mark Verification in Common Mark Certificates
-
-Sectigo SHALL perform Common Mark Certificate Verification in accordance with Section 3.2.16 of the MC Requirements.
-
-### 3.2.10.Mark Verification in Verified Mark Certificates
-
-Sectigo SHALL perform Verified Mark Certificate Verification in accordance with Section 3.2.17 of the MC Requirements.
 
 ## 3.3.Identification and Authentication for Re-Key Requests
 
@@ -714,9 +657,21 @@ Sectigo may at its discretion, accept applications via email.
 
 ### 4.1.1.Who can Submit a Certificate Application
 
-Generally, Applicants will complete the online forms made available by Sectigo or by approved RAs or partners at the respective official websites. Under special circumstances, the Applicant MAY submit an application via email; however, this process is available at the discretion of Sectigo or its RAs.
+Generally, Applicants will complete the online forms made available by Sectigo or by approved RAs at the respective official websites. Under special circumstances, the Applicant MAY submit an application via email; however, this process is available at the discretion of Sectigo or its RAs.
 
 Sectigo maintains an internal database of all previously revoked Certificates and previously rejected certificate requests. That database is used to identify subsequent suspicious certificate requests.
+
+EPKI Manager Account Holder applications are made through the EPKI Manager Management Console – a web-based console hosted and supported by Sectigo.
+
+#### 4.1.1.1.EPKI Manager Account Holder Certificate Applications
+
+EPKI Manager Account Holders make the application for a secure email Certificate to be used by a named employee, partner or extranet user under a domain name that Sectigo has validated either belongs to, or MAY legally be used by the EPKI Manager Account holding organization. Validation for adding domains to the EPKI Manager account MAY occur solely using a domain authorization letter.
+
+#### 4.1.1.2.Reseller Partner Certificate Applications
+
+Reseller Partners MAY act as RAs under the practices and policies stated within this document. The RA MAY make the application on behalf of the Applicant pursuant to the Reseller program.
+
+Under such circumstances, the RA is responsible for all the functions on behalf of the Applicant detailed in section 4.1.2 of this document. Such responsibilities are detailed and maintained within the Reseller agreement and guidelines.
 
 ### 4.1.2.Enrollment Process and Responsibilities
 
@@ -724,6 +679,8 @@ All communications among PKI Authorities supporting the Certificate application 
 
 All Certificate Applicants must complete the enrolment process, which may include:
 
+- Generate an RSA or ECC Key Pair and demonstrate to Sectigo ownership of the Private Key associated with the Public Key to be included in the Certificate through the submission of a valid PKCS#10 Certificate Signing Request (CSR) (or SPKAC request for certain email Certificates).
+- Make all reasonable efforts to protect the integrity and confidentiality of the Private Key.
 - Submit to Sectigo a Certificate application, including application information as detailed in this document, a Public Key corresponding to the Private Key of which they are in possession, and agree to the terms of the relevant Subscriber Agreement.
 - Provide proof of identity through the submission of official documentation as requested by Sectigo during the enrolment process.
 
@@ -731,17 +688,28 @@ All Certificate Applicants must complete the enrolment process, which may includ
 
 Information in Certificate applications MUST be verified as accurate before Certificates are issued.
 
-Certificate applications are submitted to either Sectigo or a Sectigo approved RA.
+Certificate applications are submitted to either Sectigo or a Sectigo approved RA. The following table details the entity(s) involved in the processing of Certificate applications. Sectigo issues all Certificates regardless of the processing entity.
+
+| **Certificate Type** | **Enrolment Entity** | **Processing Entity** | **Issuing Authority** |
+| --- | --- | --- | --- |
+| Personal Secure Email Certificate | End Entity Subscriber | Sectigo | Sectigo |
+| Corporate Secure Email Certificate | End Entity Subscriber | EPKI Manager Account Holder | Sectigo |
+
 
 Sectigo performs the applicable certificate validation procedures and as required verifies the completeness, accuracy and authenticity of the information provided by the Applicant prior to issuing a Certificate. The procedure includes:
 
-- Verifying that the Applicant is permitted to obtain a Certificate under the relevant stipulations of this document.
-- For those requests where the Applicant generates its own Key Pair:
-  - Verifying that the Applicant has provided a well-formed, valid certificate signing request, containing a valid signature;
-  - Obtaining a Public Key from the Applicant;
-- Verifying that the Applicant has executed the Subscriber Agreement;
-- Validating that the requested Certificate meets the requirements in section 3.1;
-- Performing the validation procedures set out in section 3.2 and the relevant subsections
+• Verifying that the Applicant is permitted to obtain a Certificate under the relevant stipulations of this document.
+
+• For those requests where the Applicant generates its own Key Pair:
+
+- Verifying that the Applicant has provided a well-formed, valid certificate signing request, containing a valid signature;
+- Obtaining a Public Key from the Applicant;
+
+• Verifying that the Applicant has executed the Subscriber Agreement;
+
+• Validating that the requested Certificate meets the requirements in section 3.1;
+
+• Performing the validation procedures set out in section 3.2 and the relevant subsections
 
 ### 4.2.1.Performing Identification and Authentication Functions
 
@@ -760,7 +728,12 @@ Sectigo's controls MAY also include trade registry transcripts that confirm the 
 
 Sectigo MAY use any means of communication at its disposal to ascertain the identity of an organizational or individual Applicant. Sectigo reserves right of refusal in its absolute discretion.
 
-Sectigo MAY reuse completed validations and/or supporting evidence performed in accordance with Section 3.2.
+Sectigo MAY reuse completed validations and/or supporting evidence performed in accordance with Section 3.2 within the following limits:
+1. Validation of mailbox authorization or control: Completed validation of the control of a mail server SHALL be obtained no more than 398 days prior to issuing the Certificate.
+Completed validation of control of a mailbox in accordance with Section 3.2.2.2 SHALL be obtained no more than 30 days prior to issuing the Certificate.
+2. Authentication of organization identity: Completed validation of organization identity SHALL be obtained no more than 825 days prior to issuing the Certificate.
+Validation of authority SHALL be obtained no more than 825 days prior to issuing the Certificate, unless a contract between Sectigo and the Applicant specifies a different term. For example, the contract MAY include the perpetual assignment of roles until revoked by the Applicant or CA, or until the contract expires or is terminated.
+3. Authentication of individual identity: Completed validation of Individual identity SHALL be obtained no more than 825 days prior to issuing the Certificate.
 
 ### 4.2.2.Approval or Rejection of Certificate Applications
 
@@ -791,7 +764,7 @@ Certificate issuance.
 To corroborate the Primary Network Perspective, a remote Network Perspective’s CAA check response MUST be interpreted as permission to issue, regardless of whether the responses from both Perspectives are byte‐for‐byte identical.
 Additionally, Sectigo MAY consider the response from a remote Network Perspective as corroborating if one or both of the Perspectives experience an acceptable CAA record lookup failure, as defined in this section.
 
-Sectigo processes the issuevmc property tag as specified in RFC 9495. Where the Relevant RRSet contains any issuevmc Property Tags, Sectigo recognizes the following issuer-domain-names, as expressed in the Property Values, as granting authorization for issuance by Sectigo:
+Sectigo processes the issuemail property tag as specified in RFC 9495. Where the Relevant RRSet contains any ‘issuemail’ Property Tags, Sectigo recognizes the following issuer-domain-names, as expressed in the Property Values, as granting authorization for issuance by Sectigo:
 
 - sectigo.com
 - usertrust.com
@@ -801,6 +774,25 @@ For a transitional period, Sectigo also recognizes the following domain names as
 
 - comodo.com
 - comodoca.com
+
+Additionally, Entrust has contractually agreed to allow Sectigo to recognize the following domain names within the ‘issuemail’ tag as granting authorization for issuance by Sectigo.
+
+- entrust.net
+- affirmtrust.com
+
+Sectigo implements Section 3.2.2.9 of the CABF TLS Baseline Requirements regarding MPIC.
+
+#### 4.2.4.1 DNSSEC Validation of CAA records
+
+DNSSEC validation MUST be performed on all DNS queries associated with CAA record lookups performed by the Primary Network Perspective. The DNS resolver used for all DNS queries associated with CAA record lookups performed by the Primary Network Perspective MUST:
+• perform DNSSEC validation using the algorithm defined in RFC 4035 Section 5; and
+• support NSEC3 as defined in RFC 5155; and
+• support SHA‐2 as defined in RFC 4509 and RFC 5702; and
+• properly handle the security concerns enumerated in RFC 6840 Section 4.
+
+Sectigo will not use local policy to disable DNSSEC validation on any DNS query associated with CAA record lookups.
+DNSSEC‐validation errors observed by the Primary Network Perspective (e.g., SERVFAIL) MUST NOT be treated as permission to issue.
+DNSSEC validation MAY be performed on all DNS queries associated with CAA record lookups performed by Remote Network Perspectives as part of Multi‐Perspective Issuance Corroboration.
 
 ## 4.3.Certificate Issuance
 
@@ -827,11 +819,15 @@ Sectigo´s Certificate Systems:
 
 - do not backdate notBefore dates to avoid deadlines, prohibitions, or code-enforced restrictions.
 - have in place pre-issuance mechanisms to reduce the potential mis-issuances that may occur. The use of linting tools help to achieve this goal.
-- performs preissuance and postissuance linting using pkimetal linting tool, which integrates well-known linters.
+  - For email certificates, Sectigo performs preissuance and postissuance linting using pkimetal linting tool, which integrates well-known linters.
 
 ### 4.3.2.Notification to Subscriber by the CA of Issuance of Certificate
 
-Sectigo notifies Subscriber of the issuance of a Certificate either via email and/or through delivery. 
+Sectigo notifies Subscriber of the issuance of a Certificate either via email and/or through delivery. Delivery of Subscriber Certificates to the associated Subscriber is dependent on the Certificate product type:
+
+_Secure Email Certificate: Personal Secure Email, Corporate Secure Email Certificates, Sectigo Personal Authentication Certificates_
+
+Upon issuance of a Personal Secure Email Certificate, Corporate Secure Email Certificate, or Sectigo Personal Authentication Certificates the Subscriber is emailed a collection link using the email provided during the application. The Subscriber must visit the collection link using the same computer from which the original Certificate request was made. The Subscriber's cryptographic service provider software is initiated to ensure the Subscriber holds the Private Key corresponding to the Public Key submitted during application. Pending a successful challenge, the issued Certificate is installed automatically onto the Subscriber's computer.
 
 ### 4.3.3.Refusal to Issue a Certificate
 
@@ -845,7 +841,7 @@ Before a Subscriber can make effective use of its Private Key, the CA SHALL expl
 
 ### 4.4.1.Conduct Constituting Certificate Acceptance
 
-An issued Certificate is delivered via email or downloadable through Sectigo's website. A Subscriber is deemed to have accepted a Certificate when:
+An issued Certificate is either delivered via email or installed on a Subscriber's computer / hardware security module through an online collection method. A Subscriber is deemed to have accepted a Certificate when:
 
 - the Subscriber uses the Certificate, or
 - 30 days pass from the date of the issuance of a Certificate
@@ -856,7 +852,15 @@ A Certificate is published through various means: (1) by Sectigo making the Cert
 
 ### 4.4.3.Notification of Certificate Issuance by the CA to Other Entities
 
-Other than to the Subscriber, Sectigo MAY provide notification of Certificate issuance to certain other entities, such as the applicable Reseller.
+Other than to the Subscriber, Sectigo provides notification of Certificate issuance to certain other entities as detailed below.
+
+#### 4.4.3.1.Reseller Partner
+
+Issued Subscriber Certificates applied for through a Reseller Partner on behalf of the Subscriber are emailed to the administrator contact of the Reseller Partner account. 
+
+#### 4.4.3.2.EPKI Manager Account Holder
+
+Issued Subscriber Certificates applied for through an EPKI Manager Account are emailed to the administrator contact of the account.
 
 ## 4.5.Key Pair and Certificate Usage
 
@@ -912,7 +916,7 @@ Subscriber's conduct constituting acceptance of a renewal Certificate is the sam
 
 ### 4.6.6.Publication of the Renewal Certificate by the CA
 
-Sectigo publishes a renewed Certificate by delivering it to the Subscriber. 
+Sectigo publishes a renewed Certificate by delivering it to the Subscriber. In the limited circumstances where Sectigo publishes a renewed Certificate by alternate means, Sectigo does so by using the LDAP server–a publicly accessible directory of client Certificates.
 
 ### 4.6.7.Notification of Certificate Issuance by the CA to Other Entities
 
@@ -997,7 +1001,9 @@ Sectigo SHALL revoke a Certificate within 24 hours if one or more of the followi
 
 - The Subscriber requests in writing that the CA revoke the Certificate;
 - The Subscriber notifies Sectigo that the original Certificate request was not authorized and does not retroactively grant authorization;
-- Sectigo reasonably believes that the validation of domain authorization for any domain in the Certificate should not be relied upon;
+- Sectigo reasonably believes there has been loss, theft, modification, unauthorized disclosure, or other compromise of the Private Key associated with the Certificate;
+- Sectigo is made aware of a demonstrated or proven method that can easily compute the Subscriber's Private Key based on the Public Key in the Certificate (such as a Debian weak key, see https://wiki.debian.org/SSLkeys);
+- Sectigo reasonably believes that the validation of domain authorization or mailbox control for any Mailbox address in the Certificate should not be relied upon;
 
 Sectigo SHOULD revoke within 24 hours but MUST revoke within 5 days if one or more of the following occurs:
 
@@ -1030,7 +1036,7 @@ Sectigo will revoke a Subordinate CA Certificate within seven (7) days if one or
 
 ### 4.9.2.Who Can Request Revocation
 
-A Subscriber or another appropriately authorized party can request revocation of a Certificate. An authorized party includes an RA, regardless of whether on behalf of the Subscriber may request revocation through their account. Sectigo MAY revoke a Certificate without receiving a request and without reason. Other parties may report suspected Certificate misuse, or other types of fraud, compromise, misuse, inappropriate conduct, or any other matter related to Certificates, using the contact details set out in section 1.5.2.1 of this document.
+A Subscriber or another appropriately authorized party can request revocation of a Certificate. An authorized party includes an RA, regardless of whether on behalf of the Subscriber may request revocation through their account. Sectigo MAY revoke a Certificate without receiving a request and without reason. Other parties may report suspected Private Key Compromise, Certificate misuse, or other types of fraud, compromise, misuse, inappropriate conduct, or any other matter related to Certificates, using the contact details set out in section 1.5.2.1 of this document.
 
 ### 4.9.3.Procedure for Revocation Request
 
@@ -1048,7 +1054,7 @@ The revocation request grace period ("Grace Period") means the period during whi
 
 ### 4.9.5.Time Within which CA Must Process the Revocation Request
 
-Sectigo SHALL process revocation requests in accordance with Sections 4.9.1 and 4.9.5.
+Sectigo SHALL process revocation requests in accordance with BR sections 4.9.1.1 and 4.9.5.
 Within 24 hours after receiving a Certificate Problem Report, Sectigo will investigate the facts and circumstances related to a Certificate Problem Report and provide a preliminary report on its findings to both the Subscriber and the entity who filed the Certificate Problem Report
 
 After reviewing the facts and circumstances, Sectigo will work with the Subscriber and any entity reporting the Certificate Problem Report or other revocation‐related notice to establish whether or not the Certificate will be revoked, and if so, a date on which Sectigo will revoke the Certificate. The period from receipt of the Certificate Problem Report or revocation‐related notice to published revocation SHALL NOT exceed the time frame set forth in Section 4.9.1. 
@@ -1080,7 +1086,7 @@ All CRLs are available via a publicly-accessible HTTP URL.
 **For the status of Subscriber Certificates:**
 
 Sectigo issues a new CRL at least
-(i)	once every 7 days,
+(i)	once every 7 days (all of our certificates include an OCSP pointer),
 (ii)	within 24 hours after revoking a Certificate.
 
 Sectigo includes a monotonically increasing sequence number for each CRL issued.
@@ -1141,7 +1147,11 @@ No stipulation.
 
 ### 4.9.12.Special Requirements for Key Compromise
 
-No Stipulation.
+Sectigo offers some methods for reporting key compromise:
+
+- _[https://secure.sectigo.com/products/RevocationPortal](https://secure.sectigo.com/products/RevocationPortal)_
+- ACME Directory: _[https://acme.sectigo.com/v2/keyCompromise](https://acme.sectigo.com/v2/keyCompromise)_
+- revokeCert API: _[https://acme.sectigo.com/v2/keyCompromise/revokeCert](https://acme.sectigo.com/v2/keyCompromise/revokeCert)_
 
 ### 4.9.13.Circumstances for Suspension
 
@@ -1643,7 +1653,23 @@ Sectigo is not involved in functions associated with the generation, issuance, d
 
 #### 6.1.1.1.Subscriber Key Pairs
 
-No Stipulation.
+In general, unless otherwise noted in this document, Subscriber is solely responsible for the generation of an asymmetric cryptographic Key Pair (RSA or ECDSA) appropriate to the Certificate type being applied for. During application, the Subscriber will generally be required to submit a Public Key and other personal / corporate details in the form of a Certificate Signing Request (CSR) or SPKAC.
+
+Where the Subscriber is generating, managing and/or storing keys in a cloud provider, the subscriber must provide sufficient evidence to prove that all end entity key pairs have been generated: 
+ a. using a trustworthy system, taking all reasonable precautions to prevent any loss, disclosure, or unauthorized use of the private key; or
+ b. directly generated by and stored in the cloud provider crypto module.
+
+Sectigo SHALL reject a certificate request if one or more of the following conditions are met:
+
+1. The Key Pair does not meet the requirements set forth in Section 6.1.5 and/or Section 6.1.6;
+
+2. There is clear evidence that the specific method used to generate the Private Key was flawed;
+
+3. Sectigo is aware of a demonstrated or proven method that exposes the Applicant's Private Key to compromise;
+
+4. Sectigo has previously been made aware that the Applicant's Private Key has suffered a Key Compromise, such as through the provisions of Section 4.9.1;
+
+5. Sectigo is aware of a demonstrated or proven method to easily compute the Applicant's Private Key based on the Public Key (such as a Debian weak key, see _https://wiki.debian.org/SSLkeys)_.
 
 #### 6.1.1.2.CA and subCA Key Pairs
 
@@ -1670,11 +1696,15 @@ All obsolete media from a CA Key ceremony must be disposed of in a secure manner
 
 ### 6.1.2.Private Key Delivery to Subscriber
 
-Where Subscriber keys are generated on Sectigo's servers, they MAY be delivered to the Subscriber over an encrypted communication (at least 128 bits of encryption strength). 
+Where Subscriber keys are generated on Sectigo's servers, they are delivered to the Subscriber over an encrypted communication (at least 128 bits of encryption strength). 
+
+Sectigo does not archive the Subscriber Private Key without authorization by the Subscriber. And never in clear text.
+
+If Sectigo is aware that a Subscriber’s Private Key has been communicated to a person or organization not authorized by the Subscriber, then will revoke all Certificates that include the Public Key corresponding to the communicated Private Key.
 
 ### 6.1.3.Public Key Delivery to Certificate Issuer
 
-The Public Key is delivered to the customer as part of the Certificate.
+Secure Email Certificate requests are generated using the Subscriber's cryptographic service provider software present in the Subscriber's browser and submitted to Sectigo in the form of a PKCS#10 Certificate Signing Request (CSR). The Subscriber's browser generally makes submission automatically.
 
 ### 6.1.4.CA Public Key Delivery to Relying Parties
 
@@ -1684,7 +1714,7 @@ The Public Key of a trust anchor SHALL be provided in a secure manner so that th
 •	Comparison of Certificate hash (fingerprint) against the trust anchor hash made available via authenticated out-of-band sources (note that fingerprints or hashes posted in-band along with the Certificate are not acceptable as an Authentication mechanism); and
 •	Downloading a trust anchor from trusted web sites (e.g., CA web site) secured with a currently valid Certificate of equal or greater assurance level than the Certificate being downloaded and the trust anchor is not in the Certificate Chain for the web site Certificate.
 
-Sectigo's Public Keys are provided to Relying Parties in a few ways. One way is through the Repository. Additionally, Public Keys of Sectigo's Root CAs are embedded in trusted root stores.
+Sectigo's Public Keys are provided to Relying Parties in a few ways. One way is through the Repository. Additionally, Public Keys of Sectigo's Root CAs are embedded in browsers.
 
 ### 6.1.5.Key Sizes
 
@@ -1822,9 +1852,9 @@ When Public Keys are archived, they are archived according to procedures outline
 
 Certificates are valid upon issuance by Sectigo and acceptance by the Subscriber.  
 
-Sectigo verifies all information that is included in Mark Certificates at time intervals of 398 days or less. 
+Sectigo verifies all information that is included in S/MIME Certificates at time intervals of 825 days or less. In the case of legacy S/MIME Certificates, this value is of 1185 days or less.
 
-The expiration of Sectigo's Mark Certificate Root CA Certificates is set out in Table 6.3.2.
+The expiration of Sectigo's Root CA Certificates is set out in Table 6.3.2.
 
 Subordinate CA certificates lifetimes are either the same or shorter than those of the CA by which they are signed.
 
@@ -1832,7 +1862,27 @@ Table 6.3.2
 
 | COMMON\_NAME | VALID\_TO | KEY\_SIZE | SIGNATURE |
 | --- | --- | --- | --- |
-| Sectigo Public BIMI Root R49 | 31/12/2049 | RSA 4096 | sha384WithRSAEncryption |
+| AAA Certificate Services | 31/12/2028 | RSA 2048 | sha1WithRSA |
+| Secure Certificate Services | 31/12/2028 | RSA 2048 | sha1WithRSA |
+| Trusted Certificate Services | 31/12/2028 | RSA 2048 | sha1WithRSA |
+| COMODO Certification Authority | 31/12/2030 | RSA 2048 | sha1WithRSA |
+| COMODO RSA Certification Authority | 18/1/2038 | RSA 4096 | sha384WithRSA |
+| USERTrust RSA Certification Authority | 18/1/2038 | RSA 4096 | sha384WithRSA |
+| COMODO ECC Certification Authority | 18/1/2038 | ECDSA 384 | ecdsa-with-SHA384 |
+| USERTrust ECC Certification Authority | 18/1/2038 | ECDSA 384 | ecdsa-with-SHA384 |
+| Sectigo Public Email Protection Root E46 | 21/3/2046 | ECDSA 384 | ecdsa-with-SHA384 |
+| Sectigo Public Email Protection Root R46 | 21/3/2046 | RSA 4096 | sha384WithRSA |
+| Sectigo Public Root E46 | 21/3/2046 | ECDSA 384 | ecdsa-with-SHA384 |
+| Sectigo Public Root R46 | 21/3/2046 | RSA 4096 | sha384WithRSA |
+| Sectigo Public Time Stamping Root E46 | 21/3/2046 | ECDSA 384 | ecdsa-with-SHA384 |
+| Sectigo Public Time Stamping Root R46 | 21/3/2046 | RSA 4096 | sha384WithRSA |
+| Entrust.net Certification Authority (2048) | 24/7/2029 | RSA 2048 | sha1WithRSAEncryption |
+| Entrust Root Certification Authority - G2 | 7/12/2030 | RSA 2048 | sha256WithRSAEncryption |
+| Entrust Digital Signing Root Certification Authority - DSR1 | 30/12/2040 | RSA 4096 | sha512WithRSAEncryption |
+| Entrust Root Certification Authority | 26/11/2026 | RSA 2048 | sha1WithRSAEncryption |
+| Entrust Root Certification Authority - EC1 | 18/12/2027 | ECDSA 384 | ecdsa-with-SHA384 |
+| Entrust Root Certification Authority - G4 | 27/12/2030 | RSA 4096 | sha256WithRSAEncryption |
+| Entrust SMIME Root CA - 2022 | 07/12/2047 | RSA 4096 | sha384WithRSAEncryption |
 
 Sectigo protects its CA Root Key Pairs in accordance with the audit program compliant infrastructure and this document.
 
@@ -1943,7 +1993,26 @@ Risk Assessment for every issue SHALL be completed within 48 hours and Resolutio
 
 ## 6.8.Time-Stamping
 
-No Stipulation.
+All CA components SHALL regularly synchronize with a time service such as National Institute of Standards and Technology (NIST) Atomic Clock or NIST Network Time Protocol Service. Time derived from the time service SHALL be used for establishing the time of:
+
+- Initial validity type of a Device’s Certificate;  
+- Revocation of a Device’s Certificate;  
+- Posting of CRL updates; and  
+- OCSP or other responses. 
+
+Certificates, CRLs, and other revocation database entries SHALL contain time and date information.
+
+Sectigo operates two Time-Stamping Authorities (TSA). 
+
+Sectigo will issue a new Time-stamp certificate with a new private key every 15 months.
+
+The Sectigo Authenticode time-stamping service is available at the URL:
+
+_[http://timestamp.sectigo.com/authenticode](http://timestamp.sectigo.com/authenticode)_.
+
+Sectigo also offers a RFC3161 TSA, whose URL is:
+
+_[http://timestamp.sectigo.com/rfc3161](http://timestamp.sectigo.com/rfc3161)_.
 
 # 7.CERTIFICATE, CRL, AND OCSP PROFILES
 
@@ -1968,18 +2037,18 @@ A Certificate profile contains fields as specified below:
 
 Typical content of information published on a Sectigo Certificate MAY include but is not limited to the following elements of information:
 
-- Mark Certificates
+- Secure Email Certificates
 
   - Applicant's name or organizational name.
   - Code of Applicant's country.
-  - State.
+  - Locality, state.
   - Issuing certification authority (Sectigo).
   - Applicant's Public Key.
   - Sectigo digital signature.
   - Signing algorithm.
   - Validity period of the digital Certificate.
   - Serial number of the digital Certificate.
-  - Applicant's Mark.
+  - Applicant's e-mail address(es).
 
 Sectigo generates non‐sequential Certificate serial numbers greater than zero (0) containing at least 64 bits of output from a CSPRNG.
 
@@ -1989,16 +2058,19 @@ Certificate versions are all X.509 version 3. The Certificate version number SHA
 
 ### 7.1.2.Certificate Extensions
 
-Certificate extensions are in conformance to RFC 5280 and the MC Requirements.
+Certificate extensions are in conformance to RFC 5280 and the Baseline Requirements.
 
 Enhanced naming is the usage of an extended organization field in an X.509v3 Certificate.
 
 #### 7.1.2.1.Root CAs
 
-Sectigo Root CA Certificates SHALL contain, but are not limited to:
+Sectigo Root CA Certificates contain:
 
 - a basicConstraints extension marked critical. The cA field is set true. The pathLenConstraint is not present.
-- a keyUsage extension marked critical. Bit positions for digitalSignature, keyCertSign and cRLSign are set.
+- a keyUsage extension marked critical. Bit positions for keyCertSign and cRLSign are set. Some Sectigo Root CA certificates also have the digitalSignature bit set.
+- a subjectKeyIdentifier extension not marked critical. It contains a value that is included in the keyIdentifier field of the authorityKeyIdentifier extension in Certificates issued by the Root CA. 
+
+Sectigo Root CA Certificates MAY contain a non-critical cRLDistributionPoints extension containing the HTTP URL of the CA's CRL service.
 
 Sectigo Root CA Certificates do not contain
 - certificatePolicies
@@ -2013,7 +2085,7 @@ Sectigo Subordinate CA certificates contain:
 - a non-critical authorityInformationAccess extension containing the HTTP URL of the Issuing CA's OCSP responder and also containing the HTTP URL of the Issuing CA's certificate.
 - a basicConstraints extension marked critical. The cA field is set true. The pathLenConstraint is often present and the pathLenConstraint is usually set to 0.
 - a keyUsage extension marked critical. Bit positions for keyCertSign and cRLSign are set. The digitalSignature bit is also set if this CA also signs OCSP responses.
-- an ExtendedKeyUsage extension not marked critical. The value 1.3.6.1.5.5.7.3.31 (BrandIndicatorforMessageIdentification) is present. 
+- an ExtendedKeyUsage extension not marked critical. The value id-kp-emailProtection is present. The values id-kp-serverAuth, id-kp-codeSigning, id-kp-timeStamping, and anyExtendedKeyUsage are not present. 
 - a non-critical authorityKeyIdentifier containing a keyIdentifier field and not containing an authorityCertIssuer or authorityCertSerialNumber field
 - a subjectKeyIdentifier extension not marked critical. It contains a value that is included in the keyIdentifier field of the authorityKeyIdentifier extension in Certificates issued by the Subordinate CA.
 
@@ -2026,7 +2098,12 @@ Sectigo Subscriber Certificates contain:
 - a non-critical authorityInformationAccess extension containing the HTTP URL of the Issuing CA's OCSP responder (accessMethod = 1.3.6.1.5.5.7.48.1) and also containing the HTTP URL of the Issuing CA's certificate (accessMethod = 1.3.6.1.5.5.7.48.2).
 - a basicConstraints extension marked critical. The cA field is not set. The pathLenConstraint is not present.
 - a keyUsage extension marked critical. Bit positions for keyCertSign and cRLSign are NOT set.
-- a non-critical extKeyUsage extension containing 1.3.6.1.5.5.7.3.31 (BrandIndicatorforMessageIdentification).
+   - rsaEncryption
+     - Strict, Multipurpose and legacy profile: For signing only, bit positions SHALL be set for digitalSignature. For key management only, bit positions SHALL be set        for keyEncipherment.For dual use, bit positions SHALL be set for digitalSignature and keyEncipherment.
+   - id-ecPublicKey
+     - Strict, Multipurpose and legacy profile: For signing only, bit positions SHALL be set for digitalSignature. For key management only, bit positions SHALL be set        for keyAgreement.For dual use, bit positions SHALL be set for digitalSignature and keyAgreement.
+- a non-critical extKeyUsage extension.
+   - Strict and Multipurpose profile: contain id-kp-emailProtection. Other values are not typically present in emailProtection certificates.
 - a non-critical authorityKeyIdentifier extension. The keyIdentifier field SHALL be present. authorityCertIssuer and authorityCertSerialNumber fields SHALL NOT
 be present.
 - a non-critical subjectAlternativeName
@@ -2045,7 +2122,7 @@ Sectigo does not issue certificates containing:
 1. Extensions that do not apply in the context of the public Internet unless:
  i. such value falls within an OID arc for which the Applicant demonstrates ownership, or
  ii. the Applicant can otherwise demonstrate the right to assert the data in a public context, or
- iii. the extension is defined within an open standards specification and intended for use by other organizations. 
+ iii. the extension is defined within an open standards specification and intended for use by other organizations. A   Certificate that includes such an extension MUST conform to the specifications of the open standard and the S/MIME BRs.
 2. Field or extension values which have not been validated according to the processes and procedures described in this document.
 
 Sectigo does not issue certificates containing semantics that, if included, will mislead a Relying Party about the certificate information verified by Sectigo.
@@ -2054,7 +2131,7 @@ Sectigo does not issue certificates containing semantics that, if included, will
 
 Sectigo Certificates are signed using algorithms with one of these identifiers:
 
-| **Algorithm** | **Object Identifier** |
+| sha-1WithRSAEncryption | OBJECT IDENTIFIER ::= {iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1)pkcs-1(1) 5 } |
 | --- | --- |
 | sha256WithRSAEncryption | OBJECT IDENTIFIER ::= { iso(1)member-body(2) us(840) rsadsi(113549) pkcs(1) pkcs-1(1) 11 } |
 | sha384WithRSAEncryption | OBJECT IDENTIFIER ::= { iso(1)member-body(2) us(840) rsadsi(113549) pkcs(1) pkcs-1(1) 12 } |
@@ -2079,6 +2156,10 @@ For every valid Certification Path (as defined by RFC 5280, Section 6):
 #### 7.1.4.2.Subject Information – Subscriber Certificates
 
 Sectigo represents that it followed the procedure set forth in its CP/CPS to verify that, as of the Certificate's issuance date, all of the Subject Information was accurate.
+
+Sectigo does not include a Mailbox Address in a Mailbox Field except as specified in Section 3.2.2 of this document.
+
+See the profiles document.
 
 #### 7.1.4.3.Subject Information – Root Certificates and Subordinate CA Certificates
 
@@ -2106,12 +2187,47 @@ Sectigo includes Name Constraints in Subordinate CA Certificates when relevant. 
 
 Sectigo does not include the anyExtendedKeyUsage EKU in Name Constrained CA certificates.
 
+#### 7.1.5.1.E-mail Protection
+
+For Name Constrained CAs that include the id-kp-emailProtection extended key usage, the CA certificate includes the Name Constraints X.509v3 extension with constraints on rfc822Name, with at least one name in permittedSubtrees, each such name having its ownership validated.
+
 ### 7.1.6.Certificate Policy Object Identifier
 
-For Subscriber Certificates, Sectigo includes two Policy Object Identifiers:
+Sectigo uses policy OIDs under the arcs:
 
-- 1.3.6.1.4.1.6449.1.2.1.13, indicating adherence to and compliance with this CP/CPS, together with a URL for the webpage where the CP/CPS can be publicly reviewed.
-- 1.3.6.1.4.1.53087.1.1, indicating adherence to and compliance with the Mark Certificates Requirements.
+iso(1)
+ identified-organization(3)
+ dod(6)
+ internet(1)
+ private(4)
+ enterprise(1)
+
+6449
+
+certificates(1)
+ policies(2),
+
+and:
+
+joint-iso-itu-t(2)
+ international-organizations(23)
+ ca-browser-forum(140)
+ certificate-policies(1)
+
+and:
+
+iso(1)
+ identified-organization(3)
+ dod(6)
+ internet(1)
+ private(4)
+ enterprise(1)
+
+5923
+
+See profiles document.
+
+S/MIME Certificates issued to a Subscriber SHALL contain, within the Certificate's certificatePolicies extension, one or more policy identifier(s) that are specified beneath the CA/Browser Forum's reserved policy OID arc of {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1)} (2.23.140.1). The Certificate MAY also contain additional policy identifier(s) defined by Sectigo or other entities.
 
 ### 7.1.7.Usage of Policy Constraints Extension
 
@@ -2119,7 +2235,7 @@ No stipulation.
 
 ### 7.1.8.Policy Qualifiers Syntax and Semantics
 
-Sectigo includes in End Entity Certificates a non-critical Certificate Policies extension as defined in RFC5280. We include a single PolicyInformation extension that includes the Certificate Policy Identifier and MAY contain a single Policy Qualifier referring to the CPS URI but not including a userNotice.
+Sectigo includes in End Entity Certificates a non-critical Certificate Policies extension as defined in RFC5280. We include a single PolicyInformation extension that includes the Certificate Policy Identifier and a single Policy Qualifier referring to the CPS URI but not including a userNotice.
 
 ### 7.1.9.Processing Semantics for the Critical Certificate Policies Extension
 
@@ -2169,6 +2285,7 @@ The Repository MAY include CRL entries that have a CRLreason of certificateHold 
 
 If a reasonCode CRL entry extension is present, the CRLReason MUST indicate the most appropriate reason for revocation of the certificate 
 
+
 ## 7.3.OCSP Profile
 
 Sectigo also publishes Certificate status information using Online Certificate Status Protocol (OCSP). Sectigo's OCSP responders are capable of providing a 'good' or 'revoked' status for all Certificates issued under the terms of this document. If queried for a certificate which was not issued by Sectigo the responder will provide 'unauthorized'. The OCSP responders will give an 'unknown' response for expired Certificates.
@@ -2184,10 +2301,18 @@ The profile of Sectigo OCSP responses is as per this table:
 | Version | 1 (0x0) |
 | Responder ID | Same as the subject key identifier listed in the signing certificate. |
 | Produced At | [the time at which this response was signed] |
-| Hash Algorithm | |
-| Issuer Name Hash | Hash of issuer's DN |
-| Issuer Key Hash | Hash of issuer's public key |
-| Serial Number | CertificateSerialNumber |
+| Responses |
+ |
+| Certificate | ID |
+ |
+|
+ | Hash Algorithm | Sha1 |
+|
+ | Issuer Name Hash | Hash of issuer's DN |
+|
+ | Issuer Key Hash | Hash of issuer's public key |
+|
+ | Serial Number | CertificateSerialNumber |
 | Cert Status | Good/Revoked/Unknown |
 | Revocation Time (if Revoked) | [The time at which the certificate was revoked or placed on hold] |
 | Reason code | If present SHALL contain a value permitted for CRLs, as specified in Section 7.2.2. |
@@ -2232,22 +2357,22 @@ The auditor is independent of Sectigo, and does not have a financial interest, b
 
 ## 8.4.Topics Covered by Assessment
 
-As per current version of _WebTrust for Certification Authorities_ and _WebTrust for Certification Authorities – VMC Requirements_ which can be found at _[http://www.webtrust.org](http://www.webtrust.org/)_
+As per current version of _WebTrust for Certification Authorities_ and _WebTrust for Certification Authorities – S/MIME__Baseline Requirements_ and _WebTrust for Network Security_ which can be found at _[http://www.webtrust.org](http://www.webtrust.org/)_
 
 Topics covered by the annual audit include but are not limited to the following:
--	Business Practices Disclosure, meaning
-  - the CA discloses its business practices, and
-  - the CA provides its services in accordance with its CPS
-- Key Lifecycle Management, meaning
-  - the CA maintains effective controls to provide reasonable assurance that the integrity of keys and Certificates it manages is established and protected throughout their lifecycles. 
-- Certificate Lifecycle Management, meaning that
-  - The CA maintains effective controls to provide reasonable assurance that Subscriber information was properly authenticated for specific registration activities, and
-  - The CA maintains effective controls to provide reasonable assurance that subordinate CA Certificate requests are accurate, authenticated, and approved. 
-- CA Environmental Control, meaning that
-  - the CA maintains effective controls to provide reasonable assurance that
-    - Logical and physical access to CA systems and data is restricted to authorized individuals,
-    -	The continuity of key and Certificate management operations is maintained, and
-    -	CA systems development, maintenance, and operations are properly authorized and performed to maintain CA systems integrity.
+•	Business Practices Disclosure, meaning
+o	the CA discloses its business practices, and
+o	the CA provides its services in accordance with its CPS
+•	Key Lifecycle Management, meaning
+o	the CA maintains effective controls to provide reasonable assurance that the integrity of keys and Certificates it manages is established and protected throughout their lifecycles. 
+•	Certificate Lifecycle Management, meaning that
+o	The CA maintains effective controls to provide reasonable assurance that Subscriber information was properly authenticated for specific registration activities, and
+o	The CA maintains effective controls to provide reasonable assurance that subordinate CA Certificate requests are accurate, authenticated, and approved. 
+•	CA Environmental Control, meaning that
+o	the CA maintains effective controls to provide reasonable assurance that
+- Logical and physical access to CA systems and data is restricted to authorized individuals,
+-	The continuity of key and Certificate management operations is maintained, and
+-	CA systems development, maintenance, and operations are properly authorized and performed to maintain CA systems integrity.
 
 ## 8.5.Actions Taken as a Result of Deficiency
 
@@ -2712,10 +2837,21 @@ Unless otherwise stated in this document, Subscribers shall exclusively be respo
 - Request the revocation of a Certificate in case of an occurrence that materially affects the integrity of a Sectigo Certificate.
 - For acts and omissions of partners and agents, they use to generate, retain, escrow, or destroy their Private Keys.
 
-# Appendix A: ChangeLog
+# Appendix A: Certificate Profiles
+
+See profiles document
+
+# Appendix B: ChangeLog
 
 | Version | Change Description | Date |
 | --- | --- | --- |
-| 1.0.0 | First version according to the MC Requirements | 2026-03-24 |
-| 1.0.1 | Update Subscriber Certificate Policy OIDs | 7-Jul-2026 |
-| 1.0.2 | Update section 1.1 to include the CCADB Policy | 10-Sep-2026 |
+| 1.0 | First version accoridng to the new S/MIME CABF BRs | 31-Aug-2023 | 
+| 1.0.1 | Updated sections 1.6.1, 5.2.1, 5.4.6 and 6.7 due to the new NetSec version 2.0 | 07-Aug-2024 |
+| 1.0.2 | Add CAA Practices for S/MIME | 09-Aug-2024 |
+| 1.0.3 | Created a combined CP/CPS. Add requierements from the CABF NCSSRs. Add recent CABF BRs updates. Combined CP/CPS for S/MIME | 5-Mar-2025 |
+| 1.0.4 | Updated section 5.2.2. Update CAA for S/MIME practices | 10-Mar-2025 |
+| 1.0.5 | Updated section 6.3.2 adding the Entrust root CAs| 12-Sep-2025 |
+| 1.0.6 | Added new section 3.2.2.4 for ACME use for validating mailbox <br> Updated 5.4.8 with clarification on vulnerabilities
+          Added new section 6.7.3 with the timeline for addressing vulnerabilities| 11-Nov-2025 |
+| 1.0.7 | Update of Sectigo Limited legal address | 19-Jan-2026 |
+| 1.0.8 | Added new section 4.2.4.1 regarding DNSSEC for CAA| 26-Mar-2026 |

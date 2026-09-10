@@ -1,8 +1,8 @@
 ---
 title: Sectigo Mark Certificates Certificate Policy and Certification Practice Statement
-version: 1.0.2
+version: 1.0.1
 author: Sectigo Limited
-date: 10-Sep-2026
+date: 2026-07-07
 copyright_header: Copyright Notice
 copyright_notice: Copyright Sectigo Limited 2026. All rights reserved.
 copyright_body: No part of this publication may be reproduced, stored in or introduced into a retrieval system, or transmitted,in any form or by any means (electronic, mechanical, photocopying, recording or otherwise) without prior written permission of Sectigo Limited. Requests for any other permission to reproduce this Sectigo document (as well as requests for copies from Sectigo) must be addressed to
@@ -16,7 +16,7 @@ Sectigo is a Certification Authority (CA) or a Trust Service Provider (TSP) that
 
 ## 1.1.Overview
 
-For issuance of Mark Certificates (MCs) Sectigo conforms to the latest published versions of the Minimum Security Requirements for Issuance of Mark Certificates (MCRs) published at https://bimigroup.org and the CCADB policy. In the event of any inconsistency between this document and those other documents mentioned in this paragraph, those documents take precedence over this document.
+For issuance of Mark Certificates (MCs) Sectigo conforms to the latest published version of the Minimum Security Requirements for Issuance of Mark Certificates (MCRs) published at https://bimigroup.org. In the event of any inconsistency between this document and the MCRs, the MCRs takes precedence over this document.
 
 Sectigo MAY extend, under agreement, membership of its PKI to approved third parties known as Registration Authorities (RAs). The international network of Sectigo RAs share Sectigo's policies, practices, and CA infrastructure to issue Sectigo digital Certificates, or if appropriate, private labeled digital Certificates.
 
@@ -2717,5 +2717,4 @@ Unless otherwise stated in this document, Subscribers shall exclusively be respo
 | Version | Change Description | Date |
 | --- | --- | --- |
 | 1.0.0 | First version according to the MC Requirements | 2026-03-24 |
-| 1.0.1 | Update Subscriber Certificate Policy OIDs | 7-Jul-2026 |
-| 1.0.2 | Update section 1.1 to include the CCADB Policy | 10-Sep-2026 |
+| 1.0.1 | Update Subscriber Certificate Policy OIDs | 2026-07-07 |
