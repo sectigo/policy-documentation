@@ -1,8 +1,8 @@
 ---
 title: Sectigo S/MIME Certificate Policy and Certification Practice Statement
-version: 1.0.8
+version: 1.0.9
 author: Sectigo Limited
-date: 2026-03-26
+date: 10-Sep-2026
 copyright_header: Copyright Notice
 copyright_notice: Copyright Sectigo Limited 2026. All rights reserved.
 copyright_body: No part of this publication may be reproduced, stored in or introduced into a retrieval system, or transmitted,in any form or by any means (electronic, mechanical, photocopying, recording or otherwise) without prior written permission of Sectigo Limited. Requests for any other permission to reproduce this Sectigo document (as well as requests for copies from Sectigo) must be addressed to
@@ -16,7 +16,7 @@ Sectigo is a Certification Authority (CA) or a Trust Service Provider (TSP) that
 
 ## 1.1.Overview
 
-For issuance of Secure Email (S/MIME) Certificates Sectigo conforms to the latest published version of the CAB Forum S/MIME Baseline Requirements (BR) published at https://www.cabforum.org. In the event of any inconsistency between this document and the S/MIME BRs, the S/MIME BRs takes precedence over this document.
+For issuance of Secure Email (S/MIME) Certificates Sectigo conforms to the latest published versions of the CAB Forum S/MIME Baseline Requirements (BR) published at https://www.cabforum.org and the CCADB policy. In the event of any inconsistency between this document and the other documents mentioned in this paragraph, those documents take precedence over this document.
 
 Sectigo MAY extend, under agreement, membership of its PKI to approved third parties known as Registration Authorities (RAs). The international network of Sectigo RAs share Sectigo's policies, practices, and CA infrastructure to issue Sectigo digital Certificates, or if appropriate, private labeled digital Certificates.
 
@@ -2855,3 +2855,5 @@ See profiles document
           Added new section 6.7.3 with the timeline for addressing vulnerabilities| 11-Nov-2025 |
 | 1.0.7 | Update of Sectigo Limited legal address | 19-Jan-2026 |
 | 1.0.8 | Added new section 4.2.4.1 regarding DNSSEC for CAA| 26-Mar-2026 |
+| 1.0.9 | Updated section 1.1 to include the CCADB policy| 10-Sep-2026 |
+
