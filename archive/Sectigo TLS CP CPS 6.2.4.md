@@ -1,8 +1,8 @@
 ---
 title: Sectigo TLS Certificates Certificate Policy and Certification Practice Statement
-version: 6.2.5
+version: 6.2.4
 author: Sectigo Limited
-date: 2026-09-24
+date: 3-Sep-2026
 copyright_header: Copyright Notice
 copyright_notice: Copyright Sectigo Limited 2026. All rights reserved.
 copyright_body: No part of this publication may be reproduced, stored in or introduced into a retrieval system, or transmitted,in any form or by any means (electronic, mechanical, photocopying, recording or otherwise) without prior written permission of Sectigo Limited. Requests for any other permission to reproduce this Sectigo document (as well as requests for copies from Sectigo) must be addressed to
@@ -197,11 +197,28 @@ Attention: Legal Practices
 URL: [https://www.sectigo.com](https://www.sectigo.com/) 
 Email: [legalnotices@sectigo.com](mailto:legalnotices@sectigo.com)
 
-Note: Messages sent to the contact points above are not regarded as Certificate Problem Reports.
-
 #### 1.5.2.1. Problem Reporting Address
 
-To submit a Certificate Problem Report regarding possible misissuance, abuse, fraudulent or malicious use, of Certificates issued by Sectigo, please send email to [sslabuse@sectigo.com](mailto:sslabuse@sectigo.com).
+To report abuse, fraudulent, or malicious use of Certificates issued by Sectigo, please see the supported methods below. All these methods can be found at: https://sectigo.com/support/revocation
+
+We encourage the use of our automated revocation portal, or ACME revokeCert for quickest response to issues requiring revocation.
+
+##### 1.5.2.1.1. Revocation Portal
+
+To revoke one or more certificates issued by Sectigo for which you (i) are the Subscriber or (ii) control the domain or (iii) have in your possession the private key, you may use our automated Revocation Portal here:
+
+- https://secure.sectigo.com/products/RevocationPortal
+
+##### 1.5.2.1.2. ACME revokeCert
+
+To programmatically revoke one or more certificates issued by Sectigo for which you have in your possession the private key, you may use the ACME revokeCert method at this endpoint:
+
+- ACME Directory: https://acme.sectigo.com/v2/keyCompromise
+- revokeCert API: https://acme.sectigo.com/v2/keyCompromise/revokeCert
+
+##### 1.5.2.1.3. Notifying Us Via Email
+
+For other issues or if you are unable to use the above automated revocation methods please send email to [sslabuse@sectigo.com](mailto:sslabuse@sectigo.com)
 
 ### 1.5.3. Person Determining CPS Suitability for the Policy
 
@@ -210,23 +227,6 @@ The Sectigo Policy Authority is responsible for determining the suitability of p
 ### 1.5.4. CPS approval procedures
 
 This document and any subsequent changes, amendments, or addenda, shall be approved by the Sectigo Policy Authority as specified in the _Sectigo Policy Authority (PA) Membership and Procedures_ document.
-
-### 1.5.5 Automated Certificate Revocation
-
-#### 1.5.5.1. Revocation Portal
-
-To revoke one or more certificates issued by Sectigo for which you (i) are the Subscriber or (ii) control the domain or (iii) have in your possession the private key, you may use our automated Revocation Portal.
-
-- To revoke one or more Certificates using a Revocation Token, please use https://secure.sectigo.com/products/RevocationPortalDetails?action=2a
-- To revoke one or more Certificates by providing the Private Key, please use https://secure.sectigo.com/products/RevocationPortalDetails?action=2b
-- If the certificate you want revoked has a Domain Name that you control in its subject (in a subjectAlternativename:dNSName entry), please use https://secure.sectigo.com/products/RevocationPortalDetails?action=3a
-
-#### 1.5.5.2. ACME revokeCert
-
-To programmatically revoke one or more certificates issued by Sectigo for which you have in your possession the private key, you may use the ACME revokeCert method at this endpoint:
-
-- ACME Directory: https://acme.sectigo.com/v2/keyCompromise
-- revokeCert API: https://acme.sectigo.com/v2/keyCompromise/revokeCert
 
 ## 1.6. Definitions and Acronyms
 
@@ -3186,40 +3186,39 @@ E.g., EV Secure Server Certificate. As OV Secure Server Certificate, except:
 
 | Version | Change Description | Date |
 |---|---|---|
-| 5.0 | Update all sections of document to rebrand and bring up to date with BR and Mozilla policies | 2019-02-22 |
-| 5.1 | Add and update EV requirements | 2019-03-19 |
-| 5.1.1 | Add ChangeLog | 2019-04-23 |
-| 5.1.2 | Additions related to Adobe Approved Trust List requirements | 2019-05-06 |
-| 5.1.3 | Amend Section 3.2.2.1 IP verification | 2019-07-22 |
-| 5.1.4 | Clarifications and Mozilla Policy conformance:<br>- 3.2.2.1.2 IP address verification<br>- 4.2.1 automated high risk flagging<br>- 4.3.1 manual intervention required for signing by roots<br>- 6.1.5 permitted public key sizes and algorithms<br>- 6.1.7 restriction on what roots may sign<br>- 7.1.2.5 non-applicability of RFC5280 to CT Pre-Certificates<br>- 7.3 OCSP response profile | 2019-08-12 |
-| 5.1.5 | Documentation fix removing erroneous `organizationName` from DV SSL example profile.<br>Azure Key Vault support added:<br>- 6.1.1 key generation and storage clarification<br>- 7.1.6 policy OID for Azure Key Vault<br>- Appendix C certificate profile | 2019-09-16 |
-| 5.1.6 | Remove unrelated OU fields from subCA and end-entity profiles.<br>Add “[Run by the Issuer]” phrase for Powered Partner subCA certificates.<br>Add InCommon Policy Identifier | 2020-01-15 |
-| 5.1.7 | Formatting fixes and RFC3647 headings added.<br>Replace “Not applicable” with “No stipulation.” | 2020-01-31 |
-| 5.2 | Structural changes:<br>- Move Acronyms and Definitions to Sections 1.6.1 and 1.6.2<br>- Remove Appendices A/B and rename remaining appendices<br>- Add CT and Precertificate definitions (RFC6962)<br>- Explain CT log publishing (4.4.3)<br>- Reference PA procedure document (1.5.4)<br>- Update HSM requirements (6.1.1, 6.1.6)<br>- Fix 6.2.10<br>- Add revocation portal and ACME revokeCert (1.5.2)<br>- Remove expired UTN roots<br>- Rename Certificate Policy Authority to Policy Authority | 2020-05-22 |
-| 5.2.1 | Additional methods for verifying IP address control | 2020-09-21 |
-| 5.2.2 | Added EV JoI data source publication information.<br>Added CRL and OCSP reasonCode requirements.<br>Clarified key compromise reporting via email. | 2020-09-30 |
-| 5.2.3 | Extensive updates including:<br>- Definitions and abbreviations updates<br>- Domain validation method updates (BR references)<br>- Clarifications across sections 3.2.x<br>- OCSP features<br>- Key compromise reporting process<br>- Audit log retention extended to 2 years<br>- Common Criteria option for crypto devices<br>- TLS validity limit to 398 days<br>- CABF OIDs mandatory for CS<br>- Audit report requirements | 2021-05-21 |
-| 5.3 | Updates to acronyms (1.6), validation (3.2.2), CRL issuance frequency (4.9.7).<br>Section title updates and document signing section added.<br>Remove table in 6.1.5 and reference 6.1.3.<br>Additional sites in 9.1.<br>Date format alignment in 6.3.2. | 2021-10-01 |
-| 5.3.1 | Replace table in 2.2 with `https://testsites.sectigo.com`.<br>Clarify section 3.2.3.<br>Remove section 9.17.3. | 2021-11-15 |
-| 5.3.2 | Updates including:<br>- RFC3647 and CABF OIDs references<br>- New section 1.2.1<br>- Clarifications for external RAs<br>- New wildcard validation section<br>- Data source accuracy section<br>- Revocation request clarification<br>- Updates across sections 2–9<br>- Remove Powered Partners<br>- Appendix restructuring | 2022-03-22 |
-| 5.3.3 | Update section 4.3.1 removing OCSP responder signing sentence | 2022-03-28 |
-| 5.3.4 | Revocation site clarification.<br>Adopt Mozilla precertificate requirements (v2.8).<br>Email certificate domain validation update.<br>Reduce code signing cert validity to 10 years.<br>Remove Organizational Units where unnecessary. | 2022-09-14 |
-| 5.3.5 | Clarify adherence to latest CABF docs.<br>Documentation clarification (2.4).<br>Action logging added (4.2.4).<br>NetSec conformance added (6.7).<br>IDN support added.<br>Issuer name byte-for-byte matching requirement added. | 2022-12-09 |
-| 5.3.6 | Remove confidential info from table 1.1.<br>Remove fax.<br>Rename Sectigo systems to Certificate Systems.<br>Update links. | 2023-03-23 |
-| 5.3.7 | Mozilla review updates.<br>Code signing requirement updates.<br>New section 4.9.1.1 for revoking code signing certificates. | 2023-05-17 |
-| 5.4.0 | Add RA definition.<br>Remove SMIME references.<br>Updates across sections 4.x.<br>Key escrow update.<br>Background check clarification.<br>Appendix changes removing CA certificate examples. | 2023-08-31 |
-| 5.4.1 | Section title updates.<br>Clarify OCSP “unknown” response behavior. | 2024-02-07 |
-| 6.0.0 | New CPS version specific to TLS certificates.<br>NetSec v2.0 updates.<br>Remove timestamping section 6.8. | 2024-02-14 |
-| 6.0.1 | Allow Entrust CAA domain names in section 4.2.4 | 2024-12-04 |
-| 6.1.0 | Combined CP/CPS document.<br>Definitions updates.<br>MPIC references added.<br>Revocation section updates.<br>Clarify DBA/tradename handling. | 2025-03-11 |
-| 6.1.1 | Editorial updates from internal self-assessment.<br>Update domain validation methods.<br>CAA clarification.<br>Certificate validity and reuse updates. | 2025-08-01 |
-| 6.1.2 | Update section 6.3.2 to incorporate Entrust Root CAs | 2025-09-12 |
-| 6.1.3 | Add Mass Revocation Plans section (5.7.1.1).<br>Clarify vulnerability handling and remediation timelines. | 2025-11-11 |
-| 6.1.4 | Update Sectigo Limited legal address | 2026-01-19 |
-| 6.1.5 | Add new policies in section 1.1.<br>Update domain and IP validation methods.<br>Update section 4.2.2. | 2026-03-06 |
-| 6.2.0 | TLS CP/CPS converted to MarkDown | 2026-04-07 |
-| 6.2.1 | Add Issuer Domain Name for DNS TXT Record with Persistent Value | 2026-04-20 |
-| 6.2.2 | Clean-up 2025. <br> removal of SHA-1 mentions. | 2026-04-22 |
-| 6.2.3 | Internal review as per BRs self-assessment. | 2026-06-09 |
-| 6.2.4 | Clarifying language regarding id-kp-clientAuth | 2026-09-03 |
-| 6.2.5 | Updated changelog date format. Clarified Certificate Problem Report mechanisms | 2026-09-24 | 
+| 5.0 | Update all sections of document to rebrand and bring up to date with BR and Mozilla policies | 22-Feb-2019 |
+| 5.1 | Add and update EV requirements | 19-Mar-2019 |
+| 5.1.1 | Add ChangeLog | 23-Apr-2019 |
+| 5.1.2 | Additions related to Adobe Approved Trust List requirements | 06-May-2019 |
+| 5.1.3 | Amend Section 3.2.2.1 IP verification | 22-Jul-2019 |
+| 5.1.4 | Clarifications and Mozilla Policy conformance:<br>- 3.2.2.1.2 IP address verification<br>- 4.2.1 automated high risk flagging<br>- 4.3.1 manual intervention required for signing by roots<br>- 6.1.5 permitted public key sizes and algorithms<br>- 6.1.7 restriction on what roots may sign<br>- 7.1.2.5 non-applicability of RFC5280 to CT Pre-Certificates<br>- 7.3 OCSP response profile | 12-Aug-2019 |
+| 5.1.5 | Documentation fix removing erroneous `organizationName` from DV SSL example profile.<br>Azure Key Vault support added:<br>- 6.1.1 key generation and storage clarification<br>- 7.1.6 policy OID for Azure Key Vault<br>- Appendix C certificate profile | 16-Sep-2019 |
+| 5.1.6 | Remove unrelated OU fields from subCA and end-entity profiles.<br>Add “[Run by the Issuer]” phrase for Powered Partner subCA certificates.<br>Add InCommon Policy Identifier | 15-Jan-2020 |
+| 5.1.7 | Formatting fixes and RFC3647 headings added.<br>Replace “Not applicable” with “No stipulation.” | 31-Jan-2020 |
+| 5.2 | Structural changes:<br>- Move Acronyms and Definitions to Sections 1.6.1 and 1.6.2<br>- Remove Appendices A/B and rename remaining appendices<br>- Add CT and Precertificate definitions (RFC6962)<br>- Explain CT log publishing (4.4.3)<br>- Reference PA procedure document (1.5.4)<br>- Update HSM requirements (6.1.1, 6.1.6)<br>- Fix 6.2.10<br>- Add revocation portal and ACME revokeCert (1.5.2)<br>- Remove expired UTN roots<br>- Rename Certificate Policy Authority to Policy Authority | 22-May-2020 |
+| 5.2.1 | Additional methods for verifying IP address control | 21-Sep-2020 |
+| 5.2.2 | Added EV JoI data source publication information.<br>Added CRL and OCSP reasonCode requirements.<br>Clarified key compromise reporting via email. | 30-Sep-2020 |
+| 5.2.3 | Extensive updates including:<br>- Definitions and abbreviations updates<br>- Domain validation method updates (BR references)<br>- Clarifications across sections 3.2.x<br>- OCSP features<br>- Key compromise reporting process<br>- Audit log retention extended to 2 years<br>- Common Criteria option for crypto devices<br>- TLS validity limit to 398 days<br>- CABF OIDs mandatory for CS<br>- Audit report requirements | 21-May-2021 |
+| 5.3 | Updates to acronyms (1.6), validation (3.2.2), CRL issuance frequency (4.9.7).<br>Section title updates and document signing section added.<br>Remove table in 6.1.5 and reference 6.1.3.<br>Additional sites in 9.1.<br>Date format alignment in 6.3.2. | 1-Oct-2021 |
+| 5.3.1 | Replace table in 2.2 with `https://testsites.sectigo.com`.<br>Clarify section 3.2.3.<br>Remove section 9.17.3. | 15-Nov-2021 |
+| 5.3.2 | Updates including:<br>- RFC3647 and CABF OIDs references<br>- New section 1.2.1<br>- Clarifications for external RAs<br>- New wildcard validation section<br>- Data source accuracy section<br>- Revocation request clarification<br>- Updates across sections 2–9<br>- Remove Powered Partners<br>- Appendix restructuring | 22-Mar-2022 |
+| 5.3.3 | Update section 4.3.1 removing OCSP responder signing sentence | 28-Mar-2022 |
+| 5.3.4 | Revocation site clarification.<br>Adopt Mozilla precertificate requirements (v2.8).<br>Email certificate domain validation update.<br>Reduce code signing cert validity to 10 years.<br>Remove Organizational Units where unnecessary. | 14-Sep-2022 |
+| 5.3.5 | Clarify adherence to latest CABF docs.<br>Documentation clarification (2.4).<br>Action logging added (4.2.4).<br>NetSec conformance added (6.7).<br>IDN support added.<br>Issuer name byte-for-byte matching requirement added. | 9-Dec-2022 |
+| 5.3.6 | Remove confidential info from table 1.1.<br>Remove fax.<br>Rename Sectigo systems to Certificate Systems.<br>Update links. | 23-Mar-2023 |
+| 5.3.7 | Mozilla review updates.<br>Code signing requirement updates.<br>New section 4.9.1.1 for revoking code signing certificates. | 17-May-2023 |
+| 5.4.0 | Add RA definition.<br>Remove SMIME references.<br>Updates across sections 4.x.<br>Key escrow update.<br>Background check clarification.<br>Appendix changes removing CA certificate examples. | 31-Aug-2023 |
+| 5.4.1 | Section title updates.<br>Clarify OCSP “unknown” response behavior. | 7-Feb-2024 |
+| 6.0.0 | New CPS version specific to TLS certificates.<br>NetSec v2.0 updates.<br>Remove timestamping section 6.8. | 14-Feb-2024 |
+| 6.0.1 | Allow Entrust CAA domain names in section 4.2.4 | 4-Dec-2024 |
+| 6.1.0 | Combined CP/CPS document.<br>Definitions updates.<br>MPIC references added.<br>Revocation section updates.<br>Clarify DBA/tradename handling. | 11-Mar-2025 |
+| 6.1.1 | Editorial updates from internal self-assessment.<br>Update domain validation methods.<br>CAA clarification.<br>Certificate validity and reuse updates. | 1-Aug-2025 |
+| 6.1.2 | Update section 6.3.2 to incorporate Entrust Root CAs | 12-Sep-2025 |
+| 6.1.3 | Add Mass Revocation Plans section (5.7.1.1).<br>Clarify vulnerability handling and remediation timelines. | 11-Nov-2025 |
+| 6.1.4 | Update Sectigo Limited legal address | 19-Jan-2026 |
+| 6.1.5 | Add new policies in section 1.1.<br>Update domain and IP validation methods.<br>Update section 4.2.2. | 6-Mar-2026 |
+| 6.2.0 | TLS CP/CPS converted to MarkDown | 7-Apr-2026  |
+| 6.2.1 | Add Issuer Domain Name for DNS TXT Record with Persistent Value | 20-Apr-2026 |
+| 6.2.2 | Clean-up 2025. <br> removal of SHA-1 mentions. | 22-Apr-2026 |
+| 6.2.3 | Internal review as per BRs self-assessment. | 9-Jun-2026 |
+| 6.2.4 | Clarifying language regarding id-kp-clientAuth | 3-Sep-2026 |
