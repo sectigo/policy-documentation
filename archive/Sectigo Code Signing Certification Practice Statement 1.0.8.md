@@ -1,8 +1,8 @@
 ---
 title: Sectigo Code Signing Certificates Certificate Policy and Certification Practice Statement
-version: 1.0.9
+version: 1.0.8
 author: Sectigo Limited
-date: 2026-09-30
+date: 10-Sep-2026
 copyright_header: Copyright Notice
 copyright_notice: Copyright Sectigo Limited 2026. All rights reserved.
 copyright_body: No part of this publication may be reproduced, stored in or introduced into a retrieval system, or transmitted,in any form or by any means (electronic, mechanical, photocopying, recording or otherwise) without prior written permission of Sectigo Limited. Requests for any other permission to reproduce this Sectigo document (as well as requests for copies from Sectigo) must be addressed to
@@ -169,11 +169,21 @@ URL: [https://www.sectigo.com](https://www.sectigo.com)
 
 Email: [legalnotices@sectigo.com](mailto:legalnotices@sectigo.com)
 
-Note: Messages sent to the contact points above are not regarded as Certificate Problem Reports.
-
 #### 1.5.2.1. Problem Reporting Address
 
-To submit a Certificate Problem Report regarding possible misissuance, abuse, fraudulent or malicious use, of Certificates issued by Sectigo, please send email to [sslabuse@sectigo.com](mailto:sslabuse@sectigo.com).
+To report abuse, fraudulent, or malicious use of Certificates issued by Sectigo, please see the supported methods below. All these methods can be found at: [https://sectigo.com/support/revocation](https://sectigo.com/support/revocation)
+
+We encourage the use of our automated revocation portal.
+
+##### 1.5.2.1.1. Revocation Portal
+
+To revoke one or more certificates issued by Sectigo for which you (i) are the Subscriber or (ii) have in your possession the private key, you may use our automated Revocation Portal here:
+
+- [https://secure.sectigo.com/products/RevocationPortal](https://secure.sectigo.com/products/RevocationPortal)
+
+##### 1.5.2.1.2. Notifying Us Via Email
+
+For other issues or if you are unable to use the above automated revocation methods please send email to: [signedmalwarealert@sectigo.com](mailto:signedmalwarealert@sectigo.com)
 
 ### 1.5.3. Person Determining CPS Suitability for the Policy
 
@@ -182,15 +192,6 @@ The Sectigo Policy Authority is responsible for determining the suitability of C
 ### 1.5.4. CPS approval procedures
 
 This document and any subsequent changes, amendments, or addenda, shall be approved by the Sectigo Policy Authority as specified in the _Sectigo Policy Authority (PA) Membership and Procedures_ document.
-
-### 1.5.5 Automated Certificate Revocation
-
-#### 1.5.5.1. Revocation Portal
-
-To revoke one or more certificates issued by Sectigo for which you (i) are the Subscriber or (ii) have in your possession the private key, you may use our automated Revocation Portal.
-
-- To revoke one or more Certificates using a Revocation Token, please use https://secure.sectigo.com/products/RevocationPortalDetails?action=2a
-- To revoke one or more Certificates by providing the Private Key, please use https://secure.sectigo.com/products/RevocationPortalDetails?action=2b
 
 ## 1.6. Definitions and Acronyms
 
@@ -2839,12 +2840,11 @@ E.g., EV codesigning certificate. As codeSigning Certificate, except:
 
 | Version | Change Description | Date |
 | --- | --- | --- |
-| 1.0.0 | New version specific for Code Signing certificates. Updated sections 1.6.1, 5.2.1, 5.4.6 and 6.7 due to the new NetSec version 2.0 | 2024-08-26 |
-| 1.0.2 | Combined CP/CPS | 2025-03-05 |
-| 1.0.3 | Update section 5.2.2 | 2025-03-10 |
-| 1.0.4 | Updated section 6.3.2 adding the Entrust root CAs | 2025-09-12 | 
-| 1.0.5 | Update section 6.2.10. Updated section 5.4.8 clarifying vulnerabilties issues. New section 6.7.3 for addressing vulnerabilities timelines | 2025-11-11 |
-| 1.0.6 | Update of Sectigo Limited legal address | 2026-01-19 |          
-| 1.0.7 | Update of the validity period of end entity certificates as per ballot 31 | 2026-03-26 |        
-| 1.0.8 | Update section 1.1 to include the CCADB policy | 2026-09-10 | 
-| 1.0.9 | Updated changelog date format. Clarified Certificate Problem Report mechanisms | 2026-09-30 | 
+| 1.0.0 | New version specific for Code Signing certificates. Updated sections 1.6.1, 5.2.1, 5.4.6 and 6.7 due to the new NetSec version 2.0 | 26-Aug-2024 |
+| 1.0.2 | Combined CP/CPS | 05-Mar-2025 |
+| 1.0.3 | Update section 5.2.2 | 10-Mar-2025 |
+| 1.0.4 | Updated section 6.3.2 adding the Entrust root CAs | 12-Sep-2025 | 
+| 1.0.5 | Update section 6.2.10. Updated section 5.4.8 clarifying vulnerabilties issues. New section 6.7.3 for addressing vulnerabilities timelines | 11-Nov-2025 |
+| 1.0.6 | Update of Sectigo Limited legal address | 19-Jan-2026 |          
+| 1.0.7 | Update of the validity period of end entity certificates as per ballot 31 | 26-Mar-2026 |        
+| 1.0.8 | Update section 1.1 to include the CCADB policy | 10-Sep-2026 | 

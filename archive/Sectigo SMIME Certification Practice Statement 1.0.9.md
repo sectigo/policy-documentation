@@ -1,8 +1,8 @@
 ---
 title: Sectigo S/MIME Certificate Policy and Certification Practice Statement
-version: 1.0.10
+version: 1.0.9
 author: Sectigo Limited
-date: 2026-09-30
+date: 10-Sep-2026
 copyright_header: Copyright Notice
 copyright_notice: Copyright Sectigo Limited 2026. All rights reserved.
 copyright_body: No part of this publication may be reproduced, stored in or introduced into a retrieval system, or transmitted,in any form or by any means (electronic, mechanical, photocopying, recording or otherwise) without prior written permission of Sectigo Limited. Requests for any other permission to reproduce this Sectigo document (as well as requests for copies from Sectigo) must be addressed to
@@ -178,28 +178,36 @@ URL: _[https://www.sectigo.com](https://www.sectigo.com/)_
 
 Email: _[legalnotices@sectigo.com](mailto:legalnotices@sectigo.com)_
 
-Note: Messages sent to the contact points above are not regarded as Certificate Problem Reports.
+#### 1.5.2.1.Problem Reporting Address
 
-#### 1.5.2.1. Problem Reporting Address
+To report abuse, fraudulent, or malicious use of Certificates issued by Sectigo, please see the supported methods below. All these methods can be found at: _[https://sectigo.com/support/revocation](https://sectigo.com/support/revocation)_
 
-To submit a Certificate Problem Report regarding possible misissuance, abuse, fraudulent or malicious use, of Certificates issued by Sectigo, please send email to [sslabuse@sectigo.com](mailto:sslabuse@sectigo.com).
+We encourage the use of our automated revocation portal, or ACME revokeCert for quickest response to issues requiring revocation.
 
-### 1.5.3. Person Determining CPS Suitability for the Policy
+##### 1.5.2.1.1.Revocation Portal
 
-The Sectigo Policy Authority is responsible for determining the suitability of policies illustrated within this document. The Sectigo Policy Authority is also responsible for determining the suitability of proposed changes to this document prior to the publication of an amended edition.
+To revoke one or more certificates issued by Sectigo for which you (i) are the Subscriber or (ii) control the domain or (iii) have in your possession the private key, you may use our automated Revocation Portal here:
 
-### 1.5.4. CPS approval procedures
+- _[https://secure.sectigo.com/products/RevocationPortal](https://secure.sectigo.com/products/RevocationPortal)_
+
+##### 1.5.2.1.2.ACME revokeCert
+
+To programmatically revoke one or more certificates issued by Sectigo for which you have in your possession the private key, you may use the ACME revokeCert method at this endpoint:
+
+- ACME Directory: _[https://acme.sectigo.com/v2/keyCompromise](https://acme.sectigo.com/v2/keyCompromise)_
+- revokeCert API: _[https://acme.sectigo.com/v2/keyCompromise/revokeCert](https://acme.sectigo.com/v2/keyCompromise/revokeCert)_
+
+##### 1.5.2.1.3.Notifying Us Via Email
+
+For other issues or if you are unable to use the above automated revocation methods please send email to: _[sslabuse@sectigo.com](mailto:sslabuse@sectigo.com)_
+
+### 1.5.3.Person Determining CP/CPS Suitability for the Policy
+
+The Sectigo Policy Authority is responsible for determining the suitability of Certificate policies illustrated within this document. The Sectigo Policy Authority is also responsible for determining the suitability of proposed changes to this document prior to the publication of an amended edition.
+
+### 1.5.4.CP/CPS approval procedures
 
 This document and any subsequent changes, amendments, or addenda, shall be approved by the Sectigo Policy Authority as specified in the _Sectigo Policy Authority (PA) Membership and Procedures_ document.
-
-### 1.5.5 Automated Certificate Revocation
-
-#### 1.5.5.1. Revocation Portal
-
-To revoke one or more certificates issued by Sectigo for which you (i) are the Subscriber or (ii) have in your possession the private key, you may use our automated Revocation Portal.
-
-- To revoke one or more Certificates using a Revocation Token, please use https://secure.sectigo.com/products/RevocationPortalDetails?action=2a
-- To revoke one or more Certificates by providing the Private Key, please use https://secure.sectigo.com/products/RevocationPortalDetails?action=2b
 
 ## 1.6.Definitions and Acronyms
 
@@ -2837,15 +2845,15 @@ See profiles document
 
 | Version | Change Description | Date |
 | --- | --- | --- |
-| 1.0 | First version accoridng to the new S/MIME CABF BRs | 2023-08-31 | 
-| 1.0.1 | Updated sections 1.6.1, 5.2.1, 5.4.6 and 6.7 due to the new NetSec version 2.0 | 2024-08-07 |
-| 1.0.2 | Add CAA Practices for S/MIME | 2024-08-09 |
-| 1.0.3 | Created a combined CP/CPS. Add requierements from the CABF NCSSRs. Add recent CABF BRs updates. Combined CP/CPS for S/MIME | 2025-03-05 |
-| 1.0.4 | Updated section 5.2.2. Update CAA for S/MIME practices | 2025-03-10 |
-| 1.0.5 | Updated section 6.3.2 adding the Entrust root CAs| 2025-09-12 |
+| 1.0 | First version accoridng to the new S/MIME CABF BRs | 31-Aug-2023 | 
+| 1.0.1 | Updated sections 1.6.1, 5.2.1, 5.4.6 and 6.7 due to the new NetSec version 2.0 | 07-Aug-2024 |
+| 1.0.2 | Add CAA Practices for S/MIME | 09-Aug-2024 |
+| 1.0.3 | Created a combined CP/CPS. Add requierements from the CABF NCSSRs. Add recent CABF BRs updates. Combined CP/CPS for S/MIME | 5-Mar-2025 |
+| 1.0.4 | Updated section 5.2.2. Update CAA for S/MIME practices | 10-Mar-2025 |
+| 1.0.5 | Updated section 6.3.2 adding the Entrust root CAs| 12-Sep-2025 |
 | 1.0.6 | Added new section 3.2.2.4 for ACME use for validating mailbox <br> Updated 5.4.8 with clarification on vulnerabilities
-          Added new section 6.7.3 with the timeline for addressing vulnerabilities| 2025-11-11 |
-| 1.0.7 | Update of Sectigo Limited legal address | 2026-01-19 |
-| 1.0.8 | Added new section 4.2.4.1 regarding DNSSEC for CAA| 2026-03-26 |
-| 1.0.9 | Updated section 1.1 to include the CCADB policy| 2026-09-10 |
-| 1.0.10 | Updated changelog date format. Clarified Certificate Problem Report mechanisms | 2026-09-30 | 
+          Added new section 6.7.3 with the timeline for addressing vulnerabilities| 11-Nov-2025 |
+| 1.0.7 | Update of Sectigo Limited legal address | 19-Jan-2026 |
+| 1.0.8 | Added new section 4.2.4.1 regarding DNSSEC for CAA| 26-Mar-2026 |
+| 1.0.9 | Updated section 1.1 to include the CCADB policy| 10-Sep-2026 |
+
