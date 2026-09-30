@@ -1,8 +1,8 @@
 ---
 title: "Sectigo eIDAS Certificate Policy and Certification Practice Statement"
-version: "1.1.1"
+version: "1.1.0"
 author: "Sectigo (Europe) S.L."
-date: "2026-09-30"
+date: "August 27, 2026"
 address: "Rambla Catalunya 33, 3º"
 address_line_two: "08007 Barcelona, Spain"
 copyright_header: "Copyright Notice"
@@ -200,37 +200,19 @@ Tel: +44 (0) 161 874 7070
 URL: [www.sectigo.com](www.sectigo.com)  
 Email: _legalnotices@sectigo.com_
 
-Note: Messages sent to the contact points above are not regarded as Certificate Problem Reports.
+To report abuse, fraudulent, or malicious use of Qualified Certificates issued by Sectigo, please send email to _qcabuse@sectigo.com_
 
-#### 1.5.2.1. Problem Reporting Address
+Sectigo also operates different alternatives for requesting a revocation. All these methods can be found at: [https://sectigo.com/support/revocation](https://sectigo.com/support/revocation)
 
-To submit a Certificate Problem Report regarding possible misissuance, abuse, fraudulent or malicious use, of Certificates issued by Sectigo, please send email to [qcabuse@sectigo.com](mailto:qcabuse@sectigo.com).
+We encourage the use of our automated revocation portal, or ACME revokeCert for quickest response to issues requiring revocation.
 
-### 1.5.3. Person Determining CPS Suitability for the Policy
+### 1.5.3. Person determining CPS suitability for the policy
 
-The Sectigo Policy Authority is responsible for determining the suitability of policies illustrated within this document. The Sectigo Policy Authority is also responsible for determining the suitability of proposed changes to this document prior to the publication of an amended edition.
+The Sectigo Policy Authority is responsible for determining the suitability of Certificate policies illustrated within this document. The Sectigo Policy Authority is also responsible for determining the suitability of proposed changes to this document prior to the publication of an amended edition.
 
 ### 1.5.4. CPS approval procedures
 
-This document and any subsequent changes, amendments, or addenda, shall be approved by the Sectigo Policy Authority as specified in the _Sectigo Policy Authority (PA) Membership and Procedures_ document.
-
-### 1.5.5 Automated Certificate Revocation
-
-#### 1.5.5.1. Revocation Portal
-
-To revoke one or more certificates issued by Sectigo for which you (i) are the Subscriber or (ii) control the domain or (iii) have in your possession the private key, you may use our automated Revocation Portal.
-
-- To revoke one or more Certificates using a Revocation Token, please use https://secure.sectigo.com/products/RevocationPortalDetails?action=2a
-- If the certificate you want revoked has a Domain Name that you control in its subject (in a subjectAlternativename:dNSName entry), please use https://secure.sectigo.com/products/RevocationPortalDetails?action=3a
-- To revoke one or more Certificates by providing the Private Key, please use https://secure.sectigo.com/products/RevocationPortalDetails?action=2b
-
-
-#### 1.5.5.2. ACME revokeCert
-
-To programmatically revoke one or more certificates issued by Sectigo for which you have in your possession the private key, you may use the ACME revokeCert method at this endpoint:
-
-- ACME Directory: https://acme.sectigo.com/v2/keyCompromise
-- revokeCert API: https://acme.sectigo.com/v2/keyCompromise/revokeCert
+The Sectigo Policy Authority approves the present document and any subsequent changes, amendments, or addenda, as specified in the _Sectigo Policy Authority (PA) Membership and Procedures_ document.
 
 ## 1.6. Definitions and Acronyms
 
@@ -3420,12 +3402,11 @@ Sectigo QWAC for Legal Person
 
 |**Version**|**Change Description**|**Date**|
 |---|---|---|
-|1.0.0|New combined CP/CPS for Qualified Certificates<br>accordingto the eIDAS regulation| 2025-08-01 |
-|1.0.1|Clarification on 5.4.8 regarding vulnerabilities<br>Added section 5.7.1.1 with the plan for mass<br>revocation<br>Added section 6.7.1 with the timeline for<br>addressingvulnerabilities| 2025-11-11 |
-|1.0.2|Change of addresses for Sectigo (Europe) and for<br>the PolicyAuthority| 2026-02-11 |
-|1.0.3|Review and update from the BRs self-assessment<br>Removal of SHA-1 and update to include the P-<br>521 curve| 2026-06-09 |
-|1.1.0|Markdown conversion|2026-08-27|
-|1.1.1| Updated changelog date format. Clarified Certificate Problem Report mechanisms |2026-09-30|
+|1.0.0|New combined CP/CPS for Qualified Certificates<br>accordingto the eIDAS regulation|August 1, 2025|
+|1.0.1|Clarification on 5.4.8 regarding vulnerabilities<br>Added section 5.7.1.1 with the plan for mass<br>revocation<br>Added section 6.7.1 with the timeline for<br>addressingvulnerabilities|November 11, 2025|
+|1.0.2|Change of addresses for Sectigo (Europe) and for<br>the PolicyAuthority|February 11, 2026|
+|1.0.3|Review and update from the BRs self-assessment<br>Removal of SHA-1 and update to include the P-<br>521 curve|June 9, 2026|
+|1.1.0|Markdown conversion|August 27, 2026|
 
 # Annex D: Bibliography
 

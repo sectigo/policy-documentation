@@ -1,8 +1,8 @@
 ---
 title: Sectigo Document Signing Certificates Certificate Policy and Certification Practice Statement
-version: 1.1.1
+version: 1.1.0
 author: Sectigo Limited
-date: 2026-09-30
+date: 2026-09-11
 copyright_header: Copyright Notice
 copyright_notice: Copyright Sectigo Limited 2026. All rights reserved.
 copyright_body: No part of this publication may be reproduced, stored in or introduced into a retrieval system, or transmitted,in any form or by any means (electronic, mechanical, photocopying, recording or otherwise) without prior written permission of Sectigo Limited. Requests for any other permission to reproduce this Sectigo document (as well as requests for copies from Sectigo) must be addressed to
@@ -139,28 +139,22 @@ Attention: Legal Practices
 URL: _https://www.sectigo.com_
 Email: _legalnotices@sectigo.com_
 
-Note: Messages sent to the contact points above are not regarded as Certificate Problem Reports.
-
 #### 1.5.2.1. Problem Reporting Address
 
-To submit a Certificate Problem Report regarding possible misissuance, abuse, fraudulent or malicious use, of Certificates issued by Sectigo, please send email to [sslabuse@sectigo.com](mailto:sslabuse@sectigo.com).
+To report abuse, fraudulent, or malicious use of Certificates issued by Sectigo, please send
+email to:
+
+- _sslabuse@sectigo.com_
+
+See the supported methods below. All these methods can be found at: https://sectigo.com/support/revocation
 
 ### 1.5.3. Person Determining CPS Suitability for the Policy
 
-The Sectigo Policy Authority is responsible for determining the suitability of policies illustrated within this document. The Sectigo Policy Authority is also responsible for determining the suitability of proposed changes to this document prior to the publication of an amended edition.
+The Sectigo Policy Authority is responsible for determining the suitability of Certificate policies illustrated within this CP/CPS. The Sectigo Policy Authority is also responsible for determining the suitability of proposed changes to the CP/CPS prior to the publication of an amended edition.
 
 ### 1.5.4. CPS approval procedures
 
-This document and any subsequent changes, amendments, or addenda, shall be approved by the Sectigo Policy Authority as specified in the _Sectigo Policy Authority (PA) Membership and Procedures_ document.
-
-### 1.5.5 Automated Certificate Revocation
-
-#### 1.5.5.1. Revocation Portal
-
-To revoke one or more certificates issued by Sectigo for which you (i) are the Subscriber or (ii) have in your possession the private key, you may use our automated Revocation Portal.
-
-- To revoke one or more Certificates using a Revocation Token, please use https://secure.sectigo.com/products/RevocationPortalDetails?action=2a
-- To revoke one or more Certificates by providing the Private Key, please use https://secure.sectigo.com/products/RevocationPortalDetails?action=2b
+This CP/CPS and any subsequent changes, amendments, or addenda shall be approved by the Sectigo Policy Authority as specified in the _Sectigo Policy Authority (PA) Membership and Procedures_ document.
 
 ## 1.6. Definitions and Acronyms
 
@@ -2644,5 +2638,4 @@ All dates are in the ISO 8601 format.
 | 1.0.5 | Updated section 6.3.2 to incorporate Entrust Root CAs | 2025-09-12 |
 | 1.0.6 | Added clarifications on some sections<br>Updated 5.4.8 with timing for addressing vulnerabilities<br>Added new OID for document signing going forward in section 7.1.6 | 2025-12-05 |
 | 1.0.7 | Update of Sectigo Limited legal address | 2026-01-19 |
-| 1.1.0 | Conversion to Markdown. <br> Changelog Date Realignment <br> Vulnerability Management updated timelines <br> Clarify adherence to CCADB policy | 2026-01-19 |
-| 1.1.1 | Clarified Certificate Problem Report mechanisms | 2026-09-30 | 
+| 1.1.0 | Converstion to Markdown. <br> Changelog Date Realignment <br> Vulnerability Management updated timelines <br> Clarify adherence to CCADB policy | 2026-09-11 |
