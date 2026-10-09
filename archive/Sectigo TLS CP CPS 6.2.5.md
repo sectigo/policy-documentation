@@ -1,8 +1,8 @@
 ---
 title: Sectigo TLS Certificates Certificate Policy and Certification Practice Statement
-version: 6.2.6
+version: 6.2.5
 author: Sectigo Limited
-date: 2026-10-09
+date: 2026-09-24
 copyright_header: Copyright Notice
 copyright_notice: Copyright Sectigo Limited 2026. All rights reserved.
 copyright_body: No part of this publication may be reproduced, stored in or introduced into a retrieval system, or transmitted,in any form or by any means (electronic, mechanical, photocopying, recording or otherwise) without prior written permission of Sectigo Limited. Requests for any other permission to reproduce this Sectigo document (as well as requests for copies from Sectigo) must be addressed to
@@ -39,7 +39,7 @@ This document is a public statement of the policies and practices of Sectigo and
 
 This document is structured in accordance with the Internet Engineering Task Force (IETF) standard RFC 3647.
 
-OIDs found in Certificates include but are not limited to the designated reserved policy identifiers in the Certificate Policy extension as specified in the CA/Browser Forum TLS Baseline Requirements and EV Guidelines.
+OIDs found in Certificates reliant upon CAB Forum requirements and guidelines include the designated reserved policy identifiers in the Certificate Policy extension as specified in the CAB Forum TLS Baseline Requirements and EV Guidelines.
 
 ### 1.2.1. Revisions
 
@@ -58,9 +58,8 @@ In its role as a CA, Sectigo provides Certificate services within the Sectigo PK
 - Upon receipt of a valid request to revoke the Certificate from a person authorized to request revocation using the revocation methods detailed in this document, revoke a Certificate issued for use within the Sectigo PKI,
 - Publish CRLs on a regular basis, in accordance with the applicable Certificate Policy and with provisions described in this document,
 - Distribute issued Certificates in accordance with the methods detailed in this document,
-- Update CRLs in a timely manner as detailed in this document.
-
-Sectigo MAY notify Subscribers via email (or any other method) of the imminent expiry of their Sectigo issued Certificate.
+- Update CRLs in a timely manner as detailed in this document,
+- Notify Subscribers via email (or any other method) of the imminent expiry of their Sectigo issued Certificate (for a period disclosed in this document).
 
 ### 1.3.2. Registration Authorities
 
@@ -87,7 +86,7 @@ Sectigo operates several intermediate CAs from which it issues certificates for 
 
 Sectigo operates its own internal RA that allows retail customers as well as all customers of Reseller Partners along with some of Sectigo's Web Host Resellers to manage their Certificate lifecycle, including application, issuance, renewal and revocation. Sectigo's RA adheres to this document.
 
-For the issuance of Secure Server/TLS Certificates this RA is also equipped with automated systems that validate domain control. 
+For the issuance of Secure Server/TLS Certificates this RA is also equipped with automated systems that validate domain control. For that minority of Secure Server/TLS Certificates for which the validation of domain control is not possible by completely automated means, the specially trained and vetted staff that Sectigo employs in its RA have the ability to cause the issuance of Certificates - but only when they are authenticated to Sectigo's issuance systems using two-factor authentication.
 
 Sectigo's internal RA, together with its staff and systems, all fall within the scope of Sectigo's audit certification.
 
@@ -118,6 +117,26 @@ The CAs and RAs operating under this document MAY require the services of other 
 
 Sectigo has several categories of partner which assist in the provision of certification services.
 
+#### 1.3.5.1. Reseller Partners
+
+Sectigo operates a Reseller Partner network that allows authorized partners to integrate Sectigo digital Certificates into their own product portfolios. Reseller Partners are responsible for referring digital Certificate customers to Sectigo, who maintain full control over the Certificate lifecycle process, including application, issuance, renewal and revocation. Due to the nature of the reseller program, the Reseller Partner must authorize a pending customer order made through its Reseller Partner account prior to Sectigo instigating the validation of such Certificate orders. All Reseller Partners are required to provide proof of organizational status (refer to section 3.2.2 of this document for examples of documentation required) and must enter into a Sectigo Reseller Partner agreement prior to being provided with Reseller Partner facilities.
+
+The Web Host Reseller program is a specific type of a reseller partner that allows organizations providing hosting facilities to manage the Certificate lifecycle on behalf of their hosted customers. Such Web Host Resellers are permitted to apply for Secure Server/TLS Certificates on behalf of their hosted customers.
+
+All Web Host Resellers are required to provide proof of organizational status (refer to section 3.2.2 of this document for examples of documentation required) and must enter into a Sectigo Web Host Reseller agreement prior to being provided with Web Host Reseller facilities.
+
+Some Web Host Resellers MAY be designated as external RAs.
+
+#### 1.3.5.2. EPKI Manager Accounts
+
+Sectigo Enterprise PKI (EPKI) Manager is a fully outsourced enterprise public key infrastructure service that allows authorized EPKI Manager account holders to control the entire Certificate lifecycle process, including application, issuance, renewal and revocation, for Certificates designated to company secure servers.
+
+These accounts are able to streamline the verification and issuance process by restricting the subject identifying information in the Certificates to refer only to the organization's name and address previously verified by Sectigo.
+
+EPKI account holders do not perform the initial validation of domain control for Secure Server/TLS Certificates. This element of the validation of Secure Server/TLS Certificates is always performed by Sectigo's internal RA as described in this document.
+
+The EPKI Manager account holder is obliged by contract to request Certificates only for legitimate company secure servers.
+
 ## 1.4. Certificate Usage
 
 A digital Certificate is formatted data that cryptographically binds an identified Subscriber with a Public Key. A digital Certificate allows an entity taking part in an electronic transaction to prove its identity to other participants in such transaction. Digital Certificates are used in commercial environments as a digital equivalent of an identification card.
@@ -136,11 +155,13 @@ As the suggested usage for a digital Certificate differs on a per application ba
 
 Secure Server Certificates, also known as SSL or TLS certificates, facilitate the exchange of encryption keys in order to enable the encrypted communication of information over the Internet between the user of an Internet browser and a Web site. There are typically three levels of validation for Secure Server/TLS Certificates.
 
-Domain Validated (DV) Certificates: The appropriate use of DV Certificates is to keep information encrypted when sent between a client and a server where there are low risks and consequences of data compromise and where the identity of the server operator is of little consequence. DV Certificates are appropriate for entities needing low cost Certificates issued at a fast pace.
+Domain Validated (DV) Certificates: The appropriate use of DV Certificates is to keep information encrypted when sent between a client and a server where there are low risks and consequences of data compromise and where the identity of the server operator is of little consequence. DV Certificates are appropriate for entities needing low cost Certificates issued at a fast pace. DVs do not provide authentication or validation, and are the lowest cost means of securing a website.
 
 Organization Validated (OV) Certificates: OV Certificates are used to keep information encrypted that is sent between a client and a server where there are moderate risks and consequences of data compromise, and therefore the end user desires to have reasonable assurance of the identity of the server operator. OV Certificates include business and company validation. Additionally, OV Certificates provide higher levels of trust and security than DV certificates but provide lower levels of trust and security than EV Certificates.
 
 Extended Validated (EV) Certificates: Clearly identify the legal entity that controls a web site. EV certificates provide a greater level of assurance to the user of an Internet browser that the web site the user is accessing is controlled by a specific legal entity identified in the Certificate Subject by name, address of place of business, jurisdiction of incorporation or registration, and the entities registration number or other disambiguating information.
+
+Multidomain Certificates (MDC) are Certificates that MAY contain multiple FQDNs or IP addresses in the subjectAlternativeName field.
 
 Wildcard Certificates are Certificates that cover sub-domains of any single domain.
 
@@ -395,9 +416,9 @@ Sectigo conducts the overall certification management within the Sectigo PKI; ei
 
 ### 3.1.1. Types of Names
 
-Sectigo issues Certificates with subject DNs conforming to ITU X.500.
+Sectigo issues Certificates with non-null subject DNs. The constituent elements of the subject DN conform with ITU X.500.
 
-Certificates include entries in the subjectAlternativeName (SAN) extension which are intended to be relied upon by relying parties.
+TLS Certificates in general include entries in the subjectAlternativeName (SAN) extension which are intended to be relied upon by relying parties.
 
 ### 3.1.2. Need for Names to be Meaningful
 
@@ -649,7 +670,7 @@ Sectigo MAY reuse corroborating evidence for CAA record quorum compliance for a 
 The quorum requirements are
 | **# of Distinct Remote Network Perspectives Used** | **# of allowed non-Corroborrations** |
 | -------------------------------------------------- | ------------------------------------ |
-| 4-5                                                | 1                                    |
+| 2-5                                                | 1                                    |
 | 6+                                                 | 2                                    |
 
 Sectigo does not rely on corroborations from previous attempts. There is no stipulation regarding the maximum number of validation attempts that may be performed in any period of time.
@@ -736,7 +757,7 @@ Where a request for replacement or renewal of a Certificate after revocation is 
 
 _Revocation at the Subscriber's request:_
 
-The Subscriber must either be in possession of the authentication details (typically username and password) to log in the correspondent site which were used to purchase the Certificate originally.
+The Subscriber must either be in possession of the authentication details (typically username and password) to log in the correspondent site which were used to purchase the Certificate originally OR the Subscriber must be able to send an email to our abuse accounts which will be authenticated in a later stage (for example, this email can be signed with the Private Key associated with the Certificate).
 
 _Revocation at the RA's request:_
 
@@ -748,9 +769,8 @@ Sectigo does not revoke Certificates at the request of other CAs. Sectigo can an
 Sectigo employs the following procedure for authenticating a revocation request:
 
 - The revocation request MAY be sent by the administrator contact associated with the Certificate application. Sectigo MAY, if necessary, also request that the revocation request be made by either/or the organizational contact and billing contact.
+- Upon receipt of the revocation request Sectigo will request confirmation.
 - Sectigo validation personnel will then command the revocation of the Certificate and logging of the identity of validation personnel and reason for revocation will be maintained in accordance with the logging procedures covered in this document.
-
-In addition, the methods outlined in Section 1.5.5 MAY be used by Subscribers, RAs and other parties to request automated revocation.
 
 # 4. CERTIFICATE LIFECYCLE OPERATIONAL REQUIREMENTS
 
@@ -787,6 +807,18 @@ The Subscriber, or an RA on behalf of the Subscriber SHALL submit a Subscriber C
 Generally, Applicants will complete the online forms made available by Sectigo or by approved RAs at the respective official websites. Under special circumstances, the Applicant MAY submit an application via email; however, this process is available at the discretion of Sectigo or its RAs. Sectigo maintains an internal database of all previously revoked Certificates and previously rejected certificate requests. That database is used to identify subsequent suspicious certificate requests.
 
 Sectigo does not issue Certificates to entities on a government denied list, list of prohibited persons, or other list that prohibits doing business with maintained by the US or UK or that is located in a country with which the laws of the US or UK prohibit doing business.
+
+EPKI Manager Account Holder applications are made through the EPKI Manager Management Console - a web-based console hosted and supported by Sectigo.
+
+#### 4.1.1.1. EPKI Manager Account Holder Certificate Applications
+
+EPKI Manager Account Holders make the application for a secure server/TLS Certificate to be used by a named server, partner or extranet user under a domain name that Sectigo has validated either belongs to, or MAY legally be used by the EPKI Manager Account holding organization. Validation for adding domains to the EPKI Manager account MAY occur solely using a domain authorization letter.
+
+#### 4.1.1.2. Web Host Reseller Partner Certificate Applications
+
+Web Host Reseller Partners MAY act as RAs under the practices and policies stated within this document. The RA MAY make the application on behalf of the Applicant pursuant to the Web Host Reseller program.
+
+Under such circumstances, the RA is responsible for all the functions on behalf of the Applicant detailed in section 4.1.2 of this document. Such responsibilities are detailed and maintained within the Web Host Reseller agreement and guidelines.
 
 ### 4.1.2. Enrollment Process and Responsibilities
 
@@ -841,8 +873,9 @@ For the _DNS TXT Record with Persistent Value_ Domain Control Validation method 
 
 Upon receipt of an application for a digital Certificate and based on the submitted information, Sectigo confirms the following information:
 
+- The Certificate Applicant is the same person as the person identified in the Certificate request.
 - The Certificate Applicant holds the Private Key corresponding to the Public Key to be included in the Certificate.
-- The information to be published in the Certificate is accurate.
+- The information to be published in the Certificate is accurate, except for non-verified Subscriber information.
 - Any agents who apply for a Certificate listing the Certificate Applicant's Public Key are duly authorized to do so.
 
 Sectigo MAY use the services of a third party to confirm information on a business entity that applies for a digital Certificate. Sectigo accepts confirmation from third party organizations, other third-party databases, and government entities.
@@ -863,13 +896,13 @@ Applicants whose applications have been rejected may subsequently reapply.
 
 Certificate applications that contain a new gTLD are not approved while the gTLD is still under consideration by ICANN.
 
-In all types of Sectigo TLS Certificates, the Subscriber has a continuous obligation to monitor the accuracy of the submitted information and notify Sectigo of any changes that would affect the validity of the Certificate. Failure to comply with the obligations as set out in the Subscriber Agreement may result in the revocation of the Subscriber's Certificate without further notice to the Subscriber and the Subscriber shall pay any charges payable but that have not yet been paid under the Subscriber Agreement.
+In all types of Sectigo TLS Certificates, the Subscriber has a continuous obligation to monitor the accuracy of the submitted information and notify Sectigo of any changes that would affect the validity of the Certificate. Failure to comply with the obligations as set out in the Subscriber Agreement will result in the revocation of the Subscriber's Certificate without further notice to the Subscriber and the Subscriber shall pay any charges payable but that have not yet been paid under the Subscriber Agreement.
 
 Sectigo does not issue certificates that contain internal names or reserved IP addresses because those can´t be validated as per sections 3.2.2.1.1 and 3.2.2.1.2. Nor containing Domain Names that end in an IP Address Reserve Zone Suffix.
 
 ### 4.2.3. Time to Process Certificate Applications
 
-Sectigo makes reasonable efforts to confirm Certificate application information and issue a digital Certificate within a reasonable time frame. The time frame is greatly dependent on the Subscriber providing the necessary details and/or documentation in a timely manner. 
+Sectigo makes reasonable efforts to confirm Certificate application information and issue a digital Certificate within a reasonable time frame. The time frame is greatly dependent on the Subscriber providing the necessary details and/or documentation in a timely manner. Upon the receipt of the necessary details and/or documentation, Sectigo aims to confirm submitted application data and to complete the validation process and issue/reject a Certificate application within 2 working days.
 
 From time to time, events outside of the control of Sectigo MAY delay the issuance process, however Sectigo will make every reasonable effort to meet issuance times and to make Applicants aware of any factors that may affect issuance times in a timely manner.
 
@@ -898,13 +931,13 @@ Sectigo MAY decide not to check for a CAA record:
 - For certificates for which a Certificate Transparency pre‐certificate was created and logged in at least two public logs, and for which CAA was checked;
 - For certificates issued by a Technically Constrained Subordinate CA Certificate as set out in the TLS Baseline Requirements Sections 7.1.2.3 or 7.1.2.5, where the lack of CAA checking is an explicit contractual provision in the contract with the Applicant.
 
-Sectigo will document potential issuances that were prevented by a CAA record in sufficient detail to be able to provide feedback to the CA/Browser Forum on the circumstances.
+Sectigo will document potential issuance that was prevented by a CAA record in sufficient detail to provide feedback to the CA/B Forum on the circumstances.
 
 URL schemes in the iodef record other than mailto: or https: are not supported.
 
 ## 4.3. Certificate Issuance
 
-Sectigo issues a Certificate upon approval of a Certificate application. A digital Certificate is deemed to be valid at the moment it is issued. Issuing a digital Certificate means that Sectigo accepts a Certificate application.
+Sectigo issues a Certificate upon approval of a Certificate application. A digital Certificate is deemed to be valid at the moment a Subscriber accepts it (refer to section 4.4 of this document). Issuing a digital Certificate means that Sectigo accepts a Certificate application.
 
 Sectigo Certificates are issued to organizations or individuals.
 
@@ -934,7 +967,9 @@ Certificate System:
 
 ### 4.3.2. Notification to Subscriber by the CA of Issuance of Certificate
 
-Sectigo MAY notify Subscriber of the issuance of a Certificate via email or other methods.
+Sectigo notifies Subscriber of the issuance of a Certificate via email.
+
+Secure server/TLS Certificates are delivered via email to the Subscriber using the administrator contact email address provided during the application process.
 
 ### 4.3.3. Refusal to Issue a Certificate
 
@@ -1004,19 +1039,17 @@ Certificate renewal means the issuance of a new Certificate to the Subscriber wi
 
 Renewal fees are detailed on the official Sectigo websites and within communications sent to Subscribers approaching the Certificate expiration date.
 
-Any Certificate Renewal request where the Subscriber details, Subject Alternative Names or Public Key is changed, shall be classed as a new certificate issuance.
-
 ### 4.6.1. Circumstance for Certificate Renewal
 
 End entity Certificate renewal MAY be supported for Certificates where the Private Key associated with the Certificate has not been compromised. End entity Certificates MAY be renewed to maintain continuity of Certificate usage
 
-An end entity Certificate MAY be renewed after expiration. The original Certificate MAY or MAY NOT be revoked.
+An end entity Certificate MAY be renewed after expiration. The original Certificate MAY or MAY NOT be revoked, but SHALL NOT be further re-keyed, renewed, or modified.
 
-Sectigo shall make reasonable efforts to notify Subscribers via e-mail of the imminent expiration of a digital Certificate.
+Sectigo shall make reasonable efforts to notify Subscribers via e-mail of the imminent expiration of a digital Certificate. Notice shall ordinarily be provided within a 60-day period prior to the expiry of the Certificate.
 
 ### 4.6.2. Who May Request Renewal
 
-Those who may request renewal of a Certificate include, but are not limited to, a Subscriber on behalf of itself, and an RA on behalf of a Subscriber.
+Those who may request renewal of a Certificate include, but are not limited to, a Subscriber on behalf of itself, and an RA on behalf of a Subscriber. Sectigo does not automatically renew Certificates.
 
 ### 4.6.3. Processing Certificate Renewal Requests
 
@@ -1044,7 +1077,7 @@ The section is used to describe elements/procedures generating a new Key Pair an
 
 ### 4.7.1. Circumstances for Certificate Re-Key
 
-Certificate rekey will ordinarily take place as part of a Certificate renewal or Certificate replacement, as stated in section 3.3 of this document. Certificate rekey MAY also take place when a key has been compromised.
+Certificate rekey will ordinarily take place as part of a Certificate renewal or Certificate replacement, as stated in section 3.2 of this document. Certificate rekey MAY also take place when a key has been compromised.
 
 Examples of circumstances requiring Certificate re-key include: expiration, loss or compromise.
 
@@ -1112,7 +1145,7 @@ No stipulation.
 
 Revocation of a Certificate is to permanently end the operational period of the Certificate prior to reaching the end of its stated validity period. In other words, upon revocation of a Certificate, the operational period of that Certificate is immediately considered terminated. The serial number of the revoked Certificate will be placed within the CRL and remains on the CRL until sometime after the end of the Certificate's validity period.
 
-Sectigo specifies the revocation reasons for the certificates that have been revoked. For subscriber´s certificates, the Subscriber MAY specify the revocation reason, otherwise this will be unspecified.
+Sectigo specifies the revocation reasons for the certificates that have been revoked. For subscriber´s certificates only if the subscriber has provided the revocation reason, otherwise this will be unspecified.
 
 Sectigo does not utilize Certificate suspension.
 
@@ -1122,26 +1155,28 @@ A Certificate SHALL be revoked when the binding between the subject and the subj
 
 Sectigo SHALL revoke a Certificate within 24 hours (using the corresponding CRLreason, included here for easiness) if one or more of the following occurs:
 
-- The Subscriber requests in writing, without specifying a CRLreason, that Sectigo revoke the Certificate (CRLReason “unspecified (0)” which results in no reasonCode extension being provided in the CRL);
-- The Subscriber notifies Sectigo that the original certificate request was not authorized and does not retroactively grant authorization (CRLReason #9, privilegeWithdrawn);
-- Sectigo obtains evidence that the Subscriber’s Private Key corresponding to the Public Key in the Certificate suffered a Key Compromise (CRLReason #1, keyCompromise);
-- Sectigo is made aware of a demonstrated or proven method that can easily compute the Subscriber’s Private Key based on the Public Key in the Certificate. (CRLReason #1, keyCompromise);
-- Sectigo obtains evidence that the validation of domain authorization or control for any Fully-Qualified Domain Name or IP address in the Certificate should not be relied upon, including cases where Sectigo failed to perform CAA checking correctly or where issuance was not permitted according to Section 4.2.4 (CRLReason #4, superseded).
+- The Subscriber requests in writing, without specifying a CRLreason, that the CA revoke the Certificate (CRLReason "unspecified (0)" which results in no reasonCode extension being provided in the CRL);
+- The Subscriber notifies Sectigo that the original Certificate request was not authorized and does not retroactively grant authorization (privilegeWithdrawn);
+- Sectigo reasonably believes there has been loss, theft, modification, unauthorized disclosure, or other compromise of the Private Key associated with the Certificate (keyCompromise);
+- Sectigo is made aware of a demonstrated or proven method that can easily compute the Subscriber's Private Key based on the Public Key in the Certificate (such as a Debian weak key, see <https://wiki.debian.org/SSLkeys>) (keyCompromise);
+- Sectigo reasonably believes that the validation of domain authorization or control for any Fully-Qualified Domain Name or IP address in the Certificate should not be relied upon including cases where Sectigo failed to perform CAA checking correctly or where issuance was not permitted according to Section 4.2.4 (superseded);
+- Sectigo is made aware of a demonstrated or proven method that exposes the Subscriber's Private Key to compromise, methods have been developed that can easily calculate it based on the Public Key, or if there is clear evidence that the specific method used to generate the Private Key was flawed (keyCompromise);
 
 Sectigo SHOULD revoke within 24 hours but MUST revoke within 5 days if one or more of the following occurs (using the corresponding CRLreason):
 
-- The Certificate no longer complies with the requirements of Section 6.1.5 and Section 6.1.6 (CRLReason #4, superseded);
-- Sectigo obtains evidence that the Certificate was misused (CRLReason #9, privilegeWithdrawn);
-- Sectigo is made aware that a Subscriber has violated one or more of its material obligations under the Subscriber Agreement or Terms of Use (CRLReason #9, privilegeWithdrawn);
-- Sectigo is made aware of any circumstance indicating that use of a Fully-Qualified Domain Name or IP address in the Certificate is no longer legally permitted (e.g. a court or arbitrator has revoked a Domain Name Registrant’s right to use the Domain Name) (CRLReason #5, cessationOfOperation);
-- Sectigo is made aware that a Wildcard Certificate has been used to authenticate a fraudulently misleading subordinate Fully-Qualified Domain Name (CRLReason #9, privilegeWithdrawn);
-- Sectigo is made aware of a material change in the information contained in the Certificate (CRLReason #9, privilegeWithdrawn);
-- Sectigo is made aware that the Certificate was not issued in accordance with these Requirements or Sectigo’s Certificate Policy or Certification Practice Statement (CRLReason #4, superseded);
-- Sectigo determines or is made aware that any of the information appearing in the Certificate is inaccurate (CRLReason #9, privilegeWithdrawn);
-- Sectigo’s right to issue Certificates under these Requirements expires or is revoked or terminated, unless Sectigo has made arrangements to continue maintaining the CRL/OCSP Repository (CRLReason “unspecified (0)” which results in no reasonCode extension being provided in the CRL);
-- Revocation is required by Sectigo’s Certificate Policy and/or Certification Practice Statement for a reason that is not otherwise required to be specified by this section 4.9.1.1 (CRLReason “unspecified (0)” which results in no reasonCode extension being provided in the CRL); or
-- Sectigo is made aware of a demonstrated or proven method that exposes the Subscriber’s Private Key to compromise or if there is clear evidence that the specific method used to generate the Private Key was flawed (CRLReason #1, keyCompromise).
-
+- The Subscriber or Sectigo has breached a material obligation under this document or the relevant Subscriber Agreement;
+- The Certificate no longer complies with the requirements of Sections 6.1.5 and 6.1.6 of the TLS Baseline Requirements;
+- Sectigo is made aware of any circumstance indicating that use of a Fully-Qualified Domain Name or IP address in the Certificate is no longer legally permitted (e.g., a court or arbitrator has revoked a Domain Name Registrant's right to use the Domain Name);
+- Sectigo is made aware that a Wildcard Certificate has been used to authenticate a fraudulently misleading subordinate Fully-Qualified Domain Name;
+- Either the Subscriber's or Sectigo's obligations under this document or the relevant Subscriber Agreement are delayed or prevented by a natural disaster, computer or communications failure, or other cause beyond the person's reasonable control, and as a result another person's information is materially threatened or compromised;
+- Sectigo is made aware of a material change in the information contained in the Certificate, or the information contained in the Certificate is inaccurate;
+- A personal identification number, Private Key or password has, or is likely to become known to someone not authorized to use it, or is being or is likely to be used in an unauthorized way
+- The Certificate has not been issued in accordance with the policies set out in this document;
+- The Subscriber has used the Certificate contrary to law, rule or regulation, or Sectigo reasonably believes that the Subscriber is using the Certificate, directly or indirectly, to engage in illegal or fraudulent activity;
+- The Certificate was issued as a result of fraud or negligence;
+- Sectigo right to issue Certificates under the TLS Baseline Requirements expires or is revoked or terminated, unless Sectigo has made arrangements to continue maintaining the CRL/OCSP Repository;
+- The Certificate, if not revoked, will compromise the trust status of Sectigo; or
+- The Precertificate and the Certificate do not exactly match each other according to RFC 6962.
 
 Sectigo will revoke a Subordinate CA Certificate within seven (7) days if one or more of the following occurs:
 
@@ -1166,11 +1201,11 @@ A Subscriber or another appropriately authorized party can request revocation of
 
 Sectigo accepts and responds to revocation requests and problem reports on a 24/7 basis as indicated in section 1.5.2 of this document.
 
-Prior to the revocation of a Certificate, Sectigo will verify that the revocation request has been made by:
+Prior to the revocation of a Certificate, Sectigo will verify that the revocation request has been:
 
-- the organization or individual entity that has made the Certificate application; or
-- the RA on behalf of the organization or individual entity that used the RA to make the Certificate application, and
-- in either case, been authenticated by the procedures in section 3.4 of this document.
+- Made by the organization or individual entity that has made the Certificate application.
+- Made by the RA on behalf of the organization or individual entity that used the RA to make the Certificate application, and
+- Has been authenticated by the procedures in section 3.4 of this document.
 
 ### 4.9.4. Revocation Request Grace Period
 
@@ -1178,7 +1213,9 @@ The revocation request grace period ("Grace Period") means the period during whi
 
 ### 4.9.5. Time Within which CA Must Process the Revocation Request
 
-Sectigo SHALL process revocation requests in accordance with TLS BRs sections 4.9.1.1 and 4.9.5.
+Sectigo SHALL process revocation requests in accordance with TLS BRs sections 4.9.1.1 and 4.9.5. Once a certificate has been revoked the revocation will be reflected in the OCSP responses within 1 hour, and in the CRLs within 24 hours.
+
+Sectigo will inform the subscriber and the entity reporting the issue.
 
 ### 4.9.6. Revocation Checking Requirement for Relying Parties
 
@@ -1214,7 +1251,7 @@ Sectigo will continue issuing CRLs until one of the following is true:
 - all Subordinate CA Certificates containing the same Subject Public Key are expired or revoked; or
 - the corresponding Subordinate CA Private Key is destroyed.
 
-Sectigo MAY publish new CRLs prior to the expiry of the current CRL at any time. All expired CRLs are archived (as described in section 3.4 of this document) for a period of at least 2 years.
+Under special circumstances, Sectigo MAY publish new CRLs prior to the expiry of the current CRL. All expired CRLs are archived (as described in section 3.4 of this document) for a period of 7 years or longer if applicable.
 
 ### 4.9.8. Maximum Latency for CRLs
 
@@ -1224,7 +1261,7 @@ The maximum latency for CRLs means the maximum time between the generation of CR
 
 ### 4.9.9. On-Line Revocation/Status Checking Availability
 
-In addition, Sectigo´s Certificate Systems are configured to generate and serve OCSP responses. This provides information regarding the validity of the Certificate making the revocation information available through the OCSP protocol. CRLs and OSCP are available 24/7 to anyone.
+In addition, Sectigo´s Certificate Systems are configured to generate and serve OCSP responses. This provides real-time information regarding the validity of the Certificate making the revocation information immediately available through the OCSP protocol. CRLs and OSCP are available 24/7 to anyone.
 
 OCSP responses conform to RFC6960 and/or RFC5019.
 
@@ -1324,7 +1361,9 @@ A Subscriber's subscription service ends if:
 
 ## 4.12. Key Escrow and Recovery
 
-Sectigo does not create or store the Subscriber's private key for publicly trusted TLS Certificates, unless utilized within Sectigo's own infrastructure.
+Sectigo does not create or store the Subscriber's private key for publicly trusted TLS Certificates. In general, Sectigo does not provide key escrow or key backup services. In general, Sectigo expects an Applicant to generate key-pairs in its own environment and to pass only the Public Key to Sectigo for inclusion in the Certificates issued.
+
+In certain enterprise scenarios, where specifically provided for by contract between Sectigo and the Subscriber enterprise, Sectigo provides key escrow for Certificates.
 
 ### 4.12.1. Key Escrow and Recovery Policy and Practices
 
@@ -1370,9 +1409,9 @@ RA equipment SHALL be protected from unauthorized access while the RA cryptograp
 
 ### 5.1.3. Power and Air Conditioning
 
-Each Sectigo secure facility has a primary and secondary power supply and ensure continuous, uninterrupted access to electric power. Heating/air ventilation systems are used to prevent overheating and to maintain a suitable humidity level.
+Sectigo secure facilities have a primary and secondary power supply and ensure continuous, uninterrupted access to electric power. Heating/air ventilation systems are used to prevent overheating and to maintain a suitable humidity level.
 
-Each Sectigo secure facility has backup capability sufficient to lock out input, finish any pending actions, and record the state of the equipment automatically before lack of power or air conditioning causes a shutdown. The repositories (containing CA Certificates and CRLs) SHALL be provided with uninterrupted power sufficient for a minimum of six (6) hours of operation in the absence of commercial power, to maintain availability and avoid denial of service.
+The Sectigo´s facilities have backup capability sufficient to lock out input, finish any pending actions, and record the state of the equipment automatically before lack of power or air conditioning causes a shutdown. The repositories (containing CA Certificates and CRLs) SHALL be provided with uninterrupted power sufficient for a minimum of six (6) hours of operation in the absence of commercial power, to maintain availability and avoid denial of service.
 
 ### 5.1.4. Water Exposures
 
@@ -1587,11 +1626,6 @@ Subscriber Certificate lifecycle management events:
 - Approval and rejection of Certificate requests
 - Issuance of Certificates
 - CRL generation and OCSP responses signing
-- Multi-Perspective Issuance Corroboration attempts from each Network Perspective, minimally recording the following information:
-  - an identifier that uniquely identifies the Network Perspective used;
-  - the attempted domain name and/or IP address; and
-  - the result of the attempt (e.g., “domain validation pass/fail”, “CAA permission/prohibition”).
-- Multi-Perspective Issuance Corroboration quorum results for each attempted domain name or IP address represented in a Certificate request (i.e., “3/4” which should be interpreted as “Three (3) out of four (4) attempted Network Perspectives corroborated the determinations made by the Primary Network Perspective).
 
 Security Related Events:
 
@@ -1628,7 +1662,7 @@ Logging of router and firewall activities include:
 
 ### 5.4.2. Frequency of Processing Log
 
-Logs are archived by the system administrator. Event journals are reviewed on a quarterly basis.
+Logs are archived by the system administrator on a weekly basis and event journals reviewed on a weekly basis by CA management.
 
 ### 5.4.3. Retention Period for Audit Log
 
@@ -1680,7 +1714,11 @@ If a Critical Vulnerability is discovered, not previously addressed, Sectigo wil
 
 Sectigo employs external parties to perform regular annual vulnerability scans & penetration testing on our Certificate System/infrastructure.
 
-For patching of vulnerabilities, timelines indicated in Section 6.7.3 apply.
+In detail,
+
+- Patches, packages, & updates, however identified, with a critical risk rating shall be patched within 5 days. This timeline may be reduced if the vulnerability has a high likelihood of posing a risk to Sectigo.
+- Patches, packages, & updates, however identified, with a high-risk rating shall be patched within 90 days.
+- Patches, packages, & updates, however identified, with a medium or low risk rating do not have defined patching timelines and are uniquely evaluated.
 
 ## 5.5. Records Archival
 
@@ -1699,7 +1737,9 @@ Sectigo archives all audit logs as specified in section 5.4.1. Additioanally, Se
 
 The retention period for archived information depends on the type of information, the information's level of confidentiality, and the type of system the information is stored on.
 
-Sectigo retains all documentation relating to certificate requests and the verification thereof, and all Certificates and revocation thereof for a term of not less than 2 years after any Certificate based on that documentation ceases to be valid, or as necessary to comply with applicable laws. The retention term begins on the date of expiration or revocation. Copies of Certificates are held, regardless of their status (such as expired or revoked). Such records may be retained in electronic, in paper-based format or any other format that Sectigo MAY see fit.
+Sectigo retains all documentation relating to certificate requests and the verification thereof, and all Certificates and revocation thereof for a term of not less than 7 years after any Certificate based on that documentation ceases to be valid, or as necessary to comply with applicable laws. The retention term begins on the date of expiration or revocation. Copies of Certificates are held, regardless of their status (such as expired or revoked). Such records may be retained in electronic, in paper-based format or any other format that Sectigo MAY see fit.
+
+User data backed up from a Workstation is retained for a minimum period of 6 months.
 
 ### 5.5.3. Protection of Archive
 
@@ -1763,8 +1803,6 @@ These procedures are in place to ensure that:
 - clear roles and responsibilities are defined.
 
 To maintain the integrity of its services Sectigo implements, documents, and periodically tests appropriate contingency and disaster recovery plans and procedures. These procedures define and contain a formal incident management reporting process, incident response, and incident escalation procedures to ensure professional incident management and the return to normal operations within a timely manner as defined in our Information Security Management System. The process also enables incidents to be analyzed in a way as to identify possible causes such that any weaknesses in Sectigo's processes may be improved in order to prevent reoccurrence. Such plans are revised and updated as may be required at least once a year.
-
-Tests are performed, either as table-top exercise or within production at least once every calendar year.
 
 #### 5.7.1.1. Mass Revocation Plan
 
@@ -1838,9 +1876,9 @@ For other CA Key Pairs created for Sectigo or an Affiliate, Sectigo:
 - prepares and follows a Key Generation Script and
 - has a Qualified Auditor witness the Root CA Key Pair generation process or records a video of the entire Root CA Key Pair generation process.
 
-Sectigo's CA keys are generated in Hardware Security Modules (HSM)s that SHALL be compliant, as a minimum, to FIPS 140-2 level 3, FIPS 140-3 level 3 or Common Criteria EAL 4+. CA keys are never available outside the HSM or key ceremonies in plain text form. All CA key operations are performed within the security of the HSM, whether this be the initial key generation or their end use in the live production environment. All keys that are exported from the HSM are encrypted with a suitable encryption algorithm with the encryption key generated by the HSM.
+Sectigo's CA keys are generated in Hardware Security Modules (HSM)s that SHALL be compliant, as a minimum, to FIPS 140-2 level 3 or Common Criteria EAL 4+. CA keys are never available outside the HSM or key ceremonies in plain text form. All CA key operations are performed within the security of the HSM, whether this be the initial key generation or their end use in the live production environment. All keys that are exported from the HSM are encrypted with a suitable encryption algorithm with the encryption key generated by the HSM.
 
-Access to CA keys is restricted to authorized, trusted personnel of Sectigo. CA key data must be stored securely at all times unless attended by authorised personnel of Sectigo. Auditors MAY be present while CA key material is accessed by authorized, trusted personnel.
+Access to CA keys is restricted to authorized, trusted personnel of Sectigo. CA key data must be stored securely at all times unless attended by authorised personnel of Sectigo.
 
 CA key generation that involves an HSM is performed in a 'CA key ceremony'. All CA key ceremonies are performed in a secure, controlled area. During the ceremony, at least two authorised Sectigo personnel are present at all times. It may be required that authorised auditors be present to witness the CA key ceremonies. No other persons are allowed in the secure area during the key ceremonies to protect against information loss through tampering or overseeing. All visible 'Sensitive' information is kept to a minimum at all times during the CA key ceremonies.
 
@@ -1877,7 +1915,7 @@ Root CA Certificates and any certificates which chain up to them have:
 
 ### 6.1.6. Public Key Parameters Generation and Quality Checking
 
-Sectigo generates the Public Key parameters. Sectigo's CA keys SHALL be generated within, as a minimum, a FIPS 140-2 Level 3, FIPS 140-3 Level 3 or Common Criteria EAL 4+ certified HSM.
+Sectigo generates the Public Key parameters. Sectigo's CA keys SHALL be generated within at least a FIPS 140-2 Level 3 or Common Criteria EAL 4+ certified HSM.
 
 RSA: Sectigo confirms that the value of the public exponent is an odd number equal to 3 or more. Additionally, the public exponent SHOULD be in the range between 2<sup>16</sup>+1 and 2<sup>256</sup>\-1. The modulus SHOULD also have the following characteristics: an odd number, not the power of a prime, and have no factors smaller than 752. \[Source: Section 5.3.3, NIST SP 800-89\]
 
@@ -1916,11 +1954,9 @@ Sectigo strongly urges Subscribers to use a password or equivalent authenticatio
 
 ### 6.2.1. Cryptographic Module Standards and Controls
 
-Sectigo securely generates and protects its own Private Key(s), using trustworthy HSMs and takes necessary precautions to prevent the compromise or unauthorized usage of them. Such HSMs SHALL be certified to, as a minimum, FIPS 140-2 Level 3, FIPS 140-3 Level 3 or Common Criteria EAL 4+.
+Sectigo securely generates and protects its own Private Key(s), using trustworthy HSMs and takes necessary precautions to prevent the compromise or unauthorized usage of them. Such HSMs SHALL be certified to at least FIPS 140-2 Level 3 or Common Criteria EAL 4+.
 
-Private Key(s) backups are protected under multi-person control utilising n out of m encryption with cryptographic keys generated by a trustworthy HSM.
-
-The Sectigo Root keys were generated in accordance with the guidelines detailed in the Root Key Generation Ceremony document. The activities undertaken and the personnel involved in the Root Key Generation Ceremony are recorded for audit purposes. Subsequent Root Key Ceremonies are to follow the documented reference guide also.
+The Sectigo Root keys were generated in accordance with the guidelines detailed in the Root Key Generation Ceremony document. The activities undertaken and the personnel involved in the Root Key Generation Ceremony are recorded for audit purposes. Subsequent Root Key Generation Ceremonies are to follow the documented reference guide also.
 
 ### 6.2.2. Private Key (n out of m) Multi-Person Control
 
@@ -1930,13 +1966,13 @@ Except during Key Pair generation, export, and import, access to the cryptograph
 
 ### 6.2.3. Private Key Escrow
 
-Sectigo does not provide Private Key Escrow for Subscriber certificates.
+Where Subscriber Private Keys are escrowed, Sectigo acts as the escrow agent and does not delegate this task to any third party. The Subscriber Private Key is stored in an encrypted form. A suitably authorized administrator of the enterprise account within which the Certificate has been requested may trigger the escrow. Triggering the escrow automatically revokes the Certificate ensuring that the Certificate cannot be used further.
 
 ### 6.2.4. Private Key Backup
 
-The CA private signature keys SHALL be backed up under the same multi-person control as the original signature key. At least one copy of the private signature keys SHALL be stored off-site. All copies of the CA private signature keys SHALL be accounted for and protected in the same manner as the original.
+The CA private signature keys SHALL be backed up under the same multi-person control as the original signature key. At least one copy of the private signature key SHALL be stored off-site. All copies of the CA private signature key SHALL be accounted for and protected in the same manner as the original.
 
-Sectigo does not store keys for TLS end entity certificates unless utilized for Sectigo's own infrastructure.
+Generally, the Subscriber is solely responsible for protection of their Private Keys. However, Sectigo offers certain Subscribers the optional feature of having Sectigo back up the Private Keys Sectigo generates on Subscriber's behalf. Sectigo protects these keys by having an agent or agents of the Certificate Manager Subscriber (typically, the employer of the individual receiving the client Certificate) encrypt a PKCS#12 format that contains the keys before they are stored on a secure server. Keys stored by Sectigo can only be decrypted using the keys held by the selected agents of the Certificate Manager Subscriber. Encrypted keys are sent via a secure connection and decrypted by the agent of the Certificate Manager Subscriber on their own computers.
 
 ### 6.2.5. Private Key Archival
 
@@ -1954,7 +1990,7 @@ All transfers of Private Keys into or from a cryptographic module are performed 
 
 ### 6.2.7. Private Key Storage on Cryptographic Module
 
-Private Keys are generated and stored inside Sectigo's Hardware Security Modules (HSMs). HSMs SHALL be certified to, as a minimum, FIPS 140-2 Level 3, FIPS 140-3 Level 3 or Common Criteria EAL 4+.
+Private Keys are generated and stored inside Sectigo's Hardware Security Modules (HSMs). HSMs SHALL be certified to at least FIPS 140-2 Level 3 or Common Criteria EAL 4+.
 
 For CA Root Private Key recovery purposes, the Root CA keys are encrypted and stored within a secure environment.
 
@@ -1981,6 +2017,12 @@ An online CA's Private Key SHALL be activated by a threshold number of sharehold
 
 Cryptographic modules that have been activated SHALL NOT be available to unauthorized access. After use, the cryptographic module SHALL be deactivated, e.g., via a manual logout procedure or automatically after a period of inactivity. CA cryptographic modules SHALL be stored securely when not in use.
 
+When an online CA is taken offline, Sectigo SHALL remove the token containing the Private Key from the reader in order to deactivate it.
+
+With respect to the Private Keys of offline CAs, after the completion of a Key Generation Ceremony, in which such Private Keys are used for Private Key operations, Sectigo SHALL remove the token containing the Private Keys from the reader in order to deactivate them. Once removed from the reader, tokens SHALL be securely stored.
+
+When deactivated, Private Keys SHALL be kept in encrypted form only. They SHALL be cleared from memory before the memory is de-allocated. Any disk space where Private Keys were stored SHALL be overwritten before the space is released to the operating system.
+
 Depending on the circumstances and the type of Certificate, a Private Key can be deactivated by Sectigo, Subscriber, or other authorized personnel.
 
 ### 6.2.10. Method of Destroying Private Key
@@ -2001,7 +2043,7 @@ When Public Keys are archived, they are archived according to procedures outline
 
 ### 6.3.2. Certificate Operational Periods and Key Pair Usage Periods
 
-Certificates are valid upon issuance by Sectigo.
+Certificates are valid upon issuance by Sectigo and acceptance by the Subscriber.
 
 The validity period of the certificates will be reduced over the next years to have a validity period of 47 days maximum by 2029 and the reuse of the date used to support the issuance of the Certificates to a maximum of 10 days.
 
@@ -2009,11 +2051,12 @@ Reference for maximum Validity Periods of Subscriber Certificates
 
 | Certificate issued on or after | Certificate issued before | Maximum Validity Period |
 | ------------------------------ | ------------------------- | ----------------------- |
+|                                | March 15, 2026            | 398 days                |
 | March 15, 2026                 | March 15, 2027            | 200 days                |
 | March 15, 2027                 | March 15, 2029            | 100 days                |
 | March 15, 2029                 |                           | 47 days                 |
 
-Sectigo verifies all information that is included in TLS Certificates at time intervals of 398 days or less, except the information of the domain name or IP address validation according to sections 3.2.2.1 and the tables below.
+Sectigo verifies all information that is included in TLS Certificates at time intervals of 825 days or less, except the information of the domain name or IP address validation according to sections 3.2.2.1 which is also set to 398 days or less.
 
 In the case of EV TLS Certificates, the age of all data used to support issuance does not exceed the limit of 398 days as stated in EVG section 3.2.2.14.3.
 
@@ -2021,17 +2064,17 @@ Sectigo MAY use the documents and data provided in Section 3.2 to verify certifi
 
 | Certificate issued on or after | Certificate issued before | Maximum Validity Period |
 | ------------------------------ | ------------------------- | ----------------------- |
+|                                | March 15, 2026            | 825 days                |
 | March 15, 2026                 |                           | 398 days                |
 
-For validation of Domain Names and IP Addresses according to Section 3.2.2.1.1 and Section 3.2.2.1.2, with the exception of Section 3.2.2.1.1 (9), any data, document, or completed validation used MUST be obtained within the maximum number of days prior to issuing the Certificate, as defined in the following table:
+For validation of Domain Names and IP Addresses according to Section 3.2.2.1.1 and Section 3.2.2.1.2, any data, document, or completed validation used MUST be obtained within the maximum number of days prior to issuing the Certificate, as defined in the following table:
 
 | Certificate issued on or after | Certificate issued before | Maximum Validity Period |
 | ------------------------------ | ------------------------- | ----------------------- |
+|                                | March 15, 2026            | 398 days                |
 | March 15, 2026                 | March 15, 2027            | 200 days                |
 | March 15, 2027                 | March 15, 2029            | 100 days                |
 | March 15, 2029                 |                           | 10 days                 |
-
-For validation of Domain Names according to Section 3.2.2.1.1 (9), any data, document, or completed validation MUST be obtained within 10 days perior to issuing the Certificate.
 
 In no case may a prior validation be reused if any data or document used in the prior validation was obtained more than the maximum time permitted for reuse of the data or document prior to issuing the Certificate.
 
@@ -2075,7 +2118,7 @@ Activation data refers to data values other than whole Private Keys that are req
 
 ### 6.4.1. Activation Data Generation and Installation
 
-Activation data is generated in accordance with the specifications of the HSM. This hardware SHALL be certified to, as a minimum, FIPS 140-2 level 3, FIPS 140-3 Level 3 or Common Criteria EAL 4+.
+Activation data is generated in accordance with the specifications of the HSM. This hardware SHALL be certified to at least FIPS 140-2 level 3 or Common Criteria EAL 4+.
 
 ### 6.4.2. Activation Data Protection
 
@@ -2172,16 +2215,14 @@ Equivalent security is implemented on all Systems on the same network as any CA 
 
 The following timelines apply for the application and infrastructure critical and non-critical vulnerabilities.
 
-**Risk Assessment** for every issue shall be completed within 48 hours and **Remediation time** shall be within:
+**Risk Assessment** for every issue shall be completed within 48 hours and **Resolution time** shall be within:
 
 | **Issues** | **Max Time** |
 | ---------- | ------------ |
-| Critical   | 7 days       |
+| Critical   | 96 hours     |
 | High       | 30 days      |
 | Medium     | 90 days      |
-| Low        | No Stipulation |
-
-Sectigo considers only vulnerabilities found in externally exposed systems in scope of these requirements. 
+| Low        | 90 days      |
 
 # 7. CERTIFICATE, CRL, AND OCSP PROFILES
 
@@ -2241,7 +2282,7 @@ Enhanced naming is the usage of an extended organization field in an X.509v3 Cer
 Sectigo Root CA Certificates contain:
 
 - a basicConstraints extension marked critical. The cA field is set true. The pathLenConstraint is not present.
-- a keyUsage extension marked critical. Bit positions for keyCertSign and cRLSign are set. Bit position for digitalSignature MAY be set.
+- a keyUsage extension marked critical. Bit positions for keyCertSign and cRLSign are set. Some Sectigo Root CA Certificates also have the digitalSignature bit set.
 
 Sectigo Root CA Certificates MAY contain:
 
@@ -2257,7 +2298,7 @@ Sectigo Subordinate CA certificates contain:
 - a certificatePolicies extension that includes one or more policyIdentifiers and may contain a policyQualifier referring to the CPS URI but not including a userNotice.
 - a non-critical cRLDistributionPoints extension containing the HTTP URL of the Issuing CA's CRL service.
 - a non-critical authorityInformationAccess extension containing the HTTP URL of the Issuing CA's OCSP responder and also containing the HTTP URL of the Issuing CA's certificate.
-- a basicConstraints extension marked critical. The cA field is set true. The pathLenConstraint MAY be present.
+- a basicConstraints extension marked critical. The cA field is set true. The pathLenConstraint is often present and the pathLenConstraint is usually set to 0.
 - a keyUsage extension marked critical. Bit positions for keyCertSign and cRLSign are set. The digitalSignature bit is also set if this CA also signs OCSP responses.
 - an ExtendedKeyUsage extension not marked critical.
 
@@ -2274,8 +2315,6 @@ Sectigo Subscriber certificates contain a basicConstraints extension marked crit
 Sectigo Subscriber certificates contain a keyUsage extension marked critical. Bit positions for keyCertSign and cRLSign are NOT set.
 
 Sectigo Subscriber certificates contain a non-critical extKeyUsage extension that MUST contain id-kp-serverAuth and MAY contain additional EKUs, except for id-kp-emailProtection, id-kp-codeSigning, id-kp-timeStamping or anyExtendedKeyUsage.
-
-Delegated OCSP signing certificates SHALL include a non-critical extKeyUsage extension that MUST contain id-kp-OCSPSigning
 
 #### 7.1.2.4. All Certificates
 
@@ -2323,6 +2362,87 @@ For every valid Certification Path (as defined by RFC 5280, Section 6):
 Sectigo represents that it followed the procedure to verify that, as of the Certificate's issuance date, all of the Subject Information was accurate.
 
 Sectigo does not include Domain Names or IP Addresses in a Subject attribute except as specified in Section 3.2.2 of this document.
+
+##### 7.1.4.2.1. Subject Alternative Name Extension
+
+This extension will be present and will contain at least one entry. Each entry is either a dNSName containing the Fully-Qualified Domain Name or an iPAddress containing the IP address of a server. Sectigo confirms that the Applicant controls the Fully-Qualified Domain Name or IP address or has been granted the right to use it by the Domain Name Registrant or IP address assignee, as appropriate. Wildcard FQDNs are permitted.
+
+Sectigo does not issue these certificate types with a subjectAlternativeName extension or Subject commonName field containing a Reserved IP Address or Internal Name.
+
+For internationalized domain names, the Common Name and each SAN dnsName entry is represented as a Domain Name consisting of multiple XN-Labels and/or Non-Reserved LDH-Labels.
+
+##### 7.1.4.2.2. Subject Distinguished Name Fields
+
+1. subject:commonName  
+   If present, this field contains a single IP address or Fully-Qualified Domain Name that is one of the values contained    in the Certificate's subjectAltName extension (see above).
+2. subject:organizationName  
+   If present this field contains the Subject's name and/or DBA/tradename as verified under Section 3.2.2.2 or 3.2.2.3.
+
+   Sectigo MAY include information in this field that differs slightly from the verified name, such as common variations     or abbreviations, provided that any abbreviations used are locally accepted abbreviations, e.g., if the official          record shows "Company Name Incorporated", Sectigo MAY use "Company Name Inc." or "Company Name".
+
+   If both are included, the DBA/tradename SHALL appear first, followed by the Subject's name in parentheses.
+
+   Because Subject name attributes for individuals (e.g. givenName (2.5.4.42) and surname (2.5.4.4)) are not broadly         supported by application software, Sectigo MAY use the subject:organizationName field to convey a natural person          Subject's name or DBA.
+
+3. subject:stateOrProvinceName  
+   If present this field contains the Subject's state or province information as verified under Section 3.2.2.2 or           3.2.2.3.
+
+   If the subject:countryName field specifies the ISO 3166-1 user-assigned code of XX in accordance with Section             7.1.4.2.2(7), the subject:stateOrProvinceName field may contain the full name of the Subject's country information as     verified under Section 3.2.2.2 or 3.2.2.3.
+
+4. subject:countryName  
+   This field contains the Subject's two-letter ISO 3166-1 country code information as verified under Section 3.2.2.2 or     3.2.2.3.
+
+   If a Country is not represented by an official ISO 3166-1 country code, Sectigo will specify the ISO 3166-1 user-         assigned code of XX indicating that an official ISO 3166-1 alpha-2 code has not been assigned.
+
+5. subject:organizationIdentifier
+   If present, this field MUST contain a Registration Reference for a Legal Entity assigned in accordance to the             identified Registration Scheme.
+   The organizationIdentifier MUST be encoded as a PrintableString or UTF8String.
+   The Registration Scheme MUST be identified using the using the following structure in the presented order:
+     - 3 character Registration Scheme identifier;
+     - 2 character ISO 3166 country code for the nation in which the Registration Scheme is operated, or if the scheme is        operated globally ISO 3166 code “XG” shall be used;
+     - For the NTR Registration Scheme identifier, if required under Section 7.1.4.2.4, a 2 character ISO 3166‐2                 identifier for the subdivision (state or province) of the nation in which the Registration Scheme is operated,            preceded by plus “+” (0x2B (ASCII), U+002B (UTF‐8));
+     - ahyphen‐minus“‐” (0x2D (ASCII), U+002D (UTF‐8));
+     - Registration Reference allocated in accordance with the identified Registration Scheme
+
+6. EV TLS Certificates SHALL also include the following fields as per Section 7.1.4.2 of the EVGs:
+   a. Subject Business Category
+    - subject:businessCategory (OID: 2.5.4.15)
+   b. Subject Jurisdiction of Incorporation or Registration
+    - subject:jurisdictionLocalityName (OID: 1.3.6.1.4.1.311.60.2.1.1) (if required)
+    - subject:jurisdictionStateOrProvinceName (OID: 1.3.6.1.4.1.311.60.2.1.2) (if required)
+    - subject:jurisdictionCountryName (OID: 1.3.6.1.4.1.311.60.2.1.3)
+   c. Subject Registration Number or Date
+    - subject:serialNumber (OID: 2.5.4.5)
+
+7. Other Subject Attributes  
+   Sectigo SHALL NOT include any Subject Distinguished Name attributes except as specified in Section 7.1.4.2 of the         EVGs. If present in other types of certificates, all other optional attributes, will contain information that has been    verified by Sectigo. Optional attributes for Secure Server Certificates will not contain metadata such as '.', '-',       and ' ' (i.e., space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.    dNSName entries are in the "preferred name syntax", as specified in RFC 5280, and do not contain underscore characters    ("\_").
+
+##### 7.1.4.2.3. CA/Browser ForumOrganizationIdentifier Extension
+If the subject:organizationIdentifier is present, this field MUST be present.
+
+If present, this extension MUST contain a Registration Reference for a Legal Entity assigned in accordance to the identified Registration Scheme.
+
+The Registration Scheme MUST be encoded as described by the following ASN.1 grammar:
+
+id-CABFOrganizationIdentifier OBJECT IDENTIFIER ::= {
+    joint-iso-itu-t(2) international-organizations(23)
+    ca-browser-forum(140) certificate-extensions(3)
+    cabf-organizationIdentifier(1) 
+}
+
+ext-CABFOrganizationIdentifier EXTENSION ::= {
+    SYNTAX CABFOrganizationIdentifier
+    IDENTIFIED BY id-CABFOrganizationIdentifier
+}
+
+CABFOrganizationIdentifier ::= SEQUENCE {
+    registrationSchemeIdentifier PrintableString (SIZE(3)),
+    registrationCountry          PrintableString (SIZE(2)),
+    registrationStateOrProvince  [0] IMPLICIT PrintableString
+                                  (SIZE(0..128)) OPTIONAL,
+    registrationReference        UTF8String
+}
+where the subfields have the same values, meanings, and restrictions described in Section 7.1.4.2.2 point 5.
 
 #### 7.1.4.3. Subject Information - Root Certificates and Subordinate CA Certificates
 
@@ -2398,6 +2518,7 @@ For example:
 | 1.3.6.1.4.1.6449.1.2.1.5.1                     | Sectigo OID EV TLS Server Certificates  |
 | 2.23.140.1.2.1                                 | DV TLS Server Certificates              |
 | 2.23.140.1.2.2                                 | OV TLS Organization Server Certificates |
+| 2.23.140.1.2.3                                 | OV TLS Individual Server Certificates   |
 | 2.23.140.1.1                                   | EV TLS Server Certificates              |
 | **Arc for intermediate CA policy identifiers** |                                         |
 | 1.3.6.1.4.1.6449.1.2.2                         | Intermediate CA policies                |
@@ -2410,7 +2531,7 @@ No stipulation.
 
 ### 7.1.8. Policy Qualifiers Syntax and Semantics
 
-No stipulation.
+Sectigo includes in End Entity Certificates a non-critical Certificate Policies extension as defined in RFC5280. We include a single PolicyInformation extension that includes the Certificate Policy Identifier and a single Policy Qualifier referring to the CPS URI but not including a userNotice.
 
 ### 7.1.9. Processing Semantics for the Critical Certificate Policies Extension
 
@@ -2452,7 +2573,7 @@ Sectigo does a byte-for-byte issuer name matching between CA certs and CRLs.
 
 If a CRL entry is for a Root CA or Subordinate CA Certificate, including Cross Certificates, this CRL entry extension MUST be present. If a CRL entry is for a Certificate not technically capable of causing issuance, this CRL entry extension SHOULD be present, but MAY be omitted.
 
-The CRLReason included MUST NOT be CRLReasonCode 0 - (unspecified).
+The CRLReason indicated MUST NOT be unspecified (0).
 
 If a reasonCode CRL entry extension is present, the CRLReason MUST indicate the most appropriate reason for revocation of the certificate (picked by the subscriber in the case of TLS Certificates when made the revocation request), as defined below:
 
@@ -2468,7 +2589,7 @@ If a reasonCode CRL entry extension is present, the CRLReason MUST indicate the 
 
 Sectigo also publishes Certificate status information using Online Certificate Status Protocol (OCSP). Sectigo's OCSP responders are capable of providing a 'good' or 'revoked' status for all Certificates and Precertificates issued under the terms of this document. If queried for a certificate which was not issued by Sectigo the responder will provide 'unauthorized'. The OCSP responders will give an 'unknown' response for expired Certificates or for those with fake serial numbers.
 
-Sectigo operates an OCSP service at <http://ocsp.sectigo.com>. Revocation information is made available through the OCSP service. The OCSP responder and responses are available 24x7.
+Sectigo operates an OCSP service at <http://ocsp.sectigo.com>. Revocation information is made immediately available through the OCSP services. The OCSP responder and responses are available 24x7.
 
 The profile of Sectigo OCSP responses is as per this table:
 
@@ -2485,11 +2606,11 @@ The profile of Sectigo OCSP responses is as per this table:
 | | Issuer Key Hash | Hash of issuer's public key |
 | | Serial Number | CertificateSerialNumber |
 | Cert Status | | Good/Revoked/Unknown |
-| Revocation Time (if Revoked) | | \[The time at which the certificate was revoked\] |
+| Revocation Time (if Revoked) | | \[The time at which the certificate was revoked or placed on hold\] |
 | Reason code | | If present SHALL contain a value permitted for CRLs, as specified in Section 7.2.2. |
 | This Update | | \[The most recent time at which the indicated certificate status is known by the responder to have been correct\] |
 | Next Update | | \[The time at or before which newer information will be available about the status of the certificate.\] |
-| Signature Algorithm | | Defined by the issuing CA |
+| Signature Algorithm | | sha256WithRSAEncryption |
 
 If an OCSP response is for a Root CA or Subordinate CA Certificate, including Cross Certificates, and that certificate has been revoked, then the revocationReason field within the RevokedInfo of the CertStatus MUST be present and MUST contain a value permitted for CRLs, as specified in Section 7.2.2.
 
@@ -2643,7 +2764,7 @@ Sectigo keeps the following types of information confidential and maintains reas
 
 ### 9.3.2. Information Not Within the Scope of Confidential Information
 
-Subscribers acknowledge that revocation data of all Certificates issued by the Sectigo is public information and is generally published every 24 hours but at least once every 7 days. Subscriber application data marked as "Public" in the relevant Subscriber Agreement or Certificate request form that is submitted as part of a Certificate application is published within an issued Certificate. Such information is not within the scope of confidential information.
+Subscribers acknowledge that revocation data of all Certificates issued by the Sectigo is public information and is published every 24 hours. Subscriber application data marked as "Public" in the relevant Subscriber Agreement or Certificate request form that is submitted as part of a Certificate application is published within an issued Certificate. Such information is not within the scope of confidential information.
 
 ### 9.3.3. Responsibility to Protect Confidential Information
 
@@ -2760,7 +2881,7 @@ A party relying on a Sectigo Certificate accepts that in order to reasonably rel
 - Study the limitations to the usage of digital Certificates and be aware through the Relying Party agreement the maximum value of the transactions that can be made using a Sectigo digital Certificate.
 - Read and agree with the terms of this document and Relying Party agreement.
 - Verify a Sectigo Certificate by referring to the relevant CRL and the CRLs of intermediate CA and root CA or by checking the OCSP response using the Sectigo OCSP responder.
-- Trust a Sectigo Certificate only if it is valid and has neither been revoked nor has expired.
+- Trust a Sectigo Certificate only if it is valid and has not been revoked or has expired.
 - Rely on a Sectigo Certificate, only as may be reasonable under the circumstances listed in this section and other relevant sections of this document.
 
 ### 9.6.5. Representations and Warranties of other Participants
@@ -2879,7 +3000,7 @@ This document and related agreements referenced within this document are availab
 
 Upon the Sectigo Policy Authority accepting such changes it deems to have significant impact on the users of this document, an updated edition of this document will be published at the Sectigo repository (available at <https://sectigo.com/legal>), with suitable incremental version numbering used to identify new editions. This document SHALL be updated at least once per year.
 
-Revisions not denoted "significant" are those deemed by the Sectigo Policy Authority to have minimal or no impact on Subscribers and Relying Parties using Certificates and CRLs issued by Sectigo.
+Revisions not denoted "significant" are those deemed by the Sectigo Policy Authority to have minimal or no impact on Subscribers and Relying Parties using Certificates and CRLs issued by Sectigo. Such revisions may be made without notice to users of this document and without changing the version number of this document.
 
 Controls are in place to reasonably ensure that this document is not amended and published without the prior authorization of the Sectigo Policy Authority.
 
@@ -3041,7 +3162,7 @@ E.g., OV Secure Server Certificate. As DV Secure Server Certificate, except:
 
 | | |  |
 | ------------------------------- | --------------------------------------------------------------------------- | -------------------------------------------------------- |
-| Subject:                        | commonName                                                                  | example.com | 
+| Subject:                        | commonName                                                                  | \*.example.com | 
 |                                 | organizationName                                                            | Customer Example Inc.                                    |
 |                                 | street                                                                      | 18 Main Street                                           |
 |                                 | locality                                                                    | Springfield                                              |
@@ -3102,4 +3223,3 @@ E.g., EV Secure Server Certificate. As OV Secure Server Certificate, except:
 | 6.2.3 | Internal review as per BRs self-assessment. | 2026-06-09 |
 | 6.2.4 | Clarifying language regarding id-kp-clientAuth | 2026-09-03 |
 | 6.2.5 | Updated changelog date format. Clarified Certificate Problem Report mechanisms | 2026-09-24 | 
-| 6.2.6 | 2026 language cleanup | 2026-10-09 | 
