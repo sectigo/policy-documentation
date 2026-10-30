@@ -1,8 +1,8 @@
 ---
 title: Sectigo TLS Certificates Certificate Policy and Certification Practice Statement
-version: 6.2.6
+version: 6.2.7
 author: Sectigo Limited
-date: 2026-10-09
+date: 2026-10-30
 copyright_header: Copyright Notice
 copyright_notice: Copyright Sectigo Limited 2026. All rights reserved.
 copyright_body: No part of this publication may be reproduced, stored in or introduced into a retrieval system, or transmitted,in any form or by any means (electronic, mechanical, photocopying, recording or otherwise) without prior written permission of Sectigo Limited. Requests for any other permission to reproduce this Sectigo document (as well as requests for copies from Sectigo) must be addressed to
@@ -786,7 +786,7 @@ The Subscriber, or an RA on behalf of the Subscriber SHALL submit a Subscriber C
 
 Generally, Applicants will complete the online forms made available by Sectigo or by approved RAs at the respective official websites. Under special circumstances, the Applicant MAY submit an application via email; however, this process is available at the discretion of Sectigo or its RAs. Sectigo maintains an internal database of all previously revoked Certificates and previously rejected certificate requests. That database is used to identify subsequent suspicious certificate requests.
 
-Sectigo does not issue Certificates to entities on a government denied list, list of prohibited persons, or other list that prohibits doing business with maintained by the US or UK or that is located in a country with which the laws of the US or UK prohibit doing business.
+Sectigo does not issue EV Certificates to entities on a government denied list, a list of prohibited persons, or any other list maintained by the US or UK that prohibits doing business. Additionally, EV Certificates are not issued to entities located in a country with which US or UK laws prohibit doing business.
 
 ### 4.1.2. Enrollment Process and Responsibilities
 
@@ -3103,3 +3103,4 @@ E.g., EV Secure Server Certificate. As OV Secure Server Certificate, except:
 | 6.2.4 | Clarifying language regarding id-kp-clientAuth | 2026-09-03 |
 | 6.2.5 | Updated changelog date format. Clarified Certificate Problem Report mechanisms | 2026-09-24 | 
 | 6.2.6 | 2026 language cleanup | 2026-10-09 | 
+| 6.2.7 | Update Sanctions language to EV-only as per the EVGs | 2026-10-30 | 
