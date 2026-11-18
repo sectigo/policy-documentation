@@ -1,8 +1,8 @@
 ---
 title: Sectigo TLS Certificates Certificate Policy and Certification Practice Statement
-version: 6.2.7
+version: 6.2.8
 author: Sectigo Limited
-date: 2026-10-30
+date: 2026-11-18
 copyright_header: Copyright Notice
 copyright_notice: Copyright Sectigo Limited 2026. All rights reserved.
 copyright_body: No part of this publication may be reproduced, stored in or introduced into a retrieval system, or transmitted,in any form or by any means (electronic, mechanical, photocopying, recording or otherwise) without prior written permission of Sectigo Limited. Requests for any other permission to reproduce this Sectigo document (as well as requests for copies from Sectigo) must be addressed to
@@ -558,23 +558,13 @@ This method implements the MPIC as specified in section 3.2.2.6.
 
 When a Random Value, which is unique, is used it remains valid for use for no more than 30 days from its generation.
 
-2. Email, SMS, or Postal Mail to IP Address Contact as defined in section 3.2.2.5.2 of the TLS Baseline Requirements.
-
-Confirming the Applicant's control over the IP Address by sending a Random Value via email, SMS, or postal mail and then receiving a confirming response utilizing the Random Value. The Random Value MUST be sent to an email address, SMS number, or postal mail address identified as an IP Address Contact. The Random Value SHALL be unique in each email, SMS, or postal mail. The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation.
-
-3. Reverse address lookup as defined in section 3.2.2.5.3 of the TLS Baseline Requirements.
-
-Confirming the Applicant's control over the IP Address by obtaining a Domain Name associated with the IP Address through a reverse-IP lookup on the IP Address and then verifying control over the FQDN using a method permitted under Section 3.2.2.1.1 above.
-
-This method implements the MPIC as specified in section 3.2.2.6.
-
-4. ACME "http-01" method for IP Addresses as defined in section 3.2.2.5.6 of the TLS Baseline Requirements.
+2. ACME "http-01" method for IP Addresses as defined in section 3.2.2.5.6 of the TLS Baseline Requirements.
 
 Confirming the Applicant's control over the IP Address by performing the procedure documented for a "http-01" challenge in RFC 8738.
 
 This method implements the MPIC as specified in section 3.2.2.6.
 
-5. ACME "tls-alpn-01" method for IP Addresses as defined in section 3.2.2.5.7 of the TLS Baseline Requirements.
+3. ACME "tls-alpn-01" method for IP Addresses as defined in section 3.2.2.5.7 of the TLS Baseline Requirements.
 
 Confirming the Applicant's control over the IP Address by performing the procedure documented for a "tls-alpn-01" challenge in RFC 8738.
 
@@ -3104,3 +3094,5 @@ E.g., EV Secure Server Certificate. As OV Secure Server Certificate, except:
 | 6.2.5 | Updated changelog date format. Clarified Certificate Problem Report mechanisms | 2026-09-24 | 
 | 6.2.6 | 2026 language cleanup | 2026-10-09 | 
 | 6.2.7 | Update Sanctions language to EV-only as per the EVGs | 2026-10-30 | 
+| 6.2.8 | Removal of the IP address validation methods as per ballot SC90 and SC91 | 2026-11-18 | 
+
