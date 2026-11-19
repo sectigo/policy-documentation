@@ -1,0 +1,83 @@
+name: Notify CP/CPS Approval
+
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  notify:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the merged commit
+        uses: actions/checkout@v5
+        with:
+          ref: ${{ github.event.pull_request.merge_commit_sha }}
+          fetch-depth: 0
+
+      - name: Send approval notification
+        env:
+          SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
+          DEPLOYMENT_NOTIFICATION_RECIPIENTS: ${{ vars.DEPLOYMENT_NOTIFICATION_RECIPIENTS }}
+          BEFORE_SHA: ${{ github.event.pull_request.base.sha }}
+          AFTER_SHA: ${{ github.event.pull_request.merge_commit_sha }}
+        run: |
+          node <<'NODE'
+          const { execFileSync } = require('node:child_process');
+
+          async function main() {
+            const apiKey = process.env.SENDGRID_API_KEY;
+            if (!apiKey) {
+              throw new Error('SENDGRID_API_KEY must be configured as a repository secret.');
+            }
+            const recipients = (process.env.DEPLOYMENT_NOTIFICATION_RECIPIENTS || '')
+              .split(',')
+              .map(email => email.trim())
+              .filter(Boolean);
+            if (!recipients.length || recipients.some(email => !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))) {
+              throw new Error('DEPLOYMENT_NOTIFICATION_RECIPIENTS must contain comma-separated email addresses.');
+            }
+
+            const before = process.env.BEFORE_SHA;
+            const after = process.env.AFTER_SHA;
+            const files = execFileSync('git', ['diff', '--name-only', '--no-renames', '-z', before, after], { encoding: 'utf8' });
+            const fileList = files.split('\0').filter(Boolean).map(file => `- ${file}`).join('\n')
+              || '- No net file changes.';
+            const body = [
+              'This is an automated notification that a new CP/CPS has been published publicly. Within this change, the following documents were updated:',
+              '',
+              fileList,
+              '',
+              'This is an automated reminder to disclose the updated CP/CPS in CCADB',
+            ].join('\n');
+
+            const response = await fetch('https://api.sendgrid.com/v3/mail/send', {
+              method: 'POST',
+              headers: {
+                Authorization: `Bearer ${apiKey}`,
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                personalizations: [...new Set(recipients)].map(email => ({ to: [{ email }] })),
+                from: { email: 'noreply@sectigo.com' },
+                subject: 'New CP/CPS Published',
+                content: [{ type: 'text/plain', value: body }],
+              }),
+              signal: AbortSignal.timeout(30000),
+            });
+            if (response.status !== 202) {
+              throw new Error(`SendGrid rejected the notification (HTTP ${response.status}): ${await response.text()}`);
+            }
+            console.log('SendGrid accepted the approval notification.');
+          }
+
+          main().catch(error => {
+            console.error(error);
+            process.exitCode = 1;
+          });
+          NODE
