@@ -64,7 +64,7 @@ jobs:
               },
               body: JSON.stringify({
                 personalizations: [...new Set(recipients)].map(email => ({ to: [{ email }] })),
-                from: { email: 'noreply@sectigo.com' },
+                from: { email: 'incident-response@sectigo.com' },
                 subject: 'New CP/CPS Published',
                 content: [{ type: 'text/plain', value: body }],
               }),
